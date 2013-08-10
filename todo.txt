@@ -1,0 +1,17 @@
+WorkFlow
+--------
+Restore fading
+create github dir for scrumcards5
+div-height (header, main, footer)
+
+
+CLEANUP
+-------
+
+jQuery:
+remove jQuery 1.10.2 OR
+remove jQuery 2.0.3
+
+Use min.Dependencies
+
+

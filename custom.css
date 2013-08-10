@@ -1,0 +1,9 @@
+.large-figure{
+    font-size: 14em;
+    /*line-height: 0.95em;*/
+    line-height: 1.3em;
+}
+
+.vcenter{
+    vertical-align: middle;
+}
