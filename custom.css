@@ -1,14 +1,17 @@
 .large-figure{
     font-size: 11em;
-    line-height: 1.475em;
-    /*line-height: 2.520em;*/
-    /*line-height: 3.565em;*/
-    /*line-height: 1.7624em;*/
-    background-color: #81d8ff;
-}
 
-.vcenter{
-    vertical-align: middle;
+    /* 320px */
+    /*line-height: 1.484em;*/
+
+    /* 480px */
+    line-height: 1.74375em;
+
+    /* 360px */
+
+    /* 640px */
+    /*line-height: 3.562em;*/
+    background-color: #81d8ff;
 }
 
 .mainview-header{
