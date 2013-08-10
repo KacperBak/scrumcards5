@@ -1,9 +1,13 @@
 WorkFlow
 --------
-Restore fading
-create github dir for scrumcards5
-div-height (header, main, footer)
+x  Restore fading
+x  create github dir for scrumcards5
+ip div-height (header, main, footer)
 
+
+OPTIONS
+-------
+- set fontsize manual to optimize view
 
 CLEANUP
 -------

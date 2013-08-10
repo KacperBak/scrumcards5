@@ -1,9 +1,29 @@
 .large-figure{
-    font-size: 14em;
+    font-size: 11em;
+    /*font-size: 12em;*/
     /*line-height: 0.95em;*/
-    line-height: 1.3em;
+    line-height: 1.1em;
+    background-color: #81d8ff;
 }
 
 .vcenter{
     vertical-align: middle;
+}
+
+.mainview-header{
+    height: 3.3em;
+    background-color: #faf2cc;
+}
+
+.mainview-content{
+    /*height: 16.225em;*/
+}
+
+#points{
+    background-color: #ffe1e3;
+}
+
+.mainview-footer{
+    height: 3.3em;
+    background-color: burlywood;
 }

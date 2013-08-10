@@ -8,13 +8,11 @@ var togglePoints = function(){
 var slideUpAndDown= function(){
     toggleCounter++;
     if(toggleCounter % 2){
-        $("div#header").fadeOut();
-        $("div#footer").fadeOut();
-        $("span#points").toggleClass("muted");
+        $("button").fadeOut();
+        $("div#points").toggleClass("muted");
     }else{
-        $("div#header").fadeIn();
-        $("div#footer").fadeIn();
-        $("span#points").toggleClass("muted");
+        $("button").fadeIn();
+        $("div#points").toggleClass("muted");
     }
 }
 
