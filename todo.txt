@@ -5,9 +5,13 @@ x  create github dir for scrumcards5
 ip div-height (header, main, footer)
 
 
-OPTIONS
--------
+OPTIONS-MENU
+------------
 - set fontsize manual to optimize view
+
+FUTURE
+------
+- http://calebevans.me/projects/jcanvas/ use it to prettyUp main content
 
 CLEANUP
 -------

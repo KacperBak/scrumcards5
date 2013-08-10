@@ -1,18 +1,27 @@
 /* main view */
-var toggleCounter = 1;
+var buttonsVisible = true;
 
 var togglePoints = function(){
     $("span#points").toggleClass("muted");
 }
 
-var slideUpAndDown= function(){
-    toggleCounter++;
-    if(toggleCounter % 2){
+var toggleButtonsVisible = function(){
+    if(buttonsVisible){
+        buttonsVisible = false;
+    }else{
+        buttonsVisible = true;
+    }
+}
+
+var showAndHideButtons= function(){
+    if(buttonsVisible){
         $("button").fadeOut();
         $("div#points").toggleClass("muted");
+        toggleButtonsVisible();
     }else{
         $("button").fadeIn();
         $("div#points").toggleClass("muted");
+        toggleButtonsVisible();
     }
 }
 
@@ -20,7 +29,7 @@ var slideUpAndDown= function(){
  * Main content handler
  */
 $( "div#main" ).click(function() {
-    slideUpAndDown();
+    showAndHideButtons();
 });
 
 /**
