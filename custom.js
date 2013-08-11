@@ -1,23 +1,15 @@
 /* main view */
-var buttonsVisible = false;
+var buttonsVisible = true;
 
 var toggleButtonsVisible = function(){
     if(buttonsVisible){
-        buttonsVisible = false;
-    }else{
-        buttonsVisible = true;
-    }
-}
-
-var showAndHideButtons= function(){
-    if(buttonsVisible){
         $("button").fadeOut();
         $("div#points").toggleClass("muted");
-        toggleButtonsVisible();
+        buttonsVisible = false;
     }else{
         $("button").fadeIn();
         $("div#points").toggleClass("muted");
-        toggleButtonsVisible();
+        buttonsVisible = true;
     }
 }
 
@@ -25,7 +17,7 @@ var showAndHideButtons= function(){
  * Main content handler
  */
 $( "div#main" ).click(function() {
-    showAndHideButtons();
+    toggleButtonsVisible();
 });
 
 /**
