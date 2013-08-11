@@ -2,7 +2,10 @@ WorkFlow
 --------
 x  Restore fading
 x  create github dir for scrumcards5
-ip div-height (header, main, footer)
+x  div-height (header, main, footer)
+-  increase, decrease scrum values
+-  auto fontsize
+-  rename JS-files
 
 
 OPTIONS-MENU

@@ -1,7 +1,7 @@
 /**
  * DEBUG
  */
-var DEBUG_MODE = true;
+var DEBUG_MODE = false;
 
 /**
  * calculate screen dimension
@@ -44,13 +44,7 @@ var calculateNewFontSize = function(currentHeight){
 var displayCurrentHeight = function(){
 
     var currentHeight = getWindowHeight();
-    var replaceFragment = null;
-    if(buttonsVisible){
-        replaceFragment = $('<div id="points" class="text-center large-figure muted">'+ currentHeight +'</div>');
-    }else{
-        replaceFragment = $('<div id="points" class="text-center large-figure">'+ currentHeight +'</div>');
-    }
-
+    var replaceFragment = getReplaceFragment(buttonsVisible, currentHeight);
     $("#points").remove();
     $("#main").append(replaceFragment);
     return currentHeight;
@@ -77,6 +71,56 @@ var toggleButtonsVisible = function(){
         buttonsVisible = true;
     }
 }
+
+/**
+ * shared functions
+ */
+
+var getReplaceFragment = function(buttonsVisibleState, innerValue){
+    var result = null;
+    if(buttonsVisibleState){
+        result = $('<div id="points" class="text-center large-figure muted">'+ innerValue +'</div>');
+    }else{
+        result = $('<div id="points" class="text-center large-figure">'+ innerValue +'</div>');
+    }
+    return result;
+}
+
+/**
+ * Scrum values
+ */
+
+var scrumValues             = [1, 2, 3 , 5, 8, 13, 20, 40, 100];
+var currentScrumValueIndex  = 0;
+var scrumValueMaxIndex      = _.size(scrumValues) - 1;
+
+var nextScrumValue = function(){
+    var result = scrumValues[0];
+    if( currentScrumValueIndex + 1 <= scrumValueMaxIndex){
+        currentScrumValueIndex++;
+        result = scrumValues[currentScrumValueIndex];
+    }else{
+        currentScrumValueIndex = 0;
+    }
+    return result;
+}
+
+var lastScrumValue = function(){
+    var result = scrumValues[scrumValueMaxIndex];
+    if( currentScrumValueIndex - 1 >= 0 ){
+        currentScrumValueIndex--;
+        result = scrumValues[currentScrumValueIndex];
+    }else{
+        currentScrumValueIndex = scrumValueMaxIndex;
+    }
+    return result;
+}
+
+
+
+
+
+
 
 
 

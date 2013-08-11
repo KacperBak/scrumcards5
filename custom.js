@@ -9,18 +9,20 @@ $( "div#main" ).click(function() {
  * Minus button handler
  */
 $( "button#minus" ).click(function() {
-    var number = $('<span id="points">'+ counter +'</span>');
-    $("span#points").remove();
-    $("p").append(number);
+    var scrumCardValue = lastScrumValue();
+    var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
+    $("div#points").remove();
+    $("div#main").append(replaceFragment);
 });
 
 /**
  * Plus button handler
  */
 $( "button#plus" ).click(function() {
-    var number = $('<span id="points">'+ counter +'</span>');
-    $("span#points").remove();
-    $("p").append(number);
+    var scrumCardValue = nextScrumValue();
+    var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
+    $("div#points").remove();
+    $("div#main").append(replaceFragment);
 });
 
 /**
