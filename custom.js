@@ -1,18 +1,3 @@
-/* main view */
-var buttonsVisible = true;
-
-var toggleButtonsVisible = function(){
-    if(buttonsVisible){
-        $("button").fadeOut();
-        $("div#points").toggleClass("muted");
-        buttonsVisible = false;
-    }else{
-        $("button").fadeIn();
-        $("div#points").toggleClass("muted");
-        buttonsVisible = true;
-    }
-}
-
 /**
  * Main content handler
  */
@@ -37,3 +22,10 @@ $( "button#plus" ).click(function() {
     $("span#points").remove();
     $("p").append(number);
 });
+
+/**
+ * Handle window resize
+ */
+window.addEventListener("resize", function() {
+    resizeScreenDimension();
+}, false);

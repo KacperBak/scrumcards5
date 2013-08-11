@@ -1,10 +1,15 @@
-var size = 1.0;
+/**
+ * DEBUG
+ */
+var DEBUG_MODE = true;
+
+/**
+ * calculate screen dimension
+ */
 var PX_240 = 240;
 var EM_240 = 1064;
 var EM_DELTA = 1714;
 var DIVISOR = 100;
-
-var DEBUG_MODE = true;
 
 /**
  *  320px -> 1484em
@@ -37,8 +42,15 @@ var calculateNewFontSize = function(currentHeight){
 }
 
 var displayCurrentHeight = function(){
+
     var currentHeight = getWindowHeight();
-    var replaceFragment = $('<div id="points" class="text-center large-figure">'+ currentHeight +'</div>');
+    var replaceFragment = null;
+    if(buttonsVisible){
+        replaceFragment = $('<div id="points" class="text-center large-figure muted">'+ currentHeight +'</div>');
+    }else{
+        replaceFragment = $('<div id="points" class="text-center large-figure">'+ currentHeight +'</div>');
+    }
+
     $("#points").remove();
     $("#main").append(replaceFragment);
     return currentHeight;
@@ -50,9 +62,21 @@ var resizeScreenDimension = function(){
 }
 
 /**
- * Handle window resize
+ * Toggle button fade IN/OUT and muting the points
  */
-window.addEventListener("resize", function() {
-    resizeScreenDimension();
-}, false);
+var buttonsVisible = true;
+
+var toggleButtonsVisible = function(){
+    if(buttonsVisible){
+        $("button").fadeOut();
+        $("div#points").toggleClass("muted");
+        buttonsVisible = false;
+    }else{
+        $("button").fadeIn();
+        $("div#points").toggleClass("muted");
+        buttonsVisible = true;
+    }
+}
+
+
 
