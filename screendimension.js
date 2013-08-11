@@ -1,8 +1,10 @@
 var size = 1.0;
-var PX_320 = 320;
-var EM_320 = 1484;
-var EM_DELTA = 2078;
-var DIVISOR = 1000;
+var PX_240 = 240;
+var EM_240 = 1064;
+var EM_DELTA = 1714;
+var DIVISOR = 100;
+
+var DEBUG_MODE = true;
 
 /**
  *  320px -> 1484em
@@ -12,33 +14,45 @@ var DIVISOR = 1000;
 
 var setNewFontSize = function(size){
     var valueToSet = size + "em";
-    $('.large-figure').css('line-height', valueToSet);
+    $('.mainview-content').css('height', valueToSet);
 }
 
 var getWindowHeight = function(){
     var currentHeight = $(window).height();
-    console.log("height: " + currentHeight);
     return currentHeight;
 }
 
 var calculateFontSizeFactor = function(){
-    return EM_DELTA / PX_320;
+    return EM_DELTA / PX_240;
 }
 
 var calculateNewFontSize = function(currentHeight){
-    var result = PX_320;
-    if(currentHeight >= PX_320){
-        var pxDelta = currentHeight - PX_320;
+    var result = PX_240;
+    if(currentHeight >= PX_240){
+        var pxDelta = currentHeight - PX_240;
         var emFactor = calculateFontSizeFactor();
-        result = (pxDelta * emFactor + EM_320) / DIVISOR;
+        result = (pxDelta * emFactor + EM_240) / DIVISOR;
     }
     return result;
+}
+
+var displayCurrentHeight = function(){
+    var currentHeight = getWindowHeight();
+    var replaceFragment = $('<div id="points" class="text-center large-figure">'+ currentHeight +'</div>');
+    $("#points").remove();
+    $("#main").append(replaceFragment);
+    return currentHeight;
+}
+
+var resizeScreenDimension = function(){
+    if(DEBUG_MODE){ console.log("resize: " + displayCurrentHeight()); }
+    setNewFontSize(calculateNewFontSize(getWindowHeight()));
 }
 
 /**
  * Handle window resize
  */
 window.addEventListener("resize", function() {
-    setNewFontSize(calculateNewFontSize(getWindowHeight()));
+    resizeScreenDimension();
 }, false);
 

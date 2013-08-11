@@ -1,9 +1,5 @@
 /* main view */
-var buttonsVisible = true;
-
-var togglePoints = function(){
-    $("span#points").toggleClass("muted");
-}
+var buttonsVisible = false;
 
 var toggleButtonsVisible = function(){
     if(buttonsVisible){

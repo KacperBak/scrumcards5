@@ -1,26 +1,17 @@
 .large-figure{
-    font-size: 11em;
-
-    /* 320px */
-    /*line-height: 1.484em;*/
-
-    /* 480px */
-    line-height: 1.74375em;
-
-    /* 360px */
-
-    /* 640px */
-    /*line-height: 3.562em;*/
+    font-size: 6em;
+    /* 240px as default */
+    line-height: 1.768em;
     background-color: #81d8ff;
 }
 
 .mainview-header{
-    height: 3.3em;
+    height: 3.285em;
     background-color: #faf2cc;
 }
 
 .mainview-content{
-    /*height: 16.225em;*/
+    height: 10.62em;
 }
 
 #points{
@@ -28,6 +19,6 @@
 }
 
 .mainview-footer{
-    height: 3.3em;
+    height: 3.285em;
     background-color: burlywood;
 }
