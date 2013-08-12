@@ -22,3 +22,15 @@
     height: 3.285em;
     background-color: burlywood;
 }
+
+.upper-row{
+    background-color: #de8db2;
+}
+
+.middle-row{
+    background-color: #b9deca;
+}
+
+.lower-row{
+    background-color: #98b0de;
+}

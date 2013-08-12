@@ -9,20 +9,35 @@ $( "div#main" ).click(function() {
  * Minus button handler
  */
 $( "button#minus" ).click(function() {
-    var scrumCardValue = lastScrumValue();
-    var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
-    $("div#points").remove();
-    $("div#main").append(replaceFragment);
+    if(!pointsAreVisible){
+        var scrumCardValue = lastScrumValue();
+        var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
+        $("div#point4").remove();
+        $("div#point5").remove();
+        $("div#point6").remove();
+        $("div#row2").append(replaceFragment);
+    }
+});
+
+/**
+ * Point button handler
+ */
+$( "button#point").click(function(){
+    switchPointsDisplay();
 });
 
 /**
  * Plus button handler
  */
 $( "button#plus" ).click(function() {
-    var scrumCardValue = nextScrumValue();
-    var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
-    $("div#points").remove();
-    $("div#main").append(replaceFragment);
+    if(!pointsAreVisible){
+        var scrumCardValue = nextScrumValue();
+        var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
+        $("div#point4").remove();
+        $("div#point5").remove();
+        $("div#point6").remove();
+        $("div#row2").append(replaceFragment);
+    }
 });
 
 /**
