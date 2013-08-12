@@ -2,7 +2,9 @@
  * Main content handler
  */
 $( "div#main" ).click(function() {
-    toggleButtonsVisible();
+    if(!pointsAreVisible){
+        toggleButtonsVisible();
+    }
 });
 
 /**
