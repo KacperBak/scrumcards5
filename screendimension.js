@@ -96,22 +96,22 @@ var scrumValueMaxIndex      = _.size(scrumValues) - 1;
 
 var nextScrumValue = function(){
     var result = scrumValues[0];
-    if( currentScrumValueIndex + 1 <= scrumValueMaxIndex){
-        currentScrumValueIndex++;
-        result = scrumValues[currentScrumValueIndex];
+    if( currentIndex + 1 <= scrumValueMaxIndex){
+        currentIndex++;
+        result = scrumValues[currentIndex];
     }else{
-        currentScrumValueIndex = 0;
+        currentIndex = 0;
     }
     return result;
 }
 
 var lastScrumValue = function(){
     var result = scrumValues[scrumValueMaxIndex];
-    if( currentScrumValueIndex - 1 >= 0 ){
-        currentScrumValueIndex--;
-        result = scrumValues[currentScrumValueIndex];
+    if( currentIndex - 1 >= 0 ){
+        currentIndex--;
+        result = scrumValues[currentIndex];
     }else{
-        currentScrumValueIndex = scrumValueMaxIndex;
+        currentIndex = scrumValueMaxIndex;
     }
     return result;
 }
@@ -120,6 +120,14 @@ var replaceScrumValue = function(scrumCardValue){
     var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
     $("div#mainPointContent").remove();
     $("div#segmentMainPoint").append(replaceFragment);
+}
+
+var setScrumValueBasedOnIndex = function(i){
+    if(pointsAreVisible){
+        currentIndex = i;
+        replaceScrumValue(scrumValues[currentIndex]);
+        togglePointsDisplay();
+    }
 }
 
 
@@ -131,12 +139,12 @@ var pointsAreVisible = false;
 
 var togglePointsDisplay = function(){
     if(pointsAreVisible){
-        $("div#segmentMainPoint").hide();
-        $("div#segmentScrumPoints").show();
-        pointsAreVisible = false;
-    }else{
         $("div#segmentMainPoint").show();
         $("div#segmentScrumPoints").hide();
+        pointsAreVisible = false;
+    }else{
+        $("div#segmentMainPoint").hide();
+        $("div#segmentScrumPoints").show();
         pointsAreVisible = true;
     }
 }

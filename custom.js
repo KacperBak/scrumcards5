@@ -1,7 +1,7 @@
 /**
  * Main content handler
  */
-$( "div#main" ).click(function() {
+$( "div#segmentMainPoint" ).click(function() {
     if(!pointsAreVisible){
         toggleButtonsVisible();
     }
@@ -33,8 +33,40 @@ $( "button#plus" ).click(function() {
 });
 
 /**
+ * Scrum points handler
+ */
+$( "div#point0" ).click(function() {
+    setScrumValueBasedOnIndex(0);
+});
+$( "div#point1" ).click(function() {
+    setScrumValueBasedOnIndex(1);
+});
+$( "div#point2" ).click(function() {
+    setScrumValueBasedOnIndex(2);
+});
+$( "div#point3" ).click(function() {
+    setScrumValueBasedOnIndex(3);
+});
+$( "div#point4" ).click(function() {
+    setScrumValueBasedOnIndex(4);
+});
+$( "div#point5" ).click(function() {
+    setScrumValueBasedOnIndex(5);
+});
+$( "div#point6" ).click(function() {
+    setScrumValueBasedOnIndex(6);
+});
+$( "div#point7" ).click(function() {
+    setScrumValueBasedOnIndex(7);
+});
+$( "div#point8" ).click(function() {
+    setScrumValueBasedOnIndex(8);
+});
+
+/**
  * Handle window resize
  */
 window.addEventListener("resize", function() {
     resizeScreenDimension();
 }, false);
+
