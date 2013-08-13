@@ -19,14 +19,25 @@
     background-color: burlywood;
 }
 
-.upper-row{
+/* TODO just one CSS class needed, BG is good for dev */
+/* start */
+.spRow1{
+    height: 3.285em;
     background-color: #de8db2;
 }
 
-.middle-row{
+.spRow2{
+    height: 3.285em;
     background-color: #b9deca;
 }
 
-.lower-row{
+.spRow3{
+    height: 3.285em;
     background-color: #98b0de;
 }
+
+.spRow4{
+    height: 3.285em;
+    background-color: #dade3a;
+}
+/* end */

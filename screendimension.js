@@ -17,9 +17,14 @@ var DIVISOR = 100;
  *  Delta -> 2078em
  */
 
-var setNewFontSize = function(size){
-    var valueToSet = size + "em";
-    $('.content').css('height', valueToSet);
+
+var setContentHeight = function(size){
+    var ROWS = 4.0;
+    $('.content').css('height', size + "em");
+    $('.spRow1').css('height', (size / ROWS) + "em");
+    $('.spRow2').css('height', (size / ROWS) + "em");
+    $('.spRow3').css('height', (size / ROWS) + "em");
+    $('.spRow4').css('height', (size / ROWS) + "em");
 }
 
 var getWindowHeight = function(){
@@ -27,15 +32,15 @@ var getWindowHeight = function(){
     return currentHeight;
 }
 
-var calculateFontSizeFactor = function(){
+var calculateSizeFactor = function(){
     return EM_DELTA / PX_240;
 }
 
-var calculateNewFontSize = function(currentHeight){
+var calculateNewHeight = function(currentHeight){
     var result = PX_240;
     if(currentHeight >= PX_240){
         var pxDelta = currentHeight - PX_240;
-        var emFactor = calculateFontSizeFactor();
+        var emFactor = calculateSizeFactor();
         result = (pxDelta * emFactor + EM_240) / DIVISOR;
     }
     return result;
@@ -52,7 +57,7 @@ var displayCurrentHeight = function(){
 
 var resizeScreenDimension = function(){
     if(DEBUG_MODE){ console.log("resize: " + displayCurrentHeight()); }
-    setNewFontSize(calculateNewFontSize(getWindowHeight()));
+    setContentHeight(calculateNewHeight(getWindowHeight()));
 }
 
 /**
@@ -63,11 +68,11 @@ var buttonsVisible = true;
 var toggleButtonsVisible = function(){
     if(buttonsVisible){
         $("button").fadeOut();
-        $("div#points").toggleClass("muted");
+        $("div#mainPointContent").toggleClass("muted");
         buttonsVisible = false;
     }else{
         $("button").fadeIn();
-        $("div#points").toggleClass("muted");
+        $("div#mainPointContent").toggleClass("muted");
         buttonsVisible = true;
     }
 }
@@ -89,9 +94,21 @@ var getReplaceFragment = function(buttonsVisibleState, innerValue){
 /**
  * Scrum values
  */
+var sv0 = 0;
+var sv1 = "&#189;";
+var sv2 = 1;
+var sv3 = 2;
+var sv4 = 3;
+var sv5 = 5;
+var sv6 = 8;
+var sv7 = 13;
+var sv8 = 20;
+var sv9 = 40;
+var sv10 = 100;
+var sv11 = "&#63;";
 
-var scrumValues             = [1, 2, 3 , 5, 8, 13, 20, 40, 100];
-var currentScrumValueIndex  = 0;
+var scrumValues             = [sv0, sv1, sv2, sv3, sv4, sv5, sv6, sv7, sv8, sv9, sv10, sv11];
+var currentIndex            = 0;
 var scrumValueMaxIndex      = _.size(scrumValues) - 1;
 
 var nextScrumValue = function(){
@@ -129,8 +146,6 @@ var setScrumValueBasedOnIndex = function(i){
         togglePointsDisplay();
     }
 }
-
-
 
 /**
  * Scrum values display
