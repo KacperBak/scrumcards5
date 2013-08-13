@@ -19,7 +19,7 @@ var DIVISOR = 100;
 
 var setNewFontSize = function(size){
     var valueToSet = size + "em";
-    $('.mainview-content').css('height', valueToSet);
+    $('.content').css('height', valueToSet);
 }
 
 var getWindowHeight = function(){
@@ -79,9 +79,9 @@ var toggleButtonsVisible = function(){
 var getReplaceFragment = function(buttonsVisibleState, innerValue){
     var result = null;
     if(buttonsVisibleState){
-        result = $( '<div id="point5" class="span12 text-center large-figure muted">'+ innerValue +'</div>');
+        result = $( '<div id="mainPointContent" class="span12 text-center large-figure muted">'+ innerValue +'</div>');
     }else{
-        result = $( '<div id="point5" class="span12 text-center large-figure">'+ innerValue +'</div>' );
+        result = $( '<div id="mainPointContent" class="span12 text-center large-figure">'+ innerValue +'</div>' );
     }
     return result;
 }
@@ -116,6 +116,12 @@ var lastScrumValue = function(){
     return result;
 }
 
+var replaceScrumValue = function(scrumCardValue){
+    var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
+    $("div#mainPointContent").remove();
+    $("div#segmentMainPoint").append(replaceFragment);
+}
+
 
 
 /**
@@ -123,86 +129,25 @@ var lastScrumValue = function(){
  */
 var pointsAreVisible = false;
 
-var switchPointsDisplay = function(){
+var togglePointsDisplay = function(){
     if(pointsAreVisible){
-        displayMiddlePoint();
+        $("div#segmentMainPoint").hide();
+        $("div#segmentScrumPoints").show();
         pointsAreVisible = false;
     }else{
-        displayAllPoints();
+        $("div#segmentMainPoint").show();
+        $("div#segmentScrumPoints").hide();
         pointsAreVisible = true;
     }
 }
 
-
-var displayMiddlePoint = function(){
-    removeAllPoints();
-    appendMiddlePoint(scrumValues[currentScrumValueIndex]);
+var initPointsDisplay = function(){
+    $("div#segmentScrumPoints").hide();
 }
 
-var displayAllPoints = function(){
-    removeAllPoints();
-    appendAllPoints();
-}
 
-var appendAllPoints = function (){
-    var point1 = $('<div id="point1" class="span4 text-center">1</div>');
-    var point2 = $('<div id="point2" class="span4 text-center">2</div>');
-    var point3 = $('<div id="point3" class="span4 text-center">3</div>');
-    $("#row1").append(point1);
-    $("#row1").append(point2);
-    $("#row1").append(point3);
 
-    var point4 = $('<div id="point4" class="span4 text-center">4</div>');
-    var point5 = $('<div id="point5" class="span4 text-center">5</div>');
-    var point6 = $('<div id="point6" class="span4 text-center">6</div>');
-    $("#row2").append(point4);
-    $("#row2").append(point5);
-    $("#row2").append(point6);
 
-    var point7 = $('<div id="point7" class="span4 text-center">7</div>');
-    var point8 = $('<div id="point8" class="span4 text-center">8</div>');
-    var point9 = $('<div id="point9" class="span4 text-center">9</div>');
-    $("#row3").append(point7);
-    $("#row3").append(point8);
-    $("#row3").append(point9);
-}
-
-var removeAllPoints = function(){
-    $("#point1").remove();
-    $("#point2").remove();
-    $("#point3").remove();
-    $("#point4").remove();
-    $("#point5").remove();
-    $("#point6").remove();
-    $("#point7").remove();
-    $("#point8").remove();
-    $("#point9").remove();
-}
-
-var appendEmptyUpperRow = function(){
-    var point1 = $('<div id="point1" class="span4 text-center"></div>');
-    var point2 = $('<div id="point2" class="span4 text-center"></div>');
-    var point3 = $('<div id="point3" class="span4 text-center"></div>');
-    $("#row1").append(point1);
-    $("#row1").append(point2);
-    $("#row1").append(point3);
-}
-
-var appendMiddlePoint = function(currentValue){
-    appendEmptyUpperRow();
-    var point5 = $('<div id="point5" class="span12 text-center large-figure muted">'+ currentValue +'</div>');
-    $("#row2").append(point5);
-    appendEmptyLowerRow();
-}
-
-var appendEmptyLowerRow = function(){
-    var point7 = $('<div id="point7" class="span4 text-center"></div>');
-    var point8 = $('<div id="point8" class="span4 text-center"></div>');
-    var point9 = $('<div id="point9" class="span4 text-center"></div>');
-    $("#row3").append(point7);
-    $("#row3").append(point8);
-    $("#row3").append(point9);
-}
 
 
 

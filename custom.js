@@ -12,12 +12,7 @@ $( "div#main" ).click(function() {
  */
 $( "button#minus" ).click(function() {
     if(!pointsAreVisible){
-        var scrumCardValue = lastScrumValue();
-        var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
-        $("div#point4").remove();
-        $("div#point5").remove();
-        $("div#point6").remove();
-        $("div#row2").append(replaceFragment);
+        replaceScrumValue(lastScrumValue());
     }
 });
 
@@ -25,7 +20,7 @@ $( "button#minus" ).click(function() {
  * Point button handler
  */
 $( "button#point").click(function(){
-    switchPointsDisplay();
+    togglePointsDisplay();
 });
 
 /**
@@ -33,12 +28,7 @@ $( "button#point").click(function(){
  */
 $( "button#plus" ).click(function() {
     if(!pointsAreVisible){
-        var scrumCardValue = nextScrumValue();
-        var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
-        $("div#point4").remove();
-        $("div#point5").remove();
-        $("div#point6").remove();
-        $("div#row2").append(replaceFragment);
+        replaceScrumValue(nextScrumValue());
     }
 });
 

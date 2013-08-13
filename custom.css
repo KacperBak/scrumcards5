@@ -5,20 +5,16 @@
     background-color: #81d8ff;
 }
 
-.mainview-header{
+.header{
     height: 3.285em;
     background-color: #faf2cc;
 }
 
-.mainview-content{
+.content{
     height: 10.62em;
 }
 
-#points{
-    background-color: #ffe1e3;
-}
-
-.mainview-footer{
+.footer{
     height: 3.285em;
     background-color: burlywood;
 }

@@ -8,30 +8,36 @@
     </head>
     <body>
 
-    <div class="mainview-header row-fluid">
+    <div class="header row-fluid">
         <div id="header" class="span2 offset10"><button class="btn btn-large btn-block btn-warning" type="button"><i class=" icon-wrench"></i></button></div>
     </div>
 
-    <div id="main" class="mainview-content row-fluid">
-        <!--<div id="points" class="text-center large-figure muted">ini</div>-->
-        <div id="row1" class="row-fluid upper-row">
-            <div id="point1" class="span4 text-center"></div>
-            <div id="point2" class="span4 text-center"></div>
-            <div id="point3" class="span4 text-center"></div>
+    <div id="main" class="content row-fluid">
+
+        <div id="segmentMainPoint">
+            <div id="mainPointContent" class="span12 text-center large-figure muted">ini</div>
         </div>
-        <div id="row2" class="row-fluid middle-row">
-            <div id="point4" class="span4 text-center"></div>
-            <div id="point5" class="span4 text-center">1</div>
-            <div id="point6" class="span4 text-center"></div>
-        </div>
-        <div id="row3" class="row-fluid lower-row">
-            <div id="point7" class="span4 text-center"></div>
-            <div id="point8" class="span4 text-center"></div>
-            <div id="point9" class="span4 text-center"></div>
+
+        <div id="segmentScrumPoints">
+            <div id="row1" class="row-fluid upper-row">
+                <div id="point1" class="span4 text-center">100</div>
+                <div id="point2" class="span4 text-center">200</div>
+                <div id="point3" class="span4 text-center">300</div>
+            </div>
+            <div id="row2" class="row-fluid middle-row">
+                <div id="point4" class="span4 text-center">400</div>
+                <div id="point5" class="span4 text-center">500</div>
+                <div id="point6" class="span4 text-center">600</div>
+            </div>
+            <div id="row3" class="row-fluid lower-row">
+                <div id="point7" class="span4 text-center">700</div>
+                <div id="point8" class="span4 text-center">800</div>
+                <div id="point9" class="span4 text-center">900</div>
+            </div>
         </div>
     </div>
 
-    <div id="footer" class="mainview-footer row-fluid">
+    <div id="footer" class="footer row-fluid">
         <div class="span4"><button id="minus" class="btn btn-large btn-block btn-danger" type="button" id="inc"><i class="icon-minus"></i></button></div>
         <div class="span4"><button id="point" class="btn btn-large btn-block btn-inverse" type="button"><i class="icon-th-large icon-white"></i></button></div>
         <div class="span4"><button id="plus" class="btn-success btn btn-large btn-block" type="button"><i class="icon-plus"></i></button></div>
@@ -45,8 +51,8 @@
     <script src="custom.js"></script>
     <!-- init  -->
     <script>
+        initPointsDisplay();
         resizeScreenDimension();
-        displayMiddlePoint();
     </script>
     </body>
 </html>
