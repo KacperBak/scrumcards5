@@ -1,3 +1,18 @@
+FONT SIZE calc
+--------------
+
+height      --> breite
+lineheight  --> mitte
+
+160 x 240 =  38400      6em     1.768
+320 x 480 = 153600     12em     3.536
+
+240px = 6000                    240px = 1768
+  1px = 25                        1px = 7.366666
+480px = 12000                   480px = 3536
+      = 12000 / 1000 = 12em
+
+
 WorkFlow
 --------
 x  Restore fading

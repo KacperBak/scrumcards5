@@ -4,19 +4,63 @@
 var DEBUG_MODE = false;
 
 /**
- * calculate screen dimension
+ * calculate dynamic height
  */
 var PX_240 = 240;
 var EM_240 = 1064;
 var EM_DELTA = 1714;
 var DIVISOR = 100;
 
-/**
- *  320px -> 1484em
- *  640px -> 3562em
- *  Delta -> 2078em
- */
+var getWindowHeight = function(){
+    var currentHeight = $(window).height();
+    return currentHeight;
+}
 
+var calculateNewHeight = function(currentHeight){
+    var result = EM_240 / DIVISOR;
+    if(currentHeight >= PX_240){
+        var pxDelta = currentHeight - PX_240;
+        var emFactor = EM_DELTA / PX_240;
+        result = (pxDelta * emFactor + EM_240) / DIVISOR;
+    }
+    return result;
+}
+
+/**
+ * calculate dynamic font size
+ */
+var FONTSIZE_240 = 7000;
+var FONTSIZE_DIVISOR = 1000;
+
+var calculateNewFontSize = function(currentHeight){
+    var result = FONTSIZE_240 / FONTSIZE_DIVISOR;
+    if(currentHeight >= PX_240){
+        var pxDelta = currentHeight - PX_240;
+        var emFactor = FONTSIZE_240 / PX_240;
+        result = (pxDelta * emFactor + FONTSIZE_240) / FONTSIZE_DIVISOR;
+    }
+    return result;
+}
+
+/**
+ * calculate dynamic line height
+ */
+var LINEHEIGHT_240 = 1768;
+var LINEHEIGHT_DIVISOR = 1000;
+
+var calculateNewLineHeight = function(currentHeight){
+    var result = LINEHEIGHT_240 / LINEHEIGHT_DIVISOR;
+    if(currentHeight >= PX_240){
+        var pxDelta = currentHeight - PX_240;
+        var emFactor = LINEHEIGHT_240 / PX_240;
+        result = (pxDelta * emFactor + LINEHEIGHT_240) / LINEHEIGHT_DIVISOR;
+    }
+    return result;
+}
+
+/**
+ * resize screen elements
+ */
 
 var setContentHeight = function(size){
     var ROWS = 4.0;
@@ -27,37 +71,27 @@ var setContentHeight = function(size){
     $('.spRow4').css('height', (size / ROWS) + "em");
 }
 
-var getWindowHeight = function(){
-    var currentHeight = $(window).height();
-    return currentHeight;
+var setContentFontSize = function(size){
+    $('.large-figure').css('font-size', size + "em");
 }
 
-var calculateSizeFactor = function(){
-    return EM_DELTA / PX_240;
-}
-
-var calculateNewHeight = function(currentHeight){
-    var result = PX_240;
-    if(currentHeight >= PX_240){
-        var pxDelta = currentHeight - PX_240;
-        var emFactor = calculateSizeFactor();
-        result = (pxDelta * emFactor + EM_240) / DIVISOR;
-    }
-    return result;
-}
-
-var displayCurrentHeight = function(){
-
-    var currentHeight = getWindowHeight();
-    var replaceFragment = getReplaceFragment(buttonsVisible, currentHeight);
-    $("#points").remove();
-    $("#main").append(replaceFragment);
-    return currentHeight;
+var setContentLineHeight = function(size){
+    $('.large-figure').css('line-height', size + "em");
 }
 
 var resizeScreenDimension = function(){
-    if(DEBUG_MODE){ console.log("resize: " + displayCurrentHeight()); }
-    setContentHeight(calculateNewHeight(getWindowHeight()));
+    var currentContentHeight = calculateNewHeight(getWindowHeight());
+    setContentHeight(currentContentHeight);
+
+    var currentFontSize = calculateNewFontSize(getWindowHeight());
+    console.log("fontsize:" + currentFontSize + "em", " height: " + getWindowHeight());
+    setContentFontSize(currentFontSize);
+
+//    var currentLineHeight = calculateNewLineHeight(getWindowHeight());
+//    console.log("lineHeight:" + currentLineHeight + "em", " height: " + getWindowHeight());
+    var heightToSet = currentContentHeight / (getWindowHeight() / 20);
+    console.log("currentContentHeight: " + heightToSet + " height:  " + getWindowHeight());
+    setContentLineHeight(heightToSet);
 }
 
 /**

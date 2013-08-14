@@ -1,7 +1,12 @@
 .large-figure{
+    /* 160x240 */
     font-size: 6em;
     /* 240px as default */
     line-height: 1.768em;
+
+    /* 320x480 */
+    /*font-size: 12em;*/
+    /*line-height: 2.313em;*/
     background-color: #81d8ff;
 }
 
