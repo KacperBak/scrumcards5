@@ -1,13 +1,19 @@
+div#main{
+    background-color: #a7a7a7;
+}
+
 .large-figure{
     /* 160x240 */
     font-size: 6em;
     line-height: 1.768em;
-    background-color: #81d8ff;
+    /*background-color: #81d8ff;*/
+    background-color: #a7a7a7;
 }
 
 .header{
     height: 3.285em;
-    background-color: #faf2cc;
+    /*background-color: #faf2cc;*/
+    background-color: #a7a7a7;
 }
 
 .content{
@@ -16,34 +22,36 @@
 
 .footer{
     height: 3.285em;
-    background-color: burlywood;
+    /*background-color: burlywood;*/
+    background-color: #a7a7a7;
 }
 
 /* TODO just one CSS class needed, BG is good for dev */
 /* start */
 .spRow1{
     height: 3.285em;
-    background-color: #de8db2;
+    /*background-color: #de8db2;*/
 }
 
 .spRow2{
     height: 3.285em;
-    background-color: #b9deca;
+    /*background-color: #b9deca;*/
 }
 
 .spRow3{
     height: 3.285em;
-    background-color: #98b0de;
+    /*background-color: #98b0de;*/
 }
 
 .spRow4{
     height: 3.285em;
-    background-color: #dade3a;
+    /*background-color: #dade3a;*/
 }
 /* end */
 
 .scrumValue {
     font-size: 1.5em;
     line-height: 1.65em;
-    background-color: #81d8ff;
+    /*background-color: #81d8ff;*/
 }
+

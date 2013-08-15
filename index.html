@@ -5,17 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <link href="custom.css" rel="stylesheet" media="screen">
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="icon" href="favicon.png" type="image/png">
+        <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
     </head>
     <body>
 
-    <div class="header row-fluid">
-        <!--<div id="header" class="span2 offset10"><button class="btn btn-large btn-block btn-warning" type="button"><i class=" icon-wrench"></i></button></div>-->
+    <div id="header" class="header row-fluid">
+        <div class="span4"><button id="info" class="btn btn-large btn-block btn" type="button"><i class="icon-info-sign"></i></button></div>
+        <div class="span4"><button id="bookmark" class="btn btn-large btn-block btn" type="button"><i class="icon-bookmark"></i></button></div>
+        <div class="span4"><button id="settings" class="btn btn-large btn-block btn" type="button"><i class="icon-wrench"></i></button></div>
     </div>
 
     <div id="main" class="content row-fluid">
 
         <div id="segmentMainPoint">
-            <div id="mainPointContent" class="span12 text-center large-figure muted">100</div>
+            <div id="mainPointContent" class="span12 text-center large-figure muted">sc5</div>
         </div>
 
         <div id="segmentScrumPoints">
@@ -43,9 +47,9 @@
     </div>
 
     <div id="footer" class="footer row-fluid">
-        <div class="span4"><button id="minus" class="btn btn-large btn-block btn-danger" type="button" id="inc"><i class="icon-minus"></i></button></div>
-        <div class="span4"><button id="point" class="btn btn-large btn-block btn-inverse" type="button"><i class="icon-th-large icon-white"></i></button></div>
-        <div class="span4"><button id="plus" class="btn-success btn btn-large btn-block" type="button"><i class="icon-plus"></i></button></div>
+        <div class="span4"><button id="minus" class="btn btn-large btn-block" type="button"><i class="icon-minus"></i></button></div>
+        <div class="span4"><button id="point" class="btn btn-large btn-block" type="button"><i class="icon-th-large"></i></button></div>
+        <div class="span4"><button id="plus" class="btn btn-large btn-block" type="button"><i class="icon-plus"></i></button></div>
     </div>
 
     <script src="jquery-1.10.2.min.js"></script>

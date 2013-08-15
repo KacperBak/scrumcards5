@@ -1,4 +1,11 @@
 /**
+ * Off button handler
+ */
+$( "button#off" ).click(function() {
+    console.log("info...")
+});
+
+/**
  * Main content handler
  */
 $( "div#segmentMainPoint" ).click(function() {

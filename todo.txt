@@ -20,16 +20,44 @@ x  create github dir for scrumcards5
 x  div-height (header, main, footer)
 x  auto fontsize main content
 x  fix fontsize width for higher resolutions
--  auto fontsize scrumValues
+x  auto fontsize scrumValues
+-  OFFLINE ability wich cache-manifest
+-  touch icon
+-  safe settings into localStorage
 -  rename JS-files
+
+TOUCH ICON
+----------
+- 144x144 Pixel
+- root directory
+
+[HTML]
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+[Support Android 2.1]
+rel="apple-touch-icon-precomposed"
+
+- http://www.ravelrumba.com/blog/android-apple-touch-icon/
+- http://mathiasbynens.be/notes/touch-icons
 
 
 OPTIONS-MENU
 ------------
+[THEMES]
+- Standard
+- RED
+- BLUE
+- DEBUG
+
+[FONT SIZE]
 - increase/decrease font size manually based on calculation
+- localStorage.setItem('name', 'selfhtml5');
+- var name = localStorage.getItem('name');
+- localStorage.clear();
 
 FUTURE FEATURES
 ---------------
+[HTM5 APP CACHE FOR OFFLINE USAGE]   - http://www.html5rocks.com/de/tutorials/appcache/beginner/
 [basis == delta ?]
 [EXPAND ICON AS MAIN CONTENT BG]
 [INCREASE JS PERFORMANCE]   - http://net.tutsplus.com/tutorials/javascript-ajax/10-ways-to-instantly-increase-your-jquery-performance/
