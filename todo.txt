@@ -29,7 +29,8 @@ OPTIONS-MENU
 
 FUTURE
 ------
-- http://calebevans.me/projects/jcanvas/ use it to prettyUp main content
+[INCREASE JS PERFORMANCE]   - http://net.tutsplus.com/tutorials/javascript-ajax/10-ways-to-instantly-increase-your-jquery-performance/
+[SPECIAL EFFECTS]           - http://calebevans.me/projects/jcanvas/
 
 CLEANUP
 -------

@@ -82,8 +82,12 @@ var resizeScreenDimension = function(){
     var currentFontSize = calculateNewFontSize(getWindowHeight());
     setContentFontSize(currentFontSize);
 
-    var lineHeight = calculateNewLineHeight(currentContentHeight, 39.958)
+    var lineHeight = calculateNewLineHeight(currentContentHeight, 39.958);
     setContentLineHeight(lineHeight);
+}
+
+var resizeScrumValueDimension = function(){
+
 }
 
 /**
