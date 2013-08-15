@@ -7,87 +7,57 @@ var DEBUG_MODE = false;
  * calculate dynamic height
  */
 var PX_240 = 240;
-var EM_240 = 1064;
-var EM_DELTA = 1714;
-var DIVISOR = 100;
 
 var getWindowHeight = function(){
     var currentHeight = $(window).height();
     return currentHeight;
 }
 
-var calculateNewHeight = function(currentHeight){
-    var result = EM_240 / DIVISOR;
-    if(currentHeight >= PX_240){
-        var pxDelta = currentHeight - PX_240;
-        var emFactor = EM_DELTA / PX_240;
-        result = (pxDelta * emFactor + EM_240) / DIVISOR;
+var calculateNewRatio = function(height, basis, delta, divisor){
+    var result = basis / divisor;
+    if(height >= PX_240){
+        var pxDelta = height - PX_240;
+        var emFactor = delta / PX_240;
+        result = (pxDelta * emFactor + basis) / divisor;
     }
     return result;
 }
 
 /**
- * calculate dynamic font size
- */
-var FONTSIZE_240 = 6000;
-var FONTSIZE_DIVISOR = 1000;
-
-var calculateNewFontSize = function(currentHeight){
-    var result = FONTSIZE_240 / FONTSIZE_DIVISOR;
-    if(currentHeight >= PX_240){
-        var pxDelta = currentHeight - PX_240;
-        var emFactor = FONTSIZE_240 / PX_240;
-        result = (pxDelta * emFactor + FONTSIZE_240) / FONTSIZE_DIVISOR;
-    }
-    return result;
-}
-
-/**
- * fontsize 7000 -> scaleFactor 34.26
- * fontsize 8000 -> scaleFactor 29
  *
  * @param calculatedHeight
  * @param scaleFactor
  * @returns {number}
  */
-var calculateNewLineHeight = function(calculatedHeight, scaleFactor){
-    return calculatedHeight / ( getWindowHeight() / scaleFactor );
+var calculateNewLineHeight = function(calculatedHeight, height,  scaleFactor){
+    return calculatedHeight / ( height / scaleFactor );
 }
 
 /**
  * resize screen elements
  */
 
-var setContentHeight = function(size){
+var setMainContentRatioValues = function(height, fontSize, lineHeight){
+    $('.content').css('height', height + "em");
+    $('.large-figure').css('font-size', fontSize + "em");
+    $('.large-figure').css('line-height', lineHeight + "em");
+}
+
+var setScrumRowsRatioValues = function(height){
     var ROWS = 4.0;
-    $('.content').css('height', size + "em");
-    $('.spRow1').css('height', (size / ROWS) + "em");
-    $('.spRow2').css('height', (size / ROWS) + "em");
-    $('.spRow3').css('height', (size / ROWS) + "em");
-    $('.spRow4').css('height', (size / ROWS) + "em");
-}
-
-var setContentFontSize = function(size){
-    $('.large-figure').css('font-size', size + "em");
-}
-
-var setContentLineHeight = function(size){
-    $('.large-figure').css('line-height', size + "em");
+    $('.spRow1').css('height', (height / ROWS) + "em");
+    $('.spRow2').css('height', (height / ROWS) + "em");
+    $('.spRow3').css('height', (height / ROWS) + "em");
+    $('.spRow4').css('height', (height / ROWS) + "em");
 }
 
 var resizeScreenDimension = function(){
-    var currentContentHeight = calculateNewHeight(getWindowHeight());
-    setContentHeight(currentContentHeight);
-
-    var currentFontSize = calculateNewFontSize(getWindowHeight());
-    setContentFontSize(currentFontSize);
-
-    var lineHeight = calculateNewLineHeight(currentContentHeight, 39.958);
-    setContentLineHeight(lineHeight);
-}
-
-var resizeScrumValueDimension = function(){
-
+    var actualHeight = getWindowHeight();
+    var computedHeight = calculateNewRatio(actualHeight, 1064, 1714, 100);
+    var computedFontSize = calculateNewRatio(actualHeight, 5500, 5500, 1000);
+    var computedLineHeight = calculateNewLineHeight(computedHeight, actualHeight, 43.6);
+    setMainContentRatioValues(computedHeight, computedFontSize, computedLineHeight);
+    setScrumRowsRatioValues(computedHeight);
 }
 
 /**

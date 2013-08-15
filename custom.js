@@ -72,9 +72,6 @@ $( "div#point11" ).click(function() {
     setScrumValueBasedOnIndex(11);
 });
 
-
-
-
 /**
  * Handle window resize
  */

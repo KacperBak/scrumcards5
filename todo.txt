@@ -18,8 +18,9 @@ WorkFlow
 x  Restore fading
 x  create github dir for scrumcards5
 x  div-height (header, main, footer)
--  increase, decrease scrum values
--  auto fontsize
+x  auto fontsize main content
+-  fix fontsize width for higher resolutions
+-  auto fontsize scrumValues
 -  rename JS-files
 
 
@@ -41,4 +42,7 @@ remove jQuery 2.0.3
 
 Use min.Dependencies
 
+...
+---
+39.958
 
