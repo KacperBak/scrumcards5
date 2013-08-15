@@ -62,6 +62,18 @@ $( "div#point7" ).click(function() {
 $( "div#point8" ).click(function() {
     setScrumValueBasedOnIndex(8);
 });
+$( "div#point9" ).click(function() {
+    setScrumValueBasedOnIndex(9);
+});
+$( "div#point10" ).click(function() {
+    setScrumValueBasedOnIndex(10);
+});
+$( "div#point11" ).click(function() {
+    setScrumValueBasedOnIndex(11);
+});
+
+
+
 
 /**
  * Handle window resize

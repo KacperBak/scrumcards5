@@ -29,7 +29,7 @@ var calculateNewHeight = function(currentHeight){
 /**
  * calculate dynamic font size
  */
-var FONTSIZE_240 = 7000;
+var FONTSIZE_240 = 6000;
 var FONTSIZE_DIVISOR = 1000;
 
 var calculateNewFontSize = function(currentHeight){
@@ -43,19 +43,15 @@ var calculateNewFontSize = function(currentHeight){
 }
 
 /**
- * calculate dynamic line height
+ * fontsize 7000 -> scaleFactor 34.26
+ * fontsize 8000 -> scaleFactor 29
+ *
+ * @param calculatedHeight
+ * @param scaleFactor
+ * @returns {number}
  */
-var LINEHEIGHT_240 = 1768;
-var LINEHEIGHT_DIVISOR = 1000;
-
-var calculateNewLineHeight = function(currentHeight){
-    var result = LINEHEIGHT_240 / LINEHEIGHT_DIVISOR;
-    if(currentHeight >= PX_240){
-        var pxDelta = currentHeight - PX_240;
-        var emFactor = LINEHEIGHT_240 / PX_240;
-        result = (pxDelta * emFactor + LINEHEIGHT_240) / LINEHEIGHT_DIVISOR;
-    }
-    return result;
+var calculateNewLineHeight = function(calculatedHeight, scaleFactor){
+    return calculatedHeight / ( getWindowHeight() / scaleFactor );
 }
 
 /**
@@ -84,14 +80,10 @@ var resizeScreenDimension = function(){
     setContentHeight(currentContentHeight);
 
     var currentFontSize = calculateNewFontSize(getWindowHeight());
-    console.log("fontsize:" + currentFontSize + "em", " height: " + getWindowHeight());
     setContentFontSize(currentFontSize);
 
-//    var currentLineHeight = calculateNewLineHeight(getWindowHeight());
-//    console.log("lineHeight:" + currentLineHeight + "em", " height: " + getWindowHeight());
-    var heightToSet = currentContentHeight / (getWindowHeight() / 20);
-    console.log("currentContentHeight: " + heightToSet + " height:  " + getWindowHeight());
-    setContentLineHeight(heightToSet);
+    var lineHeight = calculateNewLineHeight(currentContentHeight, 39.958)
+    setContentLineHeight(lineHeight);
 }
 
 /**
@@ -171,6 +163,7 @@ var replaceScrumValue = function(scrumCardValue){
     var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
     $("div#mainPointContent").remove();
     $("div#segmentMainPoint").append(replaceFragment);
+    resizeScreenDimension();
 }
 
 var setScrumValueBasedOnIndex = function(i){
