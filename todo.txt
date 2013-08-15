@@ -19,17 +19,19 @@ x  Restore fading
 x  create github dir for scrumcards5
 x  div-height (header, main, footer)
 x  auto fontsize main content
--  fix fontsize width for higher resolutions
+x  fix fontsize width for higher resolutions
 -  auto fontsize scrumValues
 -  rename JS-files
 
 
 OPTIONS-MENU
 ------------
-- set fontsize manual to optimize view
+- increase/decrease font size manually based on calculation
 
-FUTURE
-------
+FUTURE FEATURES
+---------------
+[basis == delta ?]
+[EXPAND ICON AS MAIN CONTENT BG]
 [INCREASE JS PERFORMANCE]   - http://net.tutsplus.com/tutorials/javascript-ajax/10-ways-to-instantly-increase-your-jquery-performance/
 [SPECIAL EFFECTS]           - http://calebevans.me/projects/jcanvas/
 
@@ -44,5 +46,8 @@ Use min.Dependencies
 
 ...
 ---
-39.958
+2
+3.3
+1.65
+scrumValesHeight 130
 

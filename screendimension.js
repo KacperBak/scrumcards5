@@ -13,7 +13,7 @@ var getWindowHeight = function(){
     return currentHeight;
 }
 
-var calculateNewRatio = function(height, basis, delta, divisor){
+var calcHeight = function(height, basis, delta, divisor){
     var result = basis / divisor;
     if(height >= PX_240){
         var pxDelta = height - PX_240;
@@ -23,14 +23,20 @@ var calculateNewRatio = function(height, basis, delta, divisor){
     return result;
 }
 
+var calcFontSize = function(height, basis, divisor){
+    var pxDelta = height - PX_240;
+    var emFactor = basis / PX_240;
+    return (pxDelta * emFactor + basis) / divisor;
+}
+
 /**
  *
  * @param calculatedHeight
  * @param scaleFactor
  * @returns {number}
  */
-var calculateNewLineHeight = function(calculatedHeight, height,  scaleFactor){
-    return calculatedHeight / ( height / scaleFactor );
+var calcLineHeight = function(calculatedHeight, actualHeight,  scaleFactor){
+    return calculatedHeight / ( actualHeight / scaleFactor );
 }
 
 /**
@@ -43,21 +49,31 @@ var setMainContentRatioValues = function(height, fontSize, lineHeight){
     $('.large-figure').css('line-height', lineHeight + "em");
 }
 
-var setScrumRowsRatioValues = function(height){
-    var ROWS = 4.0;
-    $('.spRow1').css('height', (height / ROWS) + "em");
-    $('.spRow2').css('height', (height / ROWS) + "em");
-    $('.spRow3').css('height', (height / ROWS) + "em");
-    $('.spRow4').css('height', (height / ROWS) + "em");
+var setScrumRowsRatioValues = function(height, fontSize, lineHeight){
+    $('.spRow1').css('height', height + "em");
+    $('.spRow2').css('height', height + "em");
+    $('.spRow3').css('height', height + "em");
+    $('.spRow4').css('height', height + "em");
+
+    $('.scrumValue').css('font-size', fontSize + "em");
+    $('.scrumValue').css('line-height', lineHeight + "em");
 }
 
-var resizeScreenDimension = function(){
+var resizeElementDimensions = function(){
+    //main content
     var actualHeight = getWindowHeight();
-    var computedHeight = calculateNewRatio(actualHeight, 1064, 1714, 100);
-    var computedFontSize = calculateNewRatio(actualHeight, 5500, 5500, 1000);
-    var computedLineHeight = calculateNewLineHeight(computedHeight, actualHeight, 43.6);
-    setMainContentRatioValues(computedHeight, computedFontSize, computedLineHeight);
-    setScrumRowsRatioValues(computedHeight);
+    var mainContentHeight = calcHeight(actualHeight, 1064, 1714, 100);
+    var mainContentFontSize = calcFontSize(actualHeight, 5500, 1000);
+    var mainContentLineHeight = calcLineHeight(mainContentHeight, actualHeight, 43.6);
+    setMainContentRatioValues(mainContentHeight, mainContentFontSize, mainContentLineHeight);
+
+    //scrum values
+    var ROWS = 4.0;
+    var scrumValesHeight = mainContentHeight / ROWS;
+    var scrumValuesFontSize = calcFontSize(scrumValesHeight, 1100, 10);
+    var scrumValuesLineHeight = calcLineHeight(scrumValesHeight, actualHeight, 130);
+    console.log("scrumValesHeight: " + scrumValesHeight + " LineHeight: " + scrumValuesLineHeight);
+    setScrumRowsRatioValues( scrumValesHeight, scrumValuesFontSize, scrumValuesLineHeight);
 }
 
 /**
@@ -137,7 +153,7 @@ var replaceScrumValue = function(scrumCardValue){
     var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
     $("div#mainPointContent").remove();
     $("div#segmentMainPoint").append(replaceFragment);
-    resizeScreenDimension();
+    resizeElementDimensions();
 }
 
 var setScrumValueBasedOnIndex = function(i){

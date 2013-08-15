@@ -76,6 +76,6 @@ $( "div#point11" ).click(function() {
  * Handle window resize
  */
 window.addEventListener("resize", function() {
-    resizeScreenDimension();
+    resizeElementDimensions();
 }, false);
 
