@@ -21,7 +21,7 @@ x  div-height (header, main, footer)
 x  auto fontsize main content
 x  fix fontsize width for higher resolutions
 x  auto fontsize scrumValues
--  OFFLINE ability wich cache-manifest
+-  OFFLINE ability with cache-manifest
 -  touch icon
 -  safe settings into localStorage
 -  rename JS-files

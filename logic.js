@@ -69,7 +69,7 @@ var resizeElementDimensions = function(){
     //scrum values
     var ROWS = 4.0;
     var scrumValesHeight = mainContentHeight / ROWS;
-    var scrumValuesFontSize = calcFontSize(scrumValesHeight, 1300, 10);
+    var scrumValuesFontSize = calcFontSize(scrumValesHeight, 1100, 10);
     setScrumRowsRatioValues( scrumValesHeight, scrumValuesFontSize);
 }
 
