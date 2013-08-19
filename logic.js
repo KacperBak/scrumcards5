@@ -1,9 +1,4 @@
 /**
- * DEBUG
- */
-var DEBUG_MODE = false;
-
-/**
  * calculate dynamic height
  */
 var PX_240 = 240;
@@ -213,16 +208,10 @@ var initPointsDisplay = function(){
     $("div#segmentScrumPoints").hide();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**
+ * this method should be called at least to init the app
+ */
+var initSc5 = function(){
+    initPointsDisplay();
+    resizeElementDimensions();
+}

@@ -22,8 +22,9 @@ x  auto fontsize main content
 x  fix fontsize width for higher resolutions
 x  auto fontsize scrumValues
 -  OFFLINE ability with cache-manifest
--  touch icon
+-  implement settings
 -  safe settings into localStorage
+-  very nice icon
 -  rename JS-files
 -  remove all console.log(...)
 
@@ -42,7 +43,7 @@ rel="apple-touch-icon-precomposed"
 - http://mathiasbynens.be/notes/touch-icons
 
 
-OPTIONS-MENU
+SETTINGS-MENU
 ------------
 [THEMES]
 - Standard
@@ -55,6 +56,9 @@ OPTIONS-MENU
 - localStorage.setItem('name', 'selfhtml5');
 - var name = localStorage.getItem('name');
 - localStorage.clear();
+
+[INIT-SC5]
+- call init method
 
 FUTURE FEATURES
 ---------------
