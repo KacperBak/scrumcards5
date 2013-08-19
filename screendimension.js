@@ -49,14 +49,13 @@ var setMainContentRatioValues = function(height, fontSize, lineHeight){
     $('.large-figure').css('line-height', lineHeight + "em");
 }
 
-var setScrumRowsRatioValues = function(height, fontSize, lineHeight){
+var setScrumRowsRatioValues = function(height, fontSize){
     $('.spRow1').css('height', height + "em");
     $('.spRow2').css('height', height + "em");
     $('.spRow3').css('height', height + "em");
     $('.spRow4').css('height', height + "em");
 
     $('.scrumValue').css('font-size', fontSize + "em");
-    $('.scrumValue').css('line-height', lineHeight + "em");
 }
 
 var resizeElementDimensions = function(){
@@ -70,10 +69,8 @@ var resizeElementDimensions = function(){
     //scrum values
     var ROWS = 4.0;
     var scrumValesHeight = mainContentHeight / ROWS;
-    var scrumValuesFontSize = calcFontSize(scrumValesHeight, 1100, 10);
-    var scrumValuesLineHeight = calcLineHeight(scrumValesHeight, actualHeight, 130);
-    console.log("scrumValesHeight: " + scrumValesHeight + " LineHeight: " + scrumValuesLineHeight);
-    setScrumRowsRatioValues( scrumValesHeight, scrumValuesFontSize, scrumValuesLineHeight);
+    var scrumValuesFontSize = calcFontSize(scrumValesHeight, 1300, 10);
+    setScrumRowsRatioValues( scrumValesHeight, scrumValuesFontSize);
 }
 
 /**
@@ -161,6 +158,7 @@ var setScrumValueBasedOnIndex = function(i){
         currentIndex = i;
         replaceScrumValue(scrumValues[currentIndex]);
         togglePointsDisplay();
+        $("button").fadeIn();
     }
 }
 
@@ -170,6 +168,7 @@ var setScrumValueBasedOnIndex = function(i){
 var pointsAreVisible = false;
 
 var togglePointsDisplay = function(){
+    $("button").fadeOut();
     if(pointsAreVisible){
         $("div#segmentMainPoint").show();
         $("div#segmentScrumPoints").hide();

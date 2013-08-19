@@ -78,4 +78,5 @@ Use min.Dependencies
 3.3
 1.65
 scrumValesHeight 130
+var scrumValuesFontSize = calcFontSize(scrumValesHeight, 475, 10);
 
