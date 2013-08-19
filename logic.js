@@ -82,10 +82,22 @@ var toggleButtonsVisible = function(){
     if(buttonsVisible){
         $("button").fadeOut();
         $("div#mainPointContent").toggleClass("muted");
+        $(".large-figure").css("background", "#E7E7E7");
+        $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+        $(".large-figure").css({background: "-webkit-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+        $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+        $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+        $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
         buttonsVisible = false;
     }else{
         $("button").fadeIn();
         $("div#mainPointContent").toggleClass("muted");
+        $(".large-figure").css("background", "#a7a7a7");
+        $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+        $(".large-figure").css({background: "-webkit-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+        $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+        $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+        $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
         buttonsVisible = true;
     }
 }
@@ -102,6 +114,23 @@ var getReplaceFragment = function(buttonsVisibleState, innerValue){
         result = $( '<div id="mainPointContent" class="span12 text-center large-figure">'+ innerValue +'</div>' );
     }
     return result;
+}
+
+/**
+ * add to bookmarks
+ */
+var addToBookmarks = function(){
+    if (window.sidebar) {
+        // Mozilla Firefox Bookmark
+        window.sidebar.addPanel(location.href,document.title,"");
+    } else if(window.external) {
+        // IE Favorite
+        window.external.AddFavorite(location.href,document.title); }
+    else if(window.opera && window.print) {
+        // Opera Hotlist
+        this.title=document.title;
+        return true;
+    }
 }
 
 /**

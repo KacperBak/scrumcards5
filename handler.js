@@ -1,8 +1,20 @@
 /**
  * Off button handler
  */
-$( "button#off" ).click(function() {
-    console.log("info...")
+$( "button#info" ).click(function() {
+    console.log("info...");
+    addToBookmarks();
+});
+
+$( "button#fullscreen" ).click(function() {
+    console.log("fullscreen...");
+    if(!pointsAreVisible){
+        toggleButtonsVisible();
+    }
+});
+
+$( "button#settings" ).click(function() {
+    console.log("settings...");
 });
 
 /**

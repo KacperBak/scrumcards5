@@ -25,6 +25,7 @@ x  auto fontsize scrumValues
 -  touch icon
 -  safe settings into localStorage
 -  rename JS-files
+-  remove all console.log(...)
 
 TOUCH ICON
 ----------
