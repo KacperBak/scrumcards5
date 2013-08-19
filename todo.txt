@@ -28,6 +28,11 @@ x  auto fontsize scrumValues
 -  rename JS-files
 -  remove all console.log(...)
 
+DEPLOYMENT
+----------
+
+- add new mime type for manifest file (see HTML5 article)
+
 TOUCH ICON
 ----------
 - 144x144 Pixel
