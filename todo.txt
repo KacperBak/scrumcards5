@@ -21,7 +21,13 @@ x  div-height (header, main, footer)
 x  auto fontsize main content
 x  fix fontsize width for higher resolutions
 x  auto fontsize scrumValues
--  OFFLINE ability with cache-manifest
+x  OFFLINE ability with cache-manifest
+
+-  implement info segment
+xx exclude other buttons to be pushed
+xx setInfoRatioValues() IS THIS REALLY NECESSARY
+-- refactor segments in index.html
+
 -  implement settings
 -  safe settings into localStorage
 -  very nice icon
@@ -71,6 +77,7 @@ FUTURE FEATURES
 [basis == delta ?]
 [EXPAND ICON AS MAIN CONTENT BG]
 [INCREASE JS PERFORMANCE]   - http://net.tutsplus.com/tutorials/javascript-ajax/10-ways-to-instantly-increase-your-jquery-performance/
+                            - function:resizeElementDimensions() call parts more specific
 [SPECIAL EFFECTS]           - http://calebevans.me/projects/jcanvas/
 
 CLEANUP

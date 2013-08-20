@@ -49,7 +49,6 @@ var setScrumRowsRatioValues = function(height, fontSize){
     $('.spRow2').css('height', height + "em");
     $('.spRow3').css('height', height + "em");
     $('.spRow4').css('height', height + "em");
-
     $('.scrumValue').css('font-size', fontSize + "em");
 }
 
@@ -66,6 +65,9 @@ var resizeElementDimensions = function(){
     var scrumValesHeight = mainContentHeight / ROWS;
     var scrumValuesFontSize = calcFontSize(scrumValesHeight, 1100, 10);
     setScrumRowsRatioValues( scrumValesHeight, scrumValuesFontSize);
+
+    //set info
+    setInfoRatioValues(mainContentHeight);
 }
 
 /**
@@ -74,26 +76,28 @@ var resizeElementDimensions = function(){
 var buttonsVisible = true;
 
 var toggleButtonsVisible = function(){
-    if(buttonsVisible){
-        $("button").fadeOut();
-        $("div#mainPointContent").toggleClass("muted");
-        $(".large-figure").css("background", "#E7E7E7");
-        $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-        $(".large-figure").css({background: "-webkit-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-        $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-        $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-        $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-        buttonsVisible = false;
-    }else{
-        $("button").fadeIn();
-        $("div#mainPointContent").toggleClass("muted");
-        $(".large-figure").css("background", "#a7a7a7");
-        $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-        $(".large-figure").css({background: "-webkit-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-        $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-        $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-        $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-        buttonsVisible = true;
+    if(!pointsAreVisible && !infoIsVisible){
+        if(buttonsVisible){
+            $("button").fadeOut();
+            $("div#mainPointContent").toggleClass("muted");
+            $(".large-figure").css("background", "#E7E7E7");
+            $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+            $(".large-figure").css({background: "-webkit-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+            $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+            $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+            $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+            buttonsVisible = false;
+        }else{
+            $("button").fadeIn();
+            $("div#mainPointContent").toggleClass("muted");
+            $(".large-figure").css("background", "#a7a7a7");
+            $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+            $(".large-figure").css({background: "-webkit-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+            $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+            $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+            $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+            buttonsVisible = true;
+        }
     }
 }
 
@@ -109,23 +113,6 @@ var getReplaceFragment = function(buttonsVisibleState, innerValue){
         result = $( '<div id="mainPointContent" class="span12 text-center large-figure">'+ innerValue +'</div>' );
     }
     return result;
-}
-
-/**
- * add to bookmarks
- */
-var addToBookmarks = function(){
-    if (window.sidebar) {
-        // Mozilla Firefox Bookmark
-        window.sidebar.addPanel(location.href,document.title,"");
-    } else if(window.external) {
-        // IE Favorite
-        window.external.AddFavorite(location.href,document.title); }
-    else if(window.opera && window.print) {
-        // Opera Hotlist
-        this.title=document.title;
-        return true;
-    }
 }
 
 /**
@@ -170,10 +157,16 @@ var lastScrumValue = function(){
     return result;
 }
 
+var replaceScrumValueByPlusOrMinus = function(scrumCardValue){
+    if(!pointsAreVisible && !infoIsVisible){
+        replaceScrumValue(scrumCardValue);
+    }
+}
+
 var replaceScrumValue = function(scrumCardValue){
     var replaceFragment = getReplaceFragment(buttonsVisible, scrumCardValue);
     $("div#mainPointContent").remove();
-    $("div#segmentMainPoint").append(replaceFragment);
+    $("div#mainPointSegment").append(replaceFragment);
     resizeElementDimensions();
 }
 
@@ -181,7 +174,7 @@ var setScrumValueBasedOnIndex = function(i){
     if(pointsAreVisible){
         currentIndex = i;
         replaceScrumValue(scrumValues[currentIndex]);
-        togglePointsDisplay();
+        toggleScrumPointsDisplay();
         $("button").fadeIn();
     }
 }
@@ -191,21 +184,23 @@ var setScrumValueBasedOnIndex = function(i){
  */
 var pointsAreVisible = false;
 
-var togglePointsDisplay = function(){
-    $("button").fadeOut();
-    if(pointsAreVisible){
-        $("div#segmentMainPoint").show();
-        $("div#segmentScrumPoints").hide();
-        pointsAreVisible = false;
-    }else{
-        $("div#segmentMainPoint").hide();
-        $("div#segmentScrumPoints").show();
-        pointsAreVisible = true;
+var toggleScrumPointsDisplay = function(){
+    if(!infoIsVisible){
+        $("button").fadeOut();
+        if(pointsAreVisible){
+            $("div#mainPointSegment").show();
+            $("div#scrumPointsSegment").hide();
+            pointsAreVisible = false;
+        }else{
+            $("div#mainPointSegment").hide();
+            $("div#scrumPointsSegment").show();
+            pointsAreVisible = true;
+        }
     }
 }
 
 var initPointsDisplay = function(){
-    $("div#segmentScrumPoints").hide();
+    $("div#scrumPointsSegment").hide();
 }
 
 /**
@@ -213,5 +208,6 @@ var initPointsDisplay = function(){
  */
 var initSc5 = function(){
     initPointsDisplay();
+    initInfoDisplay();
     resizeElementDimensions();
 }

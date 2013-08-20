@@ -47,6 +47,13 @@ div#main{
 }
 /* end */
 
+.infoContent {
+    font-size: 1em;
+    line-height: 1em;
+    height: 1em;
+    margin: 1em;
+}
+
 .scrumValue {
     font-size: 1em;
     line-height: 1.65em;

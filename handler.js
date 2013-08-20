@@ -2,53 +2,45 @@
  * Off button handler
  */
 $( "button#info" ).click(function() {
-    console.log("info...");
-    addToBookmarks();
+    displayInfo();
 });
 
 $( "button#fullscreen" ).click(function() {
-    console.log("fullscreen...");
-    if(!pointsAreVisible){
-        toggleButtonsVisible();
-    }
+    toggleButtonsVisible();
 });
 
 $( "button#settings" ).click(function() {
-    console.log("settings...");
+    if(!infoIsVisible){
+        console.log("settings...");
+    }
 });
 
 /**
  * Main content handler
  */
-$( "div#segmentMainPoint" ).click(function() {
-    if(!pointsAreVisible){
-        toggleButtonsVisible();
-    }
+$( "div#mainPointSegment" ).click(function() {
+    toggleButtonsVisible();
 });
 
 /**
  * Minus button handler
  */
 $( "button#minus" ).click(function() {
-    if(!pointsAreVisible){
-        replaceScrumValue(lastScrumValue());
-    }
+    replaceScrumValueByPlusOrMinus(lastScrumValue());
 });
 
 /**
  * Point button handler
  */
 $( "button#point").click(function(){
-    togglePointsDisplay();
+    toggleScrumPointsDisplay();
 });
 
 /**
  * Plus button handler
  */
 $( "button#plus" ).click(function() {
-    if(!pointsAreVisible){
-        replaceScrumValue(nextScrumValue());
-    }
+    replaceScrumValueByPlusOrMinus(nextScrumValue());
 });
 
 /**
