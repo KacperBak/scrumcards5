@@ -23,10 +23,10 @@ x  fix fontsize width for higher resolutions
 x  auto fontsize scrumValues
 x  OFFLINE ability with cache-manifest
 
--  implement info segment
+x  implement info segment
 xx exclude other buttons to be pushed
 xx setInfoRatioValues() IS THIS REALLY NECESSARY
--- refactor segments in index.html
+xx refactor segments in index.html
 
 -  implement settings
 -  safe settings into localStorage
