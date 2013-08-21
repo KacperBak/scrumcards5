@@ -205,6 +205,8 @@ var initPointsDisplay = function(){
  */
 var initSc5 = function(){
     initPointsDisplay();
-    initInfoDisplay();
+    initInfoSegment();
+    initSettingsSegment();
+    initSettingsSegmentConf1();
     resizeElementDimensions();
 }

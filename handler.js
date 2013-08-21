@@ -9,11 +9,33 @@ $( "button#fullscreen" ).click(function() {
     toggleButtonsVisible();
 });
 
+/**
+ * Settings
+ */
 $( "button#settings" ).click(function() {
-    if(!infoIsVisible){
-        console.log("settings...");
+    if( settingsAreVisible && isConf1Visible){
+        displayConf1();
+    }else{
+        displaySettings();
     }
 });
+
+$( "button#conf1").click(function(){
+    displayConf1();
+});
+
+$( "button#themeSilver").click(function(){
+    displayConf1();
+});
+
+$( "button#themeRed").click(function(){
+    displayConf1();
+});
+
+$( "button#themeBlue").click(function(){
+    displayConf1();
+});
+
 
 /**
  * Main content handler

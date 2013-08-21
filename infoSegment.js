@@ -16,7 +16,6 @@ var displayInfo = function(){
     }else{
         $("div#mainPointSegment").hide();
         $("div#infoSegment").show();
-        $("div#infoSegment").show();
         $("#fullscreen").fadeOut();
         $("#settings").fadeOut();
         $("#minus").fadeOut();
@@ -26,6 +25,6 @@ var displayInfo = function(){
     }
 }
 
-var initInfoDisplay = function(){
+var initInfoSegment = function(){
     $("div#infoSegment").hide();
 }
