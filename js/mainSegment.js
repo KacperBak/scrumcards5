@@ -28,7 +28,7 @@ $( "button#plus" ).click(function() {
 var isControlButtonsVisible = true;
 
 var toggleButtonsVisible = function(){
-    if(!isScrumPointsVisible && !isInfoVisible){
+    if(!isScrumPointsVisible){
         if(isControlButtonsVisible){
             $("button").fadeOut();
             $("div#mainContent").toggleClass("muted");

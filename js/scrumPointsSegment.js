@@ -45,17 +45,15 @@ $( "div#point11" ).click(function() {
 var isScrumPointsVisible = false;
 
 var displayScrumPoints = function(){
-    if(!isInfoVisible){
-        $("button").fadeOut();
-        if(isScrumPointsVisible){
-            $("div#mainSegment").show();
-            $("div#scrumPointsSegment").hide();
-            isScrumPointsVisible = false;
-        }else{
-            $("div#mainSegment").hide();
-            $("div#scrumPointsSegment").show();
-            isScrumPointsVisible = true;
-        }
+    $("button").fadeOut();
+    if(isScrumPointsVisible){
+        $("div#mainSegment").show();
+        $("div#scrumPointsSegment").hide();
+        isScrumPointsVisible = false;
+    }else{
+        $("div#mainSegment").hide();
+        $("div#scrumPointsSegment").show();
+        isScrumPointsVisible = true;
     }
 }
 
@@ -69,7 +67,7 @@ var setScrumValueBasedOnIndex = function(i){
 }
 
 var replaceScrumValueByPlusOrMinus = function(scrumCardValue){
-    if(!isScrumPointsVisible && !isInfoVisible){
+    if(!isScrumPointsVisible){
         replaceScrumValue(scrumCardValue);
     }
 }
