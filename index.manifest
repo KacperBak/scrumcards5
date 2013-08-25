@@ -11,8 +11,13 @@ bootstrap/img/glyphicons-halflings-white.png
 jquery-1.10.2.min.js
 bootstrap/js/bootstrap.min.js
 underscore-min.js
-logic.js
-handler.js
+js/infoSegment.js
+js/initApp.js
+js/mainSegment.js
+js/screenDimension.js
+js/scrumPointsSegment.js
+js/settingsSegment.js
+js/themesSegment.js
 fonts/sc5Font.dev.svg
 fonts/sc5Font.eot
 fonts/sc5Font.svg

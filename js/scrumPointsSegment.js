@@ -68,8 +68,10 @@ var setScrumValueBasedOnIndex = function(i){
     }
 }
 
-var initScrumPointsSegment = function(){
-    $("div#scrumPointsSegment").hide();
+var replaceScrumValueByPlusOrMinus = function(scrumCardValue){
+    if(!isScrumPointsVisible && !isInfoVisible){
+        replaceScrumValue(scrumCardValue);
+    }
 }
 
 /*
@@ -113,4 +115,12 @@ var lastScrumValue = function(){
         currentIndex = scrumValueMaxIndex;
     }
     return result;
+}
+
+/**
+ * init
+ */
+
+var initScrumPointsSegment = function(){
+    $("div#scrumPointsSegment").hide();
 }

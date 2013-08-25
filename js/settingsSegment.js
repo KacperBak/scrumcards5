@@ -52,6 +52,10 @@ var displaySettings = function(){
     }
 }
 
+/**
+ * init
+ */
+
 var initSettingsSegment = function(){
     $("div#settingsSegment").hide();
 }

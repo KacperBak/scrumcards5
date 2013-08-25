@@ -15,6 +15,9 @@ var displayThemes = function(){
     }
 }
 
+/**
+ * init
+ */
 var initThemesSegment = function(){
     $("div#themesSegment").hide();
 }
