@@ -20,7 +20,7 @@ $( "button#settings" ).click(function() {
     }
 });
 
-$( "button#conf1").click(function(){
+$( "button#themes").click(function(){
     displayConf1();
 });
 

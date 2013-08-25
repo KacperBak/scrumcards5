@@ -207,6 +207,6 @@ var initSc5 = function(){
     initPointsDisplay();
     initInfoSegment();
     initSettingsSegment();
-    initSettingsSegmentConf1();
+    initThemesSegment();
     resizeElementDimensions();
 }

@@ -5,16 +5,16 @@ var isConf1Visible = false;
 
 var displayConf1 = function(){
     if(isConf1Visible){
-        $("#settingsSegmentConf1").hide();
+        $("#themesSegment").hide();
         $("#settingsSegment").show();
         isConf1Visible = false;
     }else{
         $("#settingsSegment").hide();
-        $("#settingsSegmentConf1").show();
+        $("#themesSegment").show();
         isConf1Visible = true;
     }
 }
 
-var initSettingsSegmentConf1 = function(){
-    $("div#settingsSegmentConf1").hide();
+var initThemesSegment = function(){
+    $("div#themesSegment").hide();
 }

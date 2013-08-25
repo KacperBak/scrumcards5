@@ -19,31 +19,33 @@
 
     <div id="main" class="content row-fluid">
 
+        <!-- info menu -->
         <div id="infoSegment" class="row-fluid">
             <p class="infoContent">Version: 0.1.1</p>
             <p class="infoContent">Author: Kacper Bak</p>
             <p class="infoContent">Contact: TODO...</p>
         </div>
 
+        <!-- settings menu -->
         <div id="settingsSegment">
-            <div class="row-fluid"><div class="span12"><button id="conf1" class="btn btn-large btn-block btn" type="button">Themes</button></div></div>
-            <div class="row-fluid"><div class="span12"><button id="conf2" class="btn btn-large btn-block btn" type="button">Font size main scrum value</button></div></div>
-            <div class="row-fluid"><div class="span12"><button id="conf3" class="btn btn-large btn-block btn" type="button">Font size all scrum values</button></div></div>
+            <div class="row-fluid"><div class="span12"><button id="themes" class="btn btn-large btn-block btn" type="button">Themes</button></div></div>
             <div class="row-fluid"><div class="span12"><button id="conf4" class="btn btn-large btn-block btn" type="button">RESET APP</button></div></div>
 
         </div>
-        
-        <div id="settingsSegmentConf1">
+
+        <!-- themes menu -->
+        <div id="themesSegment">
             <div class="row-fluid"><div class="span12"><button id="themeSilver" class="btn btn-large btn-block btn" type="button">SILVER</button></div></div>
             <div class="row-fluid"><div class="span12"><button id="themeRed" class="btn btn-large btn-block btn" type="button">RED</button></div></div>
             <div class="row-fluid"><div class="span12"><button id="themeBlue" class="btn btn-large btn-block btn" type="button">BLUE</button></div></div>
         </div>
         
-
+        <!-- main scrum value -->
         <div id="mainPointSegment">
             <div id="mainPointContent" class="span12 text-center large-figure muted" data-icon="&#xe000;"></div>
         </div>
 
+        <!-- possible scrum values to select -->
         <div id="scrumPointsSegment">
             <div id="row1" class="row-fluid spRow1">
                 <div id="point0" class="span4 text-center well well-small scrumValue">0</div>
@@ -79,9 +81,9 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="underscore-min.js"></script>
 
-    <script src="settingSegementConf1.js"></script>
-    <script src="settingsSegment.js"></script>
-    <script src="infoSegment.js"></script>
+    <script src="js/themesSegment.js"></script>
+    <script src="js/settingsSegment.js"></script>
+    <script src="js/infoSegment.js"></script>
     <script src="logic.js"></script>
     <script src="handler.js"></script>
     <!-- init  -->
