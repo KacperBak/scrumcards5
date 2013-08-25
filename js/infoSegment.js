@@ -17,7 +17,7 @@ var displayInfo = function(){
         $("#fullscreen").fadeIn();
         $("#settings").fadeIn();
         $("#minus").fadeIn();
-        $("#point").fadeIn();
+        $("#scrumPoints").fadeIn();
         $("#plus").fadeIn();
         isInfoVisible = false;
     }else{
@@ -26,7 +26,7 @@ var displayInfo = function(){
         $("#fullscreen").fadeOut();
         $("#settings").fadeOut();
         $("#minus").fadeOut();
-        $("#point").fadeOut();
+        $("#scrumPoints").fadeOut();
         $("#plus").fadeOut();
         isInfoVisible = true;
     }

@@ -14,7 +14,7 @@ $( "button#minus" ).click(function() {
     replaceScrumValueByPlusOrMinus(lastScrumValue());
 });
 
-$( "button#point").click(function(){
+$( "button#scrumPoints").click(function(){
     displayScrumPoints();
 });
 
