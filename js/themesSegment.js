@@ -1,4 +1,20 @@
 /**
+ * handler
+ */
+
+$( "button#themeSilver").click(function(){
+    displayThemes();
+});
+
+$( "button#themeRed").click(function(){
+    displayThemes();
+});
+
+$( "button#themeBlue").click(function(){
+    displayThemes();
+});
+
+/**
  * display
  */
 var isThemesVisible = false;

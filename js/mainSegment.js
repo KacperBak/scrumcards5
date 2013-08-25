@@ -53,19 +53,24 @@ var toggleButtonsVisible = function(){
     }
 }
 
-var getReplaceFragment = function(buttonsVisibleState, innerValue){
-    var result = null;
-    if(buttonsVisibleState){
-        result = $( '<div id="mainContent" class="span12 text-center large-figure muted">'+ innerValue +'</div>');
+var replaceScrumValue = function(scrumCardValue){
+    var replaceFragment = null;
+    if(isControlButtonsVisible){
+        replaceFragment = $( '<div id="mainContent" class="span12 text-center large-figure muted">'+ scrumCardValue +'</div>');
     }else{
-        result = $( '<div id="mainContent" class="span12 text-center large-figure">'+ innerValue +'</div>' );
+        replaceFragment = $( '<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>' );
     }
-    return result;
+    replaceMainContent(replaceFragment);
 }
 
-var replaceScrumValue = function(scrumCardValue){
-    var replaceFragment = getReplaceFragment(isControlButtonsVisible, scrumCardValue);
+var setAppIcon = function (){
+    var replaceFragment = $('<div id="mainContent" class="span12 text-center large-figure muted" data-icon="&#xe000;"></div>');
+    replaceMainContent(replaceFragment);
+}
+
+var replaceMainContent = function(replaceFragment){
     $("div#mainContent").remove();
     $("div#mainSegment").append(replaceFragment);
     resizeElementDimensions();
 }
+

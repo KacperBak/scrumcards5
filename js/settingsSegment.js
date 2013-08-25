@@ -13,16 +13,11 @@ $( "button#themes").click(function(){
     displayThemes();
 });
 
-$( "button#themeSilver").click(function(){
-    displayThemes();
-});
+$( "button#resetApp").click(function(){
+    setAppIcon();
 
-$( "button#themeRed").click(function(){
-    displayThemes();
-});
-
-$( "button#themeBlue").click(function(){
-    displayThemes();
+    //call this at least...
+    initSc5();
 });
 
 /**
