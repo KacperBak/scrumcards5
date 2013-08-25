@@ -2,6 +2,7 @@ CACHE MANIFEST
 # date: 2013.08.19
 index.html
 index.css
+font.css
 bootstrap/css/bootstrap.min.css
 favicon.png
 bootstrap/img/glyphicons-halflings.png
@@ -11,6 +12,11 @@ bootstrap/js/bootstrap.min.js
 underscore-min.js
 logic.js
 handler.js
+fonts/sc5Font.dev.svg
+fonts/sc5Font.eot
+fonts/sc5Font.svg
+fonts/sc5Font.ttf
+fonts/sc5Font.woff
 
 NETWORK:
 *
