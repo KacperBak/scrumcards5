@@ -1,27 +1,34 @@
 /**
- * Info display
+ * handler
  */
-var infoIsVisible = false;
+$( "button#info" ).click(function() {
+    displayInfo();
+});
+
+/**
+ * display
+ */
+var isInfoVisible = false;
 
 var displayInfo = function(){
-    if(infoIsVisible){
+    if(isInfoVisible){
         $("div#infoSegment").hide();
-        $("div#mainPointSegment").show();
+        $("div#mainSegment").show();
         $("#fullscreen").fadeIn();
         $("#settings").fadeIn();
         $("#minus").fadeIn();
         $("#point").fadeIn();
         $("#plus").fadeIn();
-        infoIsVisible = false;
+        isInfoVisible = false;
     }else{
-        $("div#mainPointSegment").hide();
+        $("div#mainSegment").hide();
         $("div#infoSegment").show();
         $("#fullscreen").fadeOut();
         $("#settings").fadeOut();
         $("#minus").fadeOut();
         $("#point").fadeOut();
         $("#plus").fadeOut();
-        infoIsVisible = true;
+        isInfoVisible = true;
     }
 }
 

@@ -1,27 +1,54 @@
 /**
- * Settings display
+ * handler
  */
-var settingsAreVisible = false;
+$( "button#settings" ).click(function() {
+    if( isSettingsVisible && isThemesVisible){
+        displayThemes();
+    }else{
+        displaySettings();
+    }
+});
+
+$( "button#themes").click(function(){
+    displayThemes();
+});
+
+$( "button#themeSilver").click(function(){
+    displayThemes();
+});
+
+$( "button#themeRed").click(function(){
+    displayThemes();
+});
+
+$( "button#themeBlue").click(function(){
+    displayThemes();
+});
+
+/**
+ * display
+ */
+var isSettingsVisible = false;
 
 var displaySettings = function(){
-    if(settingsAreVisible){
+    if(isSettingsVisible){
         $("div#settingsSegment").hide();
-        $("div#mainPointSegment").show();
+        $("div#mainSegment").show();
         $("#info").fadeIn();
         $("#fullscreen").fadeIn();
         $("#minus").fadeIn();
         $("#point").fadeIn();
         $("#plus").fadeIn();
-        settingsAreVisible = false;
+        isSettingsVisible = false;
     }else{
-        $("div#mainPointSegment").hide();
+        $("div#mainSegment").hide();
         $("div#settingsSegment").show();
         $("#info").fadeOut();
         $("#fullscreen").fadeOut();
         $("#minus").fadeOut();
         $("#point").fadeOut();
         $("#plus").fadeOut();
-        settingsAreVisible = true;
+        isSettingsVisible = true;
     }
 }
 

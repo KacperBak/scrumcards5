@@ -1,17 +1,17 @@
 /**
- * conf1
+ * display
  */
-var isConf1Visible = false;
+var isThemesVisible = false;
 
-var displayConf1 = function(){
-    if(isConf1Visible){
+var displayThemes = function(){
+    if(isThemesVisible){
         $("#themesSegment").hide();
         $("#settingsSegment").show();
-        isConf1Visible = false;
+        isThemesVisible = false;
     }else{
         $("#settingsSegment").hide();
         $("#themesSegment").show();
-        isConf1Visible = true;
+        isThemesVisible = true;
     }
 }
 
