@@ -1,5 +1,5 @@
 div#main{
-    background-color: #a7a7a7;
+    /*background-color: #a7a7a7;*/
     /*background-color: #a72722;*/
 }
 
@@ -8,14 +8,14 @@ div#main{
     font-size: 6em;
     line-height: 1.768em;
     /* DEFAULT */
-    background-color: #a7a7a7;
+    /*background-color: #a7a7a7;*/
 }
 
 .header{
     height: 3.285em;
     /*background-color: #faf2cc;*/
     /*background-color: #a7a7a7;*/
-    background-color: #a7a7a7;
+    /*background-color: #a7a7a7;*/
 }
 
 .content{
@@ -25,7 +25,7 @@ div#main{
 .footer{
     height: 3.285em;
     /*background-color: burlywood;*/
-    background-color: #a7a7a7;
+    /*background-color: #a7a7a7;*/
 }
 
 /* TODO just one CSS class needed, BG is good for dev */
@@ -57,6 +57,6 @@ div#main{
 .scrumValue {
     font-size: 1em;
     line-height: 1.65em;
-    background-color: #81d8ff;
+    /*background-color: #81d8ff;*/
 }
 

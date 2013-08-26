@@ -3,15 +3,16 @@
  */
 
 $( "button#themeSilver").click(function(){
-    displayThemes();
+    colorIndex = 0;
+    setAppColor();
 });
 
 $( "button#themeRed").click(function(){
-    displayThemes();
+    colorIndex = 1;
+    setAppColor();
 });
 
 $( "button#themeBlue").click(function(){
-    displayThemes();
 });
 
 /**

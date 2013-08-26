@@ -2,6 +2,7 @@
  * this method should be called at least to init the app
  */
 var initSc5 = function(){
+    setAppColor();
     initScrumPointsSegment();
     initInfoSegment();
     initSettingsSegment();
