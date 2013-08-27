@@ -4,12 +4,12 @@
 
 $( "button#themeSilver").click(function(){
     colorIndex = 0;
-    setAppColor();
+    changeTheme();
 });
 
 $( "button#themeRed").click(function(){
     colorIndex = 1;
-    setAppColor();
+    changeTheme();
 });
 
 $( "button#themeBlue").click(function(){

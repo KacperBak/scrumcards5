@@ -79,8 +79,10 @@ var replaceMainContent = function(replaceFragment){
 var switchLargeFigureColor = function(){
     if(isControlButtonsVisible){
         $(".large-figure").css("color", getFontColor());
+        $(".large-figure").css("background-color", getMainColorLight());
     }else{
         $(".large-figure").css("color", getFontColorLight());
+        $(".large-figure").css("background-color", getMainColor());
     }
 }
 

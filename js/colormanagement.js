@@ -31,7 +31,8 @@ var getFontColorLight = function(){
 }
 
 
-var setAppColor = function(){
+var changeTheme = function(){
+    //background
     $("div#main").css("background-color", getMainColor());
     $(".large-figure").css("background-color", getMainColor());
     $(".header").css("background-color", getMainColor());
@@ -40,6 +41,24 @@ var setAppColor = function(){
     $(".spRow2").css("background-color", getMainColor());
     $(".spRow3").css("background-color", getMainColor());
     $(".spRow4").css("background-color", getMainColor());
+
+    //font
+    $(".large-figure").css("color", getFontColorLight());
+}
+
+var initAppColor = function(){
+    //background
+    $("div#main").css("background-color", getMainColor());
+    $(".large-figure").css("background-color", getMainColor());
+    $(".header").css("background-color", getMainColor());
+    $(".footer").css("background-color", getMainColor());
+    $(".spRow1").css("background-color", getMainColor());
+    $(".spRow2").css("background-color", getMainColor());
+    $(".spRow3").css("background-color", getMainColor());
+    $(".spRow4").css("background-color", getMainColor());
+
+    //font
+    $(".large-figure").css("color", getFontColor());
 }
 
 
