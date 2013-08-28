@@ -3,13 +3,11 @@
  */
 
 $( "button#themeSilver").click(function(){
-    colorIndex = 0;
-    changeTheme();
+    switchTheme(0);
 });
 
 $( "button#themeRed").click(function(){
-    colorIndex = 1;
-    changeTheme();
+    switchTheme(1);
 });
 
 $( "button#themeBlue").click(function(){
@@ -30,6 +28,21 @@ var displayThemes = function(){
         $("#themesSegment").show();
         isThemesVisible = true;
     }
+}
+
+var backToMain = function(){
+    displayThemes();
+    displaySettings();
+}
+
+/**
+ * logic
+ */
+
+var switchTheme = function(i){
+    colorIndex = i;
+    changeTheme();
+    backToMain();
 }
 
 /**
