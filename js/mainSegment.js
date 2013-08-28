@@ -30,8 +30,9 @@ var isControlButtonsVisible = true;
 var toggleButtonsVisible = function(){
     if(!isScrumPointsVisible){
         if(isControlButtonsVisible){
+            isControlButtonsVisible = false;
             $("button").fadeOut();
-            switchLargeFigureColor();
+            switchLargeFigureColor(isControlButtonsVisible);
 //            $(".large-figure").css("background", "#E7E7E7");
 //            $(".large-figure").css("background", getMainColorLight());
 //            $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
@@ -39,10 +40,10 @@ var toggleButtonsVisible = function(){
 //            $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
 //            $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
 //            $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-            isControlButtonsVisible = false;
         }else{
+            isControlButtonsVisible = true;
             $("button").fadeIn();
-            switchLargeFigureColor();
+            switchLargeFigureColor(isControlButtonsVisible);
 //            $(".large-figure").css("background", "#a7a7a7");
 //            $(".large-figure").css("background", getMainColor());
 //            $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
@@ -50,19 +51,18 @@ var toggleButtonsVisible = function(){
 //            $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
 //            $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
 //            $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-            isControlButtonsVisible = true;
         }
     }
 }
 
 var replaceScrumValue = function(scrumCardValue){
-    var replaceFragment = null;
+    replaceMainContent($( '<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>'));
     if(isControlButtonsVisible){
-        replaceFragment = $( '<div id="mainContent" class="span12 text-center large-figure muted">'+ scrumCardValue +'</div>');
+        $(".large-figure").css("color", getFontColorLight());
     }else{
-        replaceFragment = $( '<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>' );
+        $(".large-figure").css("color", getFontColor());
     }
-    replaceMainContent(replaceFragment);
+
 }
 
 var setAppIcon = function (){
@@ -75,14 +75,3 @@ var replaceMainContent = function(replaceFragment){
     $("div#mainSegment").append(replaceFragment);
     resizeElementDimensions();
 }
-
-var switchLargeFigureColor = function(){
-    if(isControlButtonsVisible){
-        $(".large-figure").css("color", getFontColor());
-        $(".large-figure").css("background-color", getMainColorLight());
-    }else{
-        $(".large-figure").css("color", getFontColorLight());
-        $(".large-figure").css("background-color", getMainColor());
-    }
-}
-

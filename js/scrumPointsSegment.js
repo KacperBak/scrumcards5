@@ -47,13 +47,15 @@ var isScrumPointsVisible = false;
 var displayScrumPoints = function(){
     $("button").fadeOut();
     if(isScrumPointsVisible){
+        isScrumPointsVisible = false;
         $("div#mainSegment").show();
         $("div#scrumPointsSegment").hide();
-        isScrumPointsVisible = false;
+        switchLargeFigureColor(!isScrumPointsVisible);
     }else{
+        isScrumPointsVisible = true;
         $("div#mainSegment").hide();
         $("div#scrumPointsSegment").show();
-        isScrumPointsVisible = true;
+        switchLargeFigureColor(!isScrumPointsVisible);
     }
 }
 

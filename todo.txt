@@ -28,7 +28,7 @@ xx exclude other buttons to be pushed
 xx setInfoRatioValues() IS THIS REALLY NECESSARY
 xx refactor segments in index.html
 
--  FIX: POINTS, PLUS, MINUS color misbehavior
+-> FIX: POINTS, PLUS, MINUS color misbehavior on RED Theme
 -  implement BLUE Schema
 -  optimize current colors
 -  implement gradient switch
