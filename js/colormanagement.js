@@ -4,9 +4,9 @@ var silverFontColor = "#000000";
 var silverLightFontColor = "#999999";
 
 var redMainColor = "#C82040";
-var redLightMainColor = "#E45234";
-var redFontColor = "#790000";
-var redLightFontColor = "#C52040";
+var redLightMainColor = "#f8d5dc";
+var redFontColor = "#000000";
+var redLightFontColor = "#a7123b";
 
 var mainColor = [silverMainColor, redMainColor];
 var mainColorLight = [silverLightMainColor, redLightMainColor];

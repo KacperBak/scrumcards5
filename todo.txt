@@ -12,6 +12,10 @@ lineheight  --> mitte
 480px = 12000                   480px = 3536
       = 12000 / 1000 = 12em
 
+Colors
+--------
+Red dark: #C82040
+
 
 WorkFlow
 --------
