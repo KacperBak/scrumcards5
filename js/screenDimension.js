@@ -1,5 +1,5 @@
 /**
- * math
+ * some voodoo composed math
  */
 
 var PX_240 = 240;
@@ -18,6 +18,8 @@ var calcHeight = function(height, basis, delta, divisor){
     }
     return result;
 }
+
+//TODO kacper - remove duplicate code
 
 var calcFontSize = function(height, basis, divisor){
     var pxDelta = height - PX_240;

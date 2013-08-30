@@ -30,14 +30,6 @@ var getFontColorLight = function(){
     return fontColorLight[colorIndex];
 }
 
-var switchLargeFigureColor = function(lightColorTrigger){
-    if(lightColorTrigger){
-        $(".large-figure").css("color", getFontColorLight());
-    }else{
-        $(".large-figure").css("color", getFontColor());
-    }
-}
-
 var changeTheme = function(){
     //background
     $("div#main").css("background-color", getMainColor());
@@ -51,6 +43,7 @@ var changeTheme = function(){
 
     //font
     $(".large-figure").css("color", getFontColorLight());
+    $(".scrumValue").css("color", getFontColor());
 }
 
 var initAppColor = function(){
@@ -69,6 +62,7 @@ var initAppColor = function(){
 
         //font
         $(".large-figure").css("color", getFontColorLight());
+        $(".scrumValue").css("color", getFontColor());
     }
     if(colorIndex == 1){
         $("div#main").css("background-color", getMainColor());
@@ -82,6 +76,7 @@ var initAppColor = function(){
 
         //font
         $(".large-figure").css("color", getFontColorLight());
+        $(".scrumValue").css("color", getFontColor());
     }
 }
 
