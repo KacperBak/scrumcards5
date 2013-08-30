@@ -16,8 +16,11 @@ $( "button#themes").click(function(){
 $( "button#resetApp").click(function(){
     setAppIcon();
 
-    //call this at least...
+    //reset
     initSc5();
+
+    //back to main
+    displaySettings();
 });
 
 /**
