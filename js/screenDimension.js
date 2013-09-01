@@ -46,7 +46,7 @@ var setScrumRowsRatioValues = function(height, fontSize){
     $('.spRow2').css('height', height + "em");
     $('.spRow3').css('height', height + "em");
     $('.spRow4').css('height', height + "em");
-    $('.scrumValue').css('font-size', fontSize + "em");
+    $('.selectValue').css('font-size', fontSize + "em");
 }
 
 var resizeElementDimensions = function(){
@@ -59,7 +59,7 @@ var resizeElementDimensions = function(){
 
     //scrum values
     var ROWS = 4.0;
-    var scrumValesHeight = mainContentHeight / ROWS;
-    var scrumValuesFontSize = calcFontSize(scrumValesHeight, 1100, 10);
-    setScrumRowsRatioValues( scrumValesHeight, scrumValuesFontSize);
+    var selectValueHeight = mainContentHeight / ROWS;
+    var selectValueFontSize = calcFontSize(selectValueHeight, 1100, 10);
+    setScrumRowsRatioValues( selectValueHeight, selectValueFontSize);
 }

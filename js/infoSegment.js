@@ -1,9 +1,7 @@
 /**
  * handler
  */
-$( "button#info" ).click(function() {
-    displayInfo();
-});
+
 
 /**
  * display

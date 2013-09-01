@@ -1,14 +1,6 @@
 /**
  * handler
  */
-$( "button#settings" ).click(function() {
-    if( isSettingsVisible && isThemesVisible){
-        displayThemes();
-    }else{
-        displaySettings();
-    }
-});
-
 $( "button#themes").click(function(){
     displayThemes();
 });
@@ -32,20 +24,22 @@ var displaySettings = function(){
     if(isSettingsVisible){
         $("div#settingsSegment").hide();
         $("div#mainSegment").show();
-        $("#info").fadeIn();
-        $("#fullscreen").fadeIn();
-        $("#minus").fadeIn();
-        $("#scrumPoints").fadeIn();
-        $("#plus").fadeIn();
+
+        $("button#specialChars").fadeIn();
+        $("button#fullscreen").fadeIn();
+        $("button#minus").fadeIn();
+        $("button#scrumPoints").fadeIn();
+        $("button#plus").fadeIn();
         isSettingsVisible = false;
     }else{
         $("div#mainSegment").hide();
         $("div#settingsSegment").show();
-        $("#info").fadeOut();
-        $("#fullscreen").fadeOut();
-        $("#minus").fadeOut();
-        $("#scrumPoints").fadeOut();
-        $("#plus").fadeOut();
+
+        $("button#specialChars").fadeOut();
+        $("button#fullscreen").fadeOut();
+        $("button#minus").fadeOut();
+        $("button#scrumPoints").fadeOut();
+        $("button#plus").fadeOut();
         isSettingsVisible = true;
     }
 }

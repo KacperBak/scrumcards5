@@ -4,6 +4,7 @@
 var initSc5 = function(){
     initAppColor();
     initScrumPointsSegment();
+    initSpecialCharsSegment();
     initInfoSegment();
     initSettingsSegment();
     initThemesSegment();

@@ -51,7 +51,7 @@ var changeTheme = function(){
 
     //font
     $(".large-figure").css("color", getFontColorLight());
-    $(".scrumValue").css("color", getFontColor());
+    $(".selectValue").css("color", getFontColor());
 }
 
 var initAppColor = function(){
@@ -70,7 +70,7 @@ var initAppColor = function(){
 
         //font
         $(".large-figure").css("color", getFontColorLight());
-        $(".scrumValue").css("color", getFontColor());
+        $(".selectValue").css("color", getFontColor());
     }
     if(colorIndex == 1){
         $("div#main").css("background-color", getMainColor());
@@ -84,7 +84,7 @@ var initAppColor = function(){
 
         //font
         $(".large-figure").css("color", getFontColorLight());
-        $(".scrumValue").css("color", getFontColor());
+        $(".selectValue").css("color", getFontColor());
     }
 }
 

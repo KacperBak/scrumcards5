@@ -1,9 +1,20 @@
 /**
  * handler
  */
+$( "button#specialChars" ).click(function() {
+    displaySpecialChars();
+});
 
 $( "button#fullscreen" ).click(function() {
     toggleButtonsVisible();
+});
+
+$( "button#settings" ).click(function() {
+    if( isSettingsVisible && isThemesVisible){
+        displayThemes();
+    }else{
+        displaySettings();
+    }
 });
 
 $( "div#mainSegment" ).click(function() {
@@ -66,7 +77,7 @@ var replaceScrumValue = function(scrumCardValue){
 }
 
 var setAppIcon = function (){
-    var replaceFragment = $('<div id="mainContent" class="span12 text-center large-figure muted" data-icon="&#xe000;"></div>');
+    var replaceFragment = $('<div id="mainContent" class="span12 text-center large-figure" data-icon="&#xe000;"></div>');
     replaceMainContent(replaceFragment);
 }
 
