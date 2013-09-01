@@ -17,27 +17,24 @@ Colors
 Red dark: #C82040
 
 
-WorkFlow
---------
-x  Restore fading
-x  create github dir for scrumcards5
-x  div-height (header, main, footer)
-x  auto fontsize main content
-x  fix fontsize width for higher resolutions
-x  auto fontsize scrumValues
-x  OFFLINE ability with cache-manifest
+HOME
+----
+x  FIX: POINTS, PLUS, MINUS color misbehavior on RED Theme
+x  FIX: Fullscreen does not switch color
+-  implement special characters with penta sign
+-  implement gradient switch
 
-x  implement info segment
-xx exclude other buttons to be pushed
-xx setInfoRatioValues() IS THIS REALLY NECESSARY
-xx refactor segments in index.html
 
--> FIX: POINTS, PLUS, MINUS color misbehavior on RED Theme
+TRAIN
+-----
+
+-  move info segment to options
+-  create comsys sign
 -  implement BLUE Schema
 -  optimize current colors
--  implement gradient switch
--  optimize current colors
 
+OPEN
+----
 -  safe settings into localStorage
 -  implement settings
 x  very nice icon

@@ -30,6 +30,14 @@ var getFontColorLight = function(){
     return fontColorLight[colorIndex];
 }
 
+var switchLargeFigureColor = function(lightColorTrigger){
+    if(lightColorTrigger){
+        $(".large-figure").css("color", getFontColorLight());
+    }else{
+        $(".large-figure").css("color", getFontColor());
+    }
+}
+
 var changeTheme = function(){
     //background
     $("div#main").css("background-color", getMainColor());

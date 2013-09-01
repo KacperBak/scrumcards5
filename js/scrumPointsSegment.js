@@ -50,12 +50,12 @@ var displayScrumPoints = function(){
         isScrumPointsVisible = false;
         $("div#mainSegment").show();
         $("div#scrumPointsSegment").hide();
-//        switchLargeFigureColor(!isScrumPointsVisible);
+        switchLargeFigureColor(!isScrumPointsVisible);
     }else{
         isScrumPointsVisible = true;
         $("div#mainSegment").hide();
         $("div#scrumPointsSegment").show();
-//        switchLargeFigureColor(!isScrumPointsVisible);
+        switchLargeFigureColor(!isScrumPointsVisible);
     }
 }
 
