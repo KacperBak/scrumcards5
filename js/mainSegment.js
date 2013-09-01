@@ -10,9 +10,18 @@ $( "button#fullscreen" ).click(function() {
 });
 
 $( "button#settings" ).click(function() {
+
     if( isSettingsVisible && isThemesVisible){
+
+        //back from themes
         displayThemes();
-    }else{
+
+    } else if(isSettingsVisible && isInfoVisible){
+
+        //back from info
+        displayInfo();
+
+    } else{
         displaySettings();
     }
 });

@@ -2,7 +2,6 @@
  * handler
  */
 
-
 /**
  * display
  */
@@ -10,22 +9,12 @@ var isInfoVisible = false;
 
 var displayInfo = function(){
     if(isInfoVisible){
-        $("div#infoSegment").hide();
-        $("div#mainSegment").show();
-        $("#fullscreen").fadeIn();
-        $("#settings").fadeIn();
-        $("#minus").fadeIn();
-        $("#scrumPoints").fadeIn();
-        $("#plus").fadeIn();
+        $("#infoSegment").hide();
+        $("#settingsSegment").show();
         isInfoVisible = false;
     }else{
-        $("div#mainSegment").hide();
-        $("div#infoSegment").show();
-        $("#fullscreen").fadeOut();
-        $("#settings").fadeOut();
-        $("#minus").fadeOut();
-        $("#scrumPoints").fadeOut();
-        $("#plus").fadeOut();
+        $("#settingsSegment").hide();
+        $("#infoSegment").show();
         isInfoVisible = true;
     }
 }

@@ -5,6 +5,10 @@ $( "button#themes").click(function(){
     displayThemes();
 });
 
+$( "button#info").click(function(){
+    displayInfo();
+});
+
 $( "button#resetApp").click(function(){
     setAppIcon();
 
