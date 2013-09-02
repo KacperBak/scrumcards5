@@ -97,11 +97,11 @@ var sc3 = "&#xe004;";
 var sc4 = "&#xe000;";
 var sc5 = "&#xe005;";
 var sc6 = "&#xe003;";
-var sc7 = "&#xe00a;";
-var sc8 = "&#xe00b;";
-var sc9 = "&#xe00d;";
+var sc7 = "&#xe00b;";
+var sc8 = "&#xe00a;";
+var sc9 = "&#xe00c;";
 var sc10 = "&#xe00e;";
-var sc11 = "&#xe00c;";
+var sc11 = "&#xe00d;";
 
 var specialCharacterValues  = [sc0, sc1, sc2, sc3, sc4, sc5, sc6, sc7, sc8, sc9, sc10, sc11];
 var specialCharacterIndex   = 0;
