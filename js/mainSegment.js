@@ -77,16 +77,11 @@ var toggleButtonsVisible = function(){
 
 var replaceScrumValue = function(scrumCardValue){
     replaceMainContent($( '<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>'));
-    if(isControlButtonsVisible){
-        $(".large-figure").css("color", getFontColorLight());
-    }else{
-        $(".large-figure").css("color", getFontColor());
-    }
-
+    switchLargeFigureColor(isControlButtonsVisible);
 }
 
 var setAppIcon = function (){
-    var replaceFragment = $('<div id="mainContent" class="span12 text-center large-figure" data-icon="&#xe000;"></div>');
+    var replaceFragment = $('<div id="mainContent" class="span12 text-center large-figure" data-icon="&#xe00e;"></div>');
     replaceMainContent(replaceFragment);
 }
 
