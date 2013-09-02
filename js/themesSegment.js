@@ -10,7 +10,16 @@ $( "button#themeRed").click(function(){
     switchTheme(1);
 });
 
+$( "button#themeGreen").click(function(){
+    switchTheme(2);
+});
+
 $( "button#themeBlue").click(function(){
+    switchTheme(3);
+});
+
+$( "button#themeYellow").click(function(){
+    switchTheme(4);
 });
 
 /**
