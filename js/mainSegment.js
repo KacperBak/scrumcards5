@@ -53,24 +53,12 @@ var toggleButtonsVisible = function(){
             isControlButtonsVisible = false;
             $("button").fadeOut();
             switchLargeFigureColor(isControlButtonsVisible);
-//            $(".large-figure").css("background", "#E7E7E7");
-            $(".large-figure").css("background", getMainColorLight());
-//            $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-//            $(".large-figure").css({background: "-webkit-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-//            $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-//            $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
-//            $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7)"});
+            switchLargeFigureBackground(isControlButtonsVisible);
         }else{
             isControlButtonsVisible = true;
             $("button").fadeIn();
             switchLargeFigureColor(isControlButtonsVisible);
-//            $(".large-figure").css("background", "#a7a7a7");
-            $(".large-figure").css("background", getMainColor());
-//            $(".large-figure").css({background: "-moz-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-//            $(".large-figure").css({background: "-webkit-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-//            $(".large-figure").css({background: "-o-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-//            $(".large-figure").css({background: "-ms-linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
-//            $(".large-figure").css({background: "linear-gradient(top, #a7a7a7 , #a7a7a7, #a7a7a7)"});
+            switchLargeFigureBackground(isControlButtonsVisible);
         }
     }
 }

@@ -54,6 +54,46 @@ var switchLargeFigureColor = function(lightColorTrigger){
     }
 }
 
+var switchLargeFigureBackground = function(lightColorTrigger){
+    var mozillaBrowser      = "-moz-linear-gradient";
+    var operaBrowser      = "-o-linear-gradient";
+    var microsoftBrowser    = "-ms-linear-gradient";
+    var webkitBrowser       = "-webkit-linear-gradient";
+    var defaultBrowser      = "linear-gradient";
+
+    if(lightColorTrigger){
+
+        //set uni-color-bg for compatibility of old browsers
+        $(".large-figure").css("background", getMainColor());
+
+        //set color gradients of new browsers
+        var colorGradient = "top, #a7a7a7 , #a7a7a7, #a7a7a7";
+
+        $(".large-figure").css({background: composeBackGround(mozillaBrowser, colorGradient)});
+        $(".large-figure").css({background: composeBackGround(webkitBrowser, colorGradient)});
+        $(".large-figure").css({background: composeBackGround(operaBrowser, colorGradient)});
+        $(".large-figure").css({background: composeBackGround(microsoftBrowser, colorGradient)});
+        $(".large-figure").css({background: composeBackGround(defaultBrowser, colorGradient)});
+
+    } else{
+        //set uni-color-bg for compatibility of old browsers
+        $(".large-figure").css("background", getMainColorLight());
+
+        //set color gradients of new browsers
+        var lightColorGradient = "top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7";
+
+        $(".large-figure").css({background: composeBackGround(mozillaBrowser, lightColorGradient)});
+        $(".large-figure").css({background: composeBackGround(webkitBrowser, lightColorGradient)});
+        $(".large-figure").css({background: composeBackGround(operaBrowser, lightColorGradient)});
+        $(".large-figure").css({background: composeBackGround(microsoftBrowser, lightColorGradient)});
+        $(".large-figure").css({background: composeBackGround(defaultBrowser, lightColorGradient)});
+    }
+}
+
+var composeBackGround = function(browser, gradient){
+    return browser + "(" + gradient + ")";
+}
+
 var changeTheme = function(){
     //background
     $("div#main").css("background-color", getMainColor());
