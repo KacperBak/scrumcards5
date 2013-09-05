@@ -1,31 +1,37 @@
 var silverMainColor = "#a7a7a7";
 var silverLightMainColor = "#E7E7E7";
+var silverUltraLightMainColor = "#FAFAFA";
 var silverFontColor = "#000000";
 var silverLightFontColor = "#999999";
 
 var redMainColor = "#C82040";
 var redLightMainColor = "#FFFFFF";
+var redUltraLightMainColor = "#FAFAFA";
 var redFontColor = "#C82040";
 var redLightFontColor = "#a7123b";
 
 var greenMainColor = "#2ca02c";
 var greenLightMainColor = "#FFFFFF";
+var greenUltraLightMainColor = "#FAFAFA";
 var greenFontColor = "#2ca02c";
 var greenLightFontColor = "#225500";
 
 var blueMainColor = "#0066ff";
 var blueLightMainColor = "#FFFFFF";
+var blueUltraLightMainColor = "#FAFAFA";
 var blueFontColor = "#0066ff";
 var blueLightFontColor = "#0044aa";
 
 //var yellowMainColor = "#ffd42a";
 var yellowMainColor = "#ffd42a";
-var yellowLightMainColor = "#ffd42a";
+var yellowLightMainColor = "#ffeeaa";
+var yellowUltraLightMainColor = "#fffdf5";
 var yellowFontColor = "#000000";
 var yellowLightFontColor = "#ffeeaa";
 
 var mainColor = [silverMainColor, redMainColor, greenMainColor, blueMainColor, yellowMainColor];
 var mainColorLight = [silverLightMainColor, redLightMainColor, greenLightMainColor, blueLightMainColor, yellowLightMainColor];
+var mainColorUltraLight = [silverUltraLightMainColor, redUltraLightMainColor, greenUltraLightMainColor, blueUltraLightMainColor, yellowUltraLightMainColor];
 var fontColor = [silverFontColor, redFontColor, greenFontColor, blueFontColor, yellowFontColor];
 var fontColorLight = [silverLightFontColor, redLightFontColor, greenLightFontColor, blueLightFontColor, yellowLightFontColor];
 var colorIndex = 0;
@@ -36,6 +42,10 @@ var getMainColor = function(){
 
 var getMainColorLight = function(){
     return mainColorLight[colorIndex];
+}
+
+var getMainColorUltraLight = function(){
+    return mainColorUltraLight[colorIndex];
 }
 
 var getFontColor = function(){
@@ -55,39 +65,28 @@ var switchLargeFigureColor = function(lightColorTrigger){
 }
 
 var switchLargeFigureBackground = function(lightColorTrigger){
-    var mozillaBrowser      = "-moz-linear-gradient";
-    var operaBrowser      = "-o-linear-gradient";
-    var microsoftBrowser    = "-ms-linear-gradient";
-    var webkitBrowser       = "-webkit-linear-gradient";
-    var defaultBrowser      = "linear-gradient";
 
     if(lightColorTrigger){
 
-        //set uni-color-bg for compatibility of old browsers
         $(".large-figure").css("background", getMainColor());
 
-        //set color gradients of new browsers
-        var colorGradient = "top, #a7a7a7 , #a7a7a7, #a7a7a7";
-
-        $(".large-figure").css({background: composeBackGround(mozillaBrowser, colorGradient)});
-        $(".large-figure").css({background: composeBackGround(webkitBrowser, colorGradient)});
-        $(".large-figure").css({background: composeBackGround(operaBrowser, colorGradient)});
-        $(".large-figure").css({background: composeBackGround(microsoftBrowser, colorGradient)});
-        $(".large-figure").css({background: composeBackGround(defaultBrowser, colorGradient)});
-
     } else{
+
         //set uni-color-bg for compatibility of old browsers
         $(".large-figure").css("background", getMainColorLight());
 
-        //set color gradients of new browsers
-        var lightColorGradient = "top, #a7a7a7 , #E7E7E7, #FAFAFA , #E7E7E7, #a7a7a7";
-
-        $(".large-figure").css({background: composeBackGround(mozillaBrowser, lightColorGradient)});
-        $(".large-figure").css({background: composeBackGround(webkitBrowser, lightColorGradient)});
-        $(".large-figure").css({background: composeBackGround(operaBrowser, lightColorGradient)});
-        $(".large-figure").css({background: composeBackGround(microsoftBrowser, lightColorGradient)});
-        $(".large-figure").css({background: composeBackGround(defaultBrowser, lightColorGradient)});
+        //set color gradients of CSS3 browsers
+        var lightGradient = "top,"+  getMainColor() + "," + getMainColorLight() + "," +  getMainColorUltraLight() + "," +  getMainColorLight() + "," + getMainColor();
+//        applyGradientToBackground(lightGradient);
     }
+}
+
+var applyGradientToBackground = function(gradient){
+    $(".large-figure").css({background: composeBackGround("-moz-linear-gradient", gradient)});
+    $(".large-figure").css({background: composeBackGround("-webkit-linear-gradient", gradient)});
+    $(".large-figure").css({background: composeBackGround("-o-linear-gradient", gradient)});
+    $(".large-figure").css({background: composeBackGround("-ms-linear-gradient", gradient)});
+    $(".large-figure").css({background: composeBackGround("linear-gradient", gradient)});
 }
 
 var composeBackGround = function(browser, gradient){
