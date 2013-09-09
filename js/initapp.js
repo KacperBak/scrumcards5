@@ -6,6 +6,7 @@ var initSc5 = function(){
     initScrumPointsSegment();
     initSpecialCharsSegment();
     initInfoSegment();
+    initAfterSelect();
     initSettingsSegment();
     initThemesSegment();
     resizeElementDimensions();

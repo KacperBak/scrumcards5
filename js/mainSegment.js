@@ -21,7 +21,12 @@ $( "button#settings" ).click(function() {
         //back from info
         displayInfo();
 
-    } else{
+    } else if (isSettingsVisible && isAfterSelectVisible){
+
+        //back from afterSelect
+        displayAfterSelect();
+
+    } else {
         displaySettings();
     }
 });

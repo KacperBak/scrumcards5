@@ -9,6 +9,10 @@ $( "button#info").click(function(){
     displayInfo();
 });
 
+$( "button#afterSelect").click(function(){
+    displayAfterSelect();
+});
+
 $( "button#resetApp").click(function(){
     setAppIcon();
 

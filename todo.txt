@@ -23,6 +23,7 @@ HOME
 
 TRAIN
 -----
+- start with statefull settings
 
 
 OPEN
