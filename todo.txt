@@ -19,20 +19,11 @@ Red dark: #C82040
 
 HOME
 ----
-x  FIX: POINTS, PLUS, MINUS color misbehavior on RED Theme
-x  FIX: Fullscreen does not switch color
--  implement gradient switch
-
+- adjust fontsize main
 
 TRAIN
 -----
 
-x  move info segment to options
-x  create comsys sign
--  implement BLUE Schema
--  implement GREEN Schema
--  implement YELLOW Schema
--  optimize current colors
 
 OPEN
 ----

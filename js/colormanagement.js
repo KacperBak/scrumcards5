@@ -1,31 +1,34 @@
 var silverMainColor = "#a7a7a7";
 var silverLightMainColor = "#E7E7E7";
-var silverUltraLightMainColor = "#FAFAFA";
+var silverUltraLightMainColor = "#FFFFFF";
 var silverFontColor = "#000000";
 var silverLightFontColor = "#999999";
 
 var redMainColor = "#C82040";
+//var redLightMainColor = "#fceef0";
 var redLightMainColor = "#FFFFFF";
-var redUltraLightMainColor = "#FAFAFA";
+var redUltraLightMainColor = "#FFFFFF";
 var redFontColor = "#C82040";
 var redLightFontColor = "#a7123b";
 
 var greenMainColor = "#2ca02c";
+//var greenLightMainColor = "#d9f5d9";
 var greenLightMainColor = "#FFFFFF";
-var greenUltraLightMainColor = "#FAFAFA";
+var greenUltraLightMainColor = "#FFFFFF";
 var greenFontColor = "#2ca02c";
 var greenLightFontColor = "#225500";
 
 var blueMainColor = "#0066ff";
+//var blueLightMainColor = "#ebf3ff";
 var blueLightMainColor = "#FFFFFF";
-var blueUltraLightMainColor = "#FAFAFA";
+var blueUltraLightMainColor = "#FFFFFF";
 var blueFontColor = "#0066ff";
 var blueLightFontColor = "#0044aa";
 
-//var yellowMainColor = "#ffd42a";
 var yellowMainColor = "#ffd42a";
-var yellowLightMainColor = "#ffeeaa";
-var yellowUltraLightMainColor = "#fffdf5";
+//var yellowLightMainColor = "#fff5cf";
+var yellowLightMainColor = "#ffffff";
+var yellowUltraLightMainColor = "#FFFFFF";
 var yellowFontColor = "#000000";
 var yellowLightFontColor = "#ffeeaa";
 
@@ -77,7 +80,7 @@ var switchLargeFigureBackground = function(lightColorTrigger){
 
         //set color gradients of CSS3 browsers
         var lightGradient = "top,"+  getMainColor() + "," + getMainColorLight() + "," +  getMainColorUltraLight() + "," +  getMainColorLight() + "," + getMainColor();
-//        applyGradientToBackground(lightGradient);
+        applyGradientToBackground(lightGradient);
     }
 }
 
