@@ -3,9 +3,9 @@
     <head>
         <title>scrumcards5</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <link href="index.css" rel="stylesheet" media="screen">
         <link href="font.css" rel="stylesheet" media="screen">
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="index.css" rel="stylesheet" media="screen">
         <link rel="icon" href="favicon.png" type="image/png">
         <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
     </head>
@@ -49,8 +49,8 @@
         <!-- settings menu -->
         <div id="settingsSegment">
             <div class="row-fluid"><div class="span12"><button id="themes" class="btn btn-large btn-block btn" type="button">Themes</button></div></div>
-            <div class="row-fluid"><div class="span12"><button id="afterSelect" class="btn btn-large btn-block btn" type="button">After select</button></div></div>
-            <div class="row-fluid"><div class="span12"><button id="info" class="btn btn-large btn-block btn" type="button">Info</button></div></div>
+            <div class="row-fluid"><div class="span12"><button id="afterSelect" class="btn btn-large btn-block btn" type="button">Main symbol</button></div></div>
+            <div class="row-fluid"><div class="span12"><button id="info" class="btn btn-large btn-block btn" type="button">App info</button></div></div>
             <div class="row-fluid"><div class="span12"><button id="resetApp" class="btn btn-large btn-block btn" type="button">RESET APP</button></div></div>
         </div>
 
@@ -71,8 +71,41 @@
         </div>
 
         <!-- afterSelect menu -->
-        <div id="afterSelectSegment" class="row-fluid">
-            <p class="afterSelectContent">AfterSelect content</p>
+        <div id="afterSelectSegment" class="row-fluid" data-toggle="buttons-radio">
+
+            <div class="row-fluid">
+                <div class="span12">
+                    <h4 class="afterSelectContent">Is visible</h4>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span12">
+                    <p class="afterSelectContent">After a symbol has been selected, it appears in a light colored version in the main of the screen.</p>
+                </div>
+            </div>
+
+            <div class="row-fluid" data-toggle="buttons-radio">
+                <div class="span6"><button class="btn btn-large btn-block btn active" type="button">On</button></div>
+                <div class="span6"><button class="btn btn-large btn-block btn" type="button">Off</button></div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span12">
+                    <h4 class="afterSelectContent">In small font size</h4>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span12">
+                    <p class="afterSelectContent">After a symbol has been selected, it appears as a small figure in the main of the screen.</p>
+                </div>
+            </div>
+
+            <div class="row-fluid" data-toggle="buttons-radio">
+                <div class="span6"><button class="btn btn-large btn-block btn active" type="button">On</button></div>
+                <div class="span6"><button class="btn btn-large btn-block btn" type="button">Off</button></div>
+            </div>
         </div>
 
 

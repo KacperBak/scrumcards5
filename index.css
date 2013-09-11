@@ -22,11 +22,14 @@ div#main{
 .spRow1 .spRow2 .spRow3 .spRow4{
 }
 
-.infoContent .afterSelectContent {
-    font-size: 1em;
-    line-height: 1em;
-    height: 1em;
-    margin: 1em;
+*.infoContent {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+*.afterSelectContent {
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .selectValue {

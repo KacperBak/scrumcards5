@@ -19,19 +19,19 @@ Red dark: #C82040
 
 HOME
 ----
-- adjust fontsize main
+
 
 TRAIN
 -----
 - start with statefull settings
+- refactor "afterSelectContent" id-css-class
+
 
 
 OPEN
 ----
 -  safe settings into localStorage
 -  implement settings
-x  very nice icon
-x  rename JS-files
 
 LONG TERM TESTING, IMPROVEMENTS
 -------------------------------
@@ -41,7 +41,6 @@ LONG TERM TESTING, IMPROVEMENTS
 
 DEPLOYMENT
 ----------
-
 - add new mime type for manifest file (see HTML5 article)
 
 TOUCH ICON
@@ -57,6 +56,11 @@ rel="apple-touch-icon-precomposed"
 
 - http://www.ravelrumba.com/blog/android-apple-touch-icon/
 - http://mathiasbynens.be/notes/touch-icons
+
+JQuery
+------
+The attribute actually corresponds to the defaultChecked property and should be used only to set the initial value of the checkbox.
+
 
 
 SETTINGS-MENU
