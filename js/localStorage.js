@@ -56,6 +56,17 @@ var extractBoolean = function(string){
 }
 
 /*
+ * get storage states
+ */
+var isMainSymbolVisible = function(){
+    return readFromLocalStorage(LS_VISIBLE_MAIN_SYMBOL, TYPE_BOOLEAN);
+}
+
+var isMainSymbolSmall = function(){
+    return readFromLocalStorage(LS_SMALL_MAIN_SYMBOL, TYPE_BOOLEAN);
+}
+
+/*
  * set default values in the application
  */
 var initLocalStorage = function(){
@@ -67,7 +78,7 @@ var initLocalStorage = function(){
  * debug
  */
 var getStorgeState = function(){
-    console.log(LS_VISIBLE_MAIN_SYMBOL + " : " + readFromLocalStorage(LS_VISIBLE_MAIN_SYMBOL));
-    console.log(LS_SMALL_MAIN_SYMBOL + " : " + readFromLocalStorage(LS_SMALL_MAIN_SYMBOL));
+    console.log(LS_VISIBLE_MAIN_SYMBOL + " : " + isMainSymbolVisible());
+    console.log(LS_SMALL_MAIN_SYMBOL + " : " + isMainSymbolSmall());
 }
 

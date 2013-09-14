@@ -36,9 +36,6 @@ var displayAfterSelect = function(){
     }
 }
 
-/*
- * app logic
- */
 var setInactive = function(selector){
     $(selector).removeClass("active");
 }
@@ -48,18 +45,14 @@ var setActive = function(selector){
 }
 
 var updateUiBasedOnLocalStorage = function(){
-    //debug
-//    analyse(readFromLocalStorage(LS_VISIBLE_MAIN_SYMBOL, TYPE_BOOLEAN));
-//    analyse(readFromLocalStorage(LS_SMALL_MAIN_SYMBOL, TYPE_BOOLEAN));
-
-    if(readFromLocalStorage(LS_VISIBLE_MAIN_SYMBOL, TYPE_BOOLEAN)){
+    if(isMainSymbolVisible()){
         setActive(   "button#visibleMainSymbolOn"  );
         setInactive( "button#visibleMainSymbolOff" );
     }else{
         setActive(   "button#visibleMainSymbolOff" );
         setInactive( "button#visibleMainSymbolOn"  );
     }
-    if(readFromLocalStorage(LS_SMALL_MAIN_SYMBOL, TYPE_BOOLEAN)){
+    if(isMainSymbolSmall()){
         setActive(   "button#smallMainSymbolOn"  );
         setInactive( "button#smallMainSymbolOff" );
     }else{
@@ -67,6 +60,11 @@ var updateUiBasedOnLocalStorage = function(){
         setInactive( "button#smallMainSymbolOn"  );
     }
 }
+
+/*
+ * app logic
+ */
+
 
 /**
  * init

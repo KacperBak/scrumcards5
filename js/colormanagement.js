@@ -61,9 +61,17 @@ var getFontColorLight = function(){
 
 var switchLargeFigureColor = function(lightColorTrigger){
     if(lightColorTrigger){
-        $(".large-figure").css("color", getFontColorLight());
+        setVisibleMainSymbol();
     }else{
         $(".large-figure").css("color", getFontColor());
+    }
+}
+
+var setVisibleMainSymbol = function(){
+    if(isMainSymbolVisible()){
+        $(".large-figure").css("color", getFontColorLight());
+    }else{
+        $(".large-figure").css("color", getMainColor());
     }
 }
 
