@@ -19,12 +19,20 @@ Red dark: #C82040
 
 HOME
 ----
+- refactoring JS Files
+-- create "app" directory
+-- create "ui" directory
+-- move files into corresponding dir
 
+- Initialisierung mit onDocumentReady function (JQuery) verknüpfen
+    $(document).ready(function(){
+        ... //stuff to do
+    });
 
 TRAIN
 -----
-- start with statefull settings
-- refactor "afterSelectContent" id-css-class
+- start with stateful settings
+- refactor "afterSelectContent" id, css-class, JS file
 
 
 
@@ -32,6 +40,7 @@ OPEN
 ----
 -  safe settings into localStorage
 -  implement settings
+
 
 LONG TERM TESTING, IMPROVEMENTS
 -------------------------------
@@ -42,6 +51,7 @@ LONG TERM TESTING, IMPROVEMENTS
 DEPLOYMENT
 ----------
 - add new mime type for manifest file (see HTML5 article)
+- note dependecies into README.md file
 
 TOUCH ICON
 ----------

@@ -10,6 +10,7 @@ var initSc5 = function(){
     initSettingsSegment();
     initThemesSegment();
     resizeElementDimensions();
+    getStorgeState();
 }
 
 /**
