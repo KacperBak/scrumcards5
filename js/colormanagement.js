@@ -79,12 +79,12 @@ var switchLargeFigureBackground = function(lightColorTrigger){
 
     if(lightColorTrigger){
 
-        $(".large-figure").css("background", getMainColor());
+        $("body").css("background", getMainColor());
 
     } else{
 
         //set uni-color-bg for compatibility of old browsers
-        $(".large-figure").css("background", getMainColorLight());
+        $("body").css("background", getMainColorLight());
 
         //set color gradients of CSS3 browsers
         var lightGradient = "top,"+  getMainColor() + "," + getMainColorLight() + "," +  getMainColorUltraLight() + "," +  getMainColorLight() + "," + getMainColor();
@@ -93,11 +93,11 @@ var switchLargeFigureBackground = function(lightColorTrigger){
 }
 
 var applyGradientToBackground = function(gradient){
-    $(".large-figure").css({background: composeBackGround("-moz-linear-gradient", gradient)});
-    $(".large-figure").css({background: composeBackGround("-webkit-linear-gradient", gradient)});
-    $(".large-figure").css({background: composeBackGround("-o-linear-gradient", gradient)});
-    $(".large-figure").css({background: composeBackGround("-ms-linear-gradient", gradient)});
-    $(".large-figure").css({background: composeBackGround("linear-gradient", gradient)});
+    $("body").css({background: composeBackGround("-moz-linear-gradient", gradient)});
+    $("body").css({background: composeBackGround("-webkit-linear-gradient", gradient)});
+    $("body").css({background: composeBackGround("-o-linear-gradient", gradient)});
+    $("body").css({background: composeBackGround("-ms-linear-gradient", gradient)});
+    $("body").css({background: composeBackGround("linear-gradient", gradient)});
 }
 
 var composeBackGround = function(browser, gradient){
@@ -106,14 +106,7 @@ var composeBackGround = function(browser, gradient){
 
 var changeTheme = function(){
     //background
-    $("div#main").css("background-color", getMainColor());
-    $(".large-figure").css("background-color", getMainColor());
-    $(".header").css("background-color", getMainColor());
-    $(".footer").css("background-color", getMainColor());
-    $(".spRow1").css("background-color", getMainColor());
-    $(".spRow2").css("background-color", getMainColor());
-    $(".spRow3").css("background-color", getMainColor());
-    $(".spRow4").css("background-color", getMainColor());
+    $("body").css("background-color", getMainColor());
 
     //font
     $(".large-figure").css("color", getFontColorLight());
@@ -121,17 +114,9 @@ var changeTheme = function(){
 }
 
 var initAppColor = function(){
-
     colorIndex = 0;
-
-    $("div#main").css("background-color", getMainColor());
-    $(".large-figure").css("background-color", getMainColor());
-    $(".header").css("background-color", getMainColor());
-    $(".footer").css("background-color", getMainColor());
-    $(".spRow1").css("background-color", getMainColor());
-    $(".spRow2").css("background-color", getMainColor());
-    $(".spRow3").css("background-color", getMainColor());
-    $(".spRow4").css("background-color", getMainColor());
+    //background
+    $("body").css("background-color", getMainColor());
 
     //font
     $(".large-figure").css("color", getFontColorLight());
