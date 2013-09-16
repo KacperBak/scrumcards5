@@ -2,6 +2,7 @@
  * this method should be called at least to init the app
  */
 var initSc5 = function(){
+//    initLocalStorage();
     initAppColor();
     initScrumPointsSegment();
     initSpecialCharsSegment();
@@ -9,7 +10,7 @@ var initSc5 = function(){
     initAfterSelect();
     initSettingsSegment();
     initThemesSegment();
-    resizeElementDimensions();
+    resizeElementDimensions(getMainSymbolFontSize());
     getStorgeState();
 }
 
@@ -17,5 +18,5 @@ var initSc5 = function(){
  * Handle window resize
  */
 window.addEventListener("resize", function() {
-    resizeElementDimensions();
+    resizeElementDimensions(getMainSymbolFontSize());
 }, false);

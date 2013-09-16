@@ -1,19 +1,17 @@
 body{
     background-color: #E7E7E7;
 }
-td{
-    height: 200px;
-}
+
 .large-figure{
     /* 160x240 */
     font-size: 12em;
     line-height: 390px;
-    background-color: magenta;
+    /*background-color: magenta;*/
 }
 
 .header{
     height: 45px;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 
 .content{
@@ -22,7 +20,7 @@ td{
 
 .footer{
     height: 45px;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 
 .spRow1 .spRow2 .spRow3 .spRow4{

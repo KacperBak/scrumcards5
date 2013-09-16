@@ -40,6 +40,7 @@ var displaySettings = function(){
         $("button#plus").fadeIn();
         isSettingsVisible = false;
         setVisibleMainSymbol();
+        resizeElementDimensions(getMainSymbolFontSize());
     }else{
         $("div#mainSegment").hide();
         $("div#settingsSegment").show();

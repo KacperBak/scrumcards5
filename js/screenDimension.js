@@ -1,6 +1,3 @@
-/**
- * some voodoo composed math
- */
 
 var PX_240 = 240;
 
@@ -8,10 +5,20 @@ var getWindowHeight = function(){
     return $(window).height();
 }
 
+/**
+ * some voodoo composed math
+ */
 var calcMostFittingFontSize = function(height, basis, divisor){
     var pxDelta = height - PX_240;
     var emFactor = basis / PX_240;
     return (pxDelta * emFactor + basis) / divisor;
+}
+
+/**
+ * content = window - header - footer; (in px)
+ */
+var calcHeight = function(windowHeight){
+    return windowHeight - 90;
 }
 
 /**
@@ -31,12 +38,12 @@ var setScrumRowsRatioValues = function(height, fontSize){
     $('.selectValue').css('font-size', fontSize + "em");
 }
 
-var resizeElementDimensions = function(){
+var resizeElementDimensions = function(fontSizeFactor){
     //main content
     var actualHeight = getWindowHeight();
     var mainContentHeight = calcHeight(actualHeight);
     var mainContentFontSize = calcMostFittingFontSize(actualHeight, 5500, 1000);
-    setMainContentRatioValues(mainContentHeight, mainContentFontSize * 1.0, mainContentHeight);
+    setMainContentRatioValues(mainContentHeight, mainContentFontSize * fontSizeFactor, mainContentHeight);
 
     //scrum values
     var ROWS = 4.0;
@@ -45,9 +52,17 @@ var resizeElementDimensions = function(){
     setScrumRowsRatioValues( selectValueHeight, selectValueFontSize);
 }
 
-/*
- * new screen dimension logic
- */
-var calcHeight = function(windowHeight){
-    return windowHeight - 90;
+var getMainSymbolFontSize = function(){
+    var smallFontSize    = getSmallFontSizeInitFactor();
+    var normaFontSize    = getNormalFontSizeInitFactor();
+    var result = normaFontSize;
+
+    if(isMainSymbolSmall()){
+        result = smallFontSize;
+    }
+    if(!isControlButtonsVisible){
+        result = normaFontSize;
+    }
+    return result;
 }
+

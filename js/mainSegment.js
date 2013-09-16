@@ -59,11 +59,13 @@ var toggleButtonsVisible = function(){
             $("button").fadeOut();
             switchLargeFigureColor(isControlButtonsVisible);
             switchLargeFigureBackground(isControlButtonsVisible);
+            resizeElementDimensions(getMainSymbolFontSize());
         }else{
             isControlButtonsVisible = true;
             $("button").fadeIn();
             switchLargeFigureColor(isControlButtonsVisible);
             switchLargeFigureBackground(isControlButtonsVisible);
+            resizeElementDimensions(getMainSymbolFontSize());
         }
     }
 }
@@ -81,5 +83,5 @@ var setAppIcon = function (){
 var replaceMainContent = function(replaceFragment){
     $("div#mainContent").remove();
     $("div#mainSegment").append(replaceFragment);
-    resizeElementDimensions();
+    resizeElementDimensions(getMainSymbolFontSize());
 }
