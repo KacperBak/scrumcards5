@@ -2,7 +2,8 @@
  * this method should be called at least to init the app
  */
 var initSc5 = function(){
-//    initLocalStorage();
+
+    initLocalStorage();
     initAppColor();
     initScrumPointsSegment();
     initSpecialCharsSegment();
@@ -11,7 +12,6 @@ var initSc5 = function(){
     initSettingsSegment();
     initThemesSegment();
     resizeElementDimensions(getMainSymbolFontSize());
-    getStorgeState();
 }
 
 /**
