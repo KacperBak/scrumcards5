@@ -114,13 +114,17 @@ var changeTheme = function(){
 }
 
 var initAppColor = function(){
-    colorIndex = 0;
+    colorIndex = getColorIndexFromLocalStorage();
     //background
     $("body").css("background-color", getMainColor());
 
     //font
     $(".large-figure").css("color", getFontColorLight());
     $(".selectValue").css("color", getFontColor());
+}
+
+var resetColor = function(){
+    colorIndex = 0;
 }
 
 

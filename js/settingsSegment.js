@@ -14,9 +14,12 @@ $( "button#afterSelect").click(function(){
 });
 
 $( "button#resetApp").click(function(){
-    setAppIcon();
-
     //reset
+    setLocalStorageDefaultValues();
+    setAppIcon();
+    resetColor();
+
+    //re-init
     initSc5();
 
     //back to main

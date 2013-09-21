@@ -47,9 +47,9 @@ var backToMain = function(){
 /**
  * logic
  */
-
 var switchTheme = function(i){
     colorIndex = i;
+    setColorIndexInLocalStorage(i);
     changeTheme();
     backToMain();
 }

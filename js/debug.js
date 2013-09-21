@@ -1,3 +1,4 @@
+var MESSAGE_TYPE_INFO = "INFO";
 
 var analyse = function(value, ignoreStrictObject, displayRawValue){
     
