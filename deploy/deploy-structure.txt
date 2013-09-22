@@ -1,0 +1,10 @@
+js.*            -->  scrumcards5.js
+css.*           -->  scrumcards5.css
+index.html      -->  scrumcards5.html
+index.manifest  -->  scrumcards5.manifest
+
+./
+./scrumcards5.js
+./scrumcards5.css
+./scrumcards5.html
+./scrumcards5.manifest
