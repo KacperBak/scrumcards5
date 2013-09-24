@@ -1,11 +1,15 @@
-echo "--- JS aggregation ---"
-
-JS_OUTPUT=scrumcards5.js
-
+echo "--- OUT creation      ---"
 #clear
-rm -rf $JS_OUTPUT
+rm -rf out/
 
 #create
+mkdir out
+
+echo "--- JS aggregation    ---"
+# var
+JS_OUTPUT=./out/scrumcards5.js
+
+#create file
 touch $JS_OUTPUT
 
 # aggregate - LIB files (order is extreme important --> no loop)
@@ -36,4 +40,82 @@ do
     echo "\n" >> $JS_OUTPUT
 done
 
+echo "--- CSS aggregation   ---"
 
+# var
+CSS_OUTPUT=./out/scrumcards5.css
+
+# create file
+touch $CSS_OUTPUT
+
+#var
+CSS_FILES=../*.css
+
+for f in $CSS_FILES
+do
+    cat $f >> $CSS_OUTPUT
+    echo "\n" >> $CSS_OUTPUT
+done
+
+echo "--- STATIC FILES copy ---"
+
+#html
+cp ../scrumcards5.html out/
+
+#font
+cp ../sc5Font.dev.svg out/
+cp ../sc5Font.eot out/
+cp ../sc5Font.svg out/
+cp ../sc5Font.ttf out/
+cp ../sc5Font.woff out/
+
+#png
+cp ../apple-touch-icon-precomposed.png out/
+cp ../favicon.png out/
+cp ../glyphicons-halflings.png out/
+cp ../glyphicons-halflings-white.png out/
+
+echo "--- MANIFEST creation ---"
+#change dir
+cd out/
+
+#var
+MANIFEST_OUTPUT=scrumcards5.manifest
+
+#create file
+touch $MANIFEST_OUTPUT
+
+#var
+MANIFEST_FILES=*
+
+#write head
+echo "CACHE MANIFEST" >> $MANIFEST_OUTPUT
+
+#write date
+#echo "#" >> date >> $MANIFEST_OUTPUT
+
+#traverse all files
+for f in $MANIFEST_FILES
+do
+    echo $f >> $MANIFEST_OUTPUT
+done
+
+#write end
+echo "NETWORK:" >> $MANIFEST_OUTPUT
+echo "*" >> $MANIFEST_OUTPUT
+
+echo "--- COMPRESSED dir    ---"
+cd ..
+rm -rf compressed/
+mkdir compressed
+cp -R out/ compressed/
+rm -rf compressed/scrumcards5.js
+rm -rf compressed/scrumcards5.css
+
+
+
+echo "--- JS  compress GCC  ---"
+java -jar compiler.jar --js out/scrumcards5.js --js_output_file compressed/scrumcards5.js
+# java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --js out/scrumcards5.js --js_output_file compressed/scrumcards5.js
+
+echo "--- CSS compress YUI  ---"
