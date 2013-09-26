@@ -15,6 +15,7 @@ workspace
 .springBeans
 .gitconfig
 .settings/
+compressed/
 target/
 overlays/
 build/

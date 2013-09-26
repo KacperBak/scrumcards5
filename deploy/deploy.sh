@@ -113,9 +113,13 @@ rm -rf compressed/scrumcards5.js
 rm -rf compressed/scrumcards5.css
 
 
-
 echo "--- JS  compress GCC  ---"
+# 164341 Byte
 java -jar compiler.jar --js out/scrumcards5.js --js_output_file compressed/scrumcards5.js
 # java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --js out/scrumcards5.js --js_output_file compressed/scrumcards5.js
 
 echo "--- CSS compress YUI  ---"
+# 166504 Byte
+# java -jar yuicompressor-2.4.8.jar out/scrumcards5.js -o compressed/scrumcards5.js --charset utf-8
+# 107588 Byte
+java -jar yuicompressor-2.4.8.jar out/scrumcards5.css -o compressed/scrumcards5.css --charset utf-8
