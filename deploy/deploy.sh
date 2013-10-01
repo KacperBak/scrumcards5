@@ -59,6 +59,9 @@ done
 
 echo "--- STATIC FILES copy ---"
 
+#webserver config
+cp ../.htaccess out/
+
 #html
 cp ../scrumcards5.html out/
 

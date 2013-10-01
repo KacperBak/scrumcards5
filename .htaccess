@@ -1,0 +1,4 @@
+AddType text/cache-manifest .manifest
+ErrorDocument 403 http://scrumcards5.com/scrumcards5.html
+ErrorDocument 404 http://scrumcards5.com/scrumcards5.html
+ErrorDocument 500 http://scrumcards5.com/scrumcards5.html
