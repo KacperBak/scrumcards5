@@ -94,8 +94,9 @@ MANIFEST_FILES=*
 #write head
 echo "CACHE MANIFEST" >> $MANIFEST_OUTPUT
 
-#write date
-#echo "#" >> date >> $MANIFEST_OUTPUT
+#write date|timestamp as a comment
+now=$(date +%s)
+echo "#$now" >> $MANIFEST_OUTPUT
 
 #traverse all files
 for f in $MANIFEST_FILES
