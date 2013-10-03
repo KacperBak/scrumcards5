@@ -7,7 +7,7 @@ mkdir out
 
 echo "--- JS aggregation    ---"
 # var
-JS_OUTPUT=./out/scrumcards5.js
+JS_OUTPUT=./out/index.js
 
 #create file
 touch $JS_OUTPUT
@@ -43,7 +43,7 @@ done
 echo "--- CSS aggregation   ---"
 
 # var
-CSS_OUTPUT=./out/scrumcards5.css
+CSS_OUTPUT=./out/index.css
 
 # create file
 touch $CSS_OUTPUT
@@ -63,7 +63,7 @@ echo "--- STATIC FILES copy ---"
 cp ../.htaccess out/
 
 #html
-cp ../scrumcards5.html out/
+cp ../index.html out/
 
 #font
 cp ../sc5Font.dev.svg out/
@@ -83,7 +83,7 @@ echo "--- MANIFEST creation ---"
 cd out/
 
 #var
-MANIFEST_OUTPUT=scrumcards5.manifest
+MANIFEST_OUTPUT=index.manifest
 
 #create file
 touch $MANIFEST_OUTPUT
@@ -113,17 +113,17 @@ cd ..
 rm -rf compressed/
 mkdir compressed
 cp -R out/ compressed/
-rm -rf compressed/scrumcards5.js
-rm -rf compressed/scrumcards5.css
+rm -rf compressed/index.js
+rm -rf compressed/index.css
 
 
 echo "--- JS  compress GCC  ---"
 # 164341 Byte
-java -jar compiler.jar --js out/scrumcards5.js --js_output_file compressed/scrumcards5.js
-# java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --js out/scrumcards5.js --js_output_file compressed/scrumcards5.js
+java -jar compiler.jar --js out/index.js --js_output_file compressed/index.js
+# java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --js out/index.js --js_output_file compressed/index.js
 
 echo "--- CSS compress YUI  ---"
 # 166504 Byte
-# java -jar yuicompressor-2.4.8.jar out/scrumcards5.js -o compressed/scrumcards5.js --charset utf-8
+# java -jar yuicompressor-2.4.8.jar out/index.js -o compressed/index.js --charset utf-8
 # 107588 Byte
-java -jar yuicompressor-2.4.8.jar out/scrumcards5.css -o compressed/scrumcards5.css --charset utf-8
+java -jar yuicompressor-2.4.8.jar out/index.css -o compressed/index.css --charset utf-8
