@@ -112,7 +112,7 @@ echo "--- COMPRESSED dir    ---"
 cd ..
 rm -rf compressed/
 mkdir compressed
-cp -R out/ compressed/
+cp -r out/. compressed/
 rm -rf compressed/index.js
 rm -rf compressed/index.css
 
