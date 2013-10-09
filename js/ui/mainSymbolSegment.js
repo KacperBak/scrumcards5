@@ -25,13 +25,13 @@ var isAfterSelectVisible = false;
 
 var displayAfterSelect = function(){
     if(isAfterSelectVisible){
-        $("#afterSelectSegment").hide();
+        $("#mainSymbolSegment").hide();
         $("#settingsSegment").show();
         isAfterSelectVisible = false;
     }else{
         updateUiBasedOnLocalStorage();
         $("#settingsSegment").hide();
-        $("#afterSelectSegment").show();
+        $("#mainSymbolSegment").show();
         isAfterSelectVisible = true;
     }
 }
@@ -70,5 +70,5 @@ var updateUiBasedOnLocalStorage = function(){
  * init
  */
 var initAfterSelect = function(){
-    $("div#afterSelectSegment").hide();
+    $("div#mainSymbolSegment").hide();
 }
