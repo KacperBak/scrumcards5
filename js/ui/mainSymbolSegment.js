@@ -21,18 +21,18 @@ $( "button#smallMainSymbolOff" ).click(function() {
 /**
  * display
  */
-var isAfterSelectVisible = false;
+var isMainSymbolSegmentVisible = false;
 
-var displayAfterSelect = function(){
-    if(isAfterSelectVisible){
+var displayMainSymbolSegment = function(){
+    if(isMainSymbolSegmentVisible){
         $("#mainSymbolSegment").hide();
         $("#settingsSegment").show();
-        isAfterSelectVisible = false;
+        isMainSymbolSegmentVisible = false;
     }else{
         updateUiBasedOnLocalStorage();
         $("#settingsSegment").hide();
         $("#mainSymbolSegment").show();
-        isAfterSelectVisible = true;
+        isMainSymbolSegmentVisible = true;
     }
 }
 

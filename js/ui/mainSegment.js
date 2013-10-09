@@ -21,10 +21,10 @@ $( "button#settings" ).click(function() {
         //back from info
         displayInfo();
 
-    } else if (isSettingsVisible && isAfterSelectVisible){
+    } else if (isSettingsVisible && isMainSymbolSegmentVisible){
 
         //back from afterSelect
-        displayAfterSelect();
+        displayMainSymbolSegment();
 
     } else {
         displaySettings();

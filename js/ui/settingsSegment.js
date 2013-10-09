@@ -10,7 +10,7 @@ $( "button#info").click(function(){
 });
 
 $( "button#afterSelect").click(function(){
-    displayAfterSelect();
+    displayMainSymbolSegment();
 });
 
 $( "button#resetApp").click(function(){
