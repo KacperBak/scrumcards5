@@ -9,7 +9,6 @@ $( "button#mainSymbolFontSizeOff" ).click(function() {
     writeToLocalStorage(LS_SMALL_MAIN_SYMBOL, false);
 });
 
-
 /**
  * display
  */
@@ -21,27 +20,16 @@ var displayMainSymbolFontSizeSegment = function(){
         $("#mainSymbolSegment").show();
         isMainSymbolFontSizeSegmentVisible = false;
     }else{
-        updateUiBasedOnLocalStorage();
+        updateUiBasedOnLocalStorage(isMainSymbolSmall(), "button#mainSymbolFontSizeOn", "button#mainSymbolFontSizeOff" );
         $("#mainSymbolSegment").hide();
         $("#mainSymbolFontSizeSegment").show();
         isMainSymbolFontSizeSegmentVisible = true;
     }
 }
 
-var updateUiBasedOnLocalStorage = function(){
-    if(isMainSymbolSmall()){
-        setActive(   "button#mainSymbolFontSizeOn"  );
-        setInactive( "button#mainSymbolFontSizeOff" );
-    }else{
-        setActive(   "button#mainSymbolFontSizeOff" );
-        setInactive( "button#mainSymbolFontSizeOn"  );
-    }
-}
 /*
  * app logic
  */
-
-
 
 /**
  * init

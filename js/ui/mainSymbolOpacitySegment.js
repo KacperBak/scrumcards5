@@ -21,27 +21,16 @@ var displayMainSymbolOpacitySegment = function(){
         $("#mainSymbolSegment").show();
         isMainSymbolOpacitySegmentVisible = false;
     }else{
-        updateUiBasedOnLocalStorage();
+        updateUiBasedOnLocalStorage(isMainSymbolVisible(), "button#mainSymbolOpacityOn", "button#mainSymbolOpacityOff");
         $("#mainSymbolSegment").hide();
         $("#mainSymbolOpacitySegment").show();
         isMainSymbolOpacitySegmentVisible = true;
     }
 }
 
-var updateUiBasedOnLocalStorage = function(){
-    if(isMainSymbolVisible()){
-        setActive(   "button#mainSymbolOpacityOn"  );
-        setInactive( "button#mainSymbolOpacityOff" );
-    }else{
-        setActive(   "button#mainSymbolOpacityOff" );
-        setInactive( "button#mainSymbolOpacityOn"  );
-    }
-}
 /*
  * app logic
  */
-
-
 
 /**
  * init
