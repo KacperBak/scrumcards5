@@ -9,7 +9,7 @@ $( "button#info").click(function(){
     displayInfo();
 });
 
-$( "button#afterSelect").click(function(){
+$( "button#mainSymbol").click(function(){
     displayMainSymbolSegment();
 });
 

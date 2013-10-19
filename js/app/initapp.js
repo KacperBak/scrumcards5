@@ -8,7 +8,8 @@ var initSc5 = function(){
     initScrumPointsSegment();
     initSpecialCharsSegment();
     initInfoSegment();
-    initAfterSelect();
+    initMainSymbolSegment();
+    initMainSymbolFontSizeSegment();
     initSettingsSegment();
     initThemesSegment();
     resizeElementDimensions(getMainSymbolFontSize());

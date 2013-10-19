@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "--- OUT creation      ---"
 #clear
 rm -rf out/

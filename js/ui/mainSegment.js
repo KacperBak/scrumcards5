@@ -21,12 +21,17 @@ $( "button#settings" ).click(function() {
         //back from info
         displayInfo();
 
+    } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolFontSizeSegmentVisible) {
+
+        //back from mainSymbolFontSizeSegment
+        displayMainSymbolFontSizeSegment();
+
     } else if (isSettingsVisible && isMainSymbolSegmentVisible){
 
-        //back from afterSelect
+        //back from mainSymbolSegment
         displayMainSymbolSegment();
 
-    } else {
+    }  else {
         displaySettings();
     }
 });

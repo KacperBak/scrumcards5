@@ -66,7 +66,7 @@
         <!-- settings menu -->
         <div id="settingsSegment">
             <div class="row-fluid"><div class="span12"><button id="themes" class="btn btn-large btn-block" type="button">Themes</button></div></div>
-            <div class="row-fluid"><div class="span12"><button id="afterSelect" class="btn btn-large btn-block" type="button">Main symbol</button></div></div>
+            <div class="row-fluid"><div class="span12"><button id="mainSymbol" class="btn btn-large btn-block" type="button">Main symbol</button></div></div>
             <div class="row-fluid"><div class="span12"><button id="info" class="btn btn-large btn-block" type="button">App info</button></div></div>
             <div class="row-fluid"><div class="span12"><button id="resetApp" class="btn btn-large btn-block" type="button">App reset</button></div></div>
         </div>
@@ -79,6 +79,33 @@
             <div class="row-fluid"><div class="span12"><button id="themeGreen" class="btn btn-large btn-block" type="button">GREEN</button></div></div>
             <div class="row-fluid"><div class="span12"><button id="themeYellow" class="btn btn-large btn-block" type="button">YELLOW</button></div></div>
         </div>
+
+        <!-- mainSymbolSegment menu -->
+        <div id="mainSymbolSegment">
+            <div class="row-fluid"><div class="span12"><button id="mainSymbolFontSize" class="btn btn-large btn-block" type="button">Font size</button></div></div>
+            <div class="row-fluid"><div class="span12"><button id="mainSymbolOpacity" class="btn btn-large btn-block" type="button">Opacity</button></div></div>
+        </div>
+
+        <!-- mainSymbolFontSize menu -->
+        <div id="mainSymbolFontSizeSegment" class="row-fluid" data-toggle="buttons-radio">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h4 class="settingsContent">In small font size</h4>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span12">
+                    <p class="settingsContent">After a symbol has been changed, it appears as a <strong>small</strong> figure in the main of the screen.</p>
+                </div>
+            </div>
+
+            <div class="row-fluid" data-toggle="buttons-radio">
+                <div class="span6"><button id="smallMainSymbolOn" class="btn btn-large btn-block" type="button">On</button></div>
+                <div class="span6"><button id="smallMainSymbolOff" class="btn btn-large btn-block" type="button">Off</button></div>
+            </div>
+        </div>
+
 
         <!-- info menu -->
         <div id="infoSegment" class="row-fluid">
@@ -105,45 +132,6 @@
             </div>
 
         </div>
-
-        <!-- afterSelect menu -->
-        <div id="mainSymbolSegment" class="row-fluid" data-toggle="buttons-radio">
-
-            <div class="row-fluid">
-                <div class="span12">
-                    <h4 class="afterSelectContent">Is visible</h4>
-                </div>
-            </div>
-
-            <div class="row-fluid">
-                <div class="span12">
-                    <p class="afterSelectContent">After a symbol has been changed, it appears in a <strong>contrast</strong> colored version in the main of the screen.</p>
-                </div>
-            </div>
-
-            <div class="row-fluid" data-toggle="buttons-radio">
-                <div class="span6"><button id="visibleMainSymbolOn" class="btn btn-large btn-block" type="button">On</button></div>
-                <div class="span6"><button id="visibleMainSymbolOff" class="btn btn-large btn-block" type="button">Off</button></div>
-            </div>
-
-            <div class="row-fluid">
-                <div class="span12">
-                    <h4 class="afterSelectContent">In small font size</h4>
-                </div>
-            </div>
-
-            <div class="row-fluid">
-                <div class="span12">
-                    <p class="afterSelectContent">After a symbol has been changed, it appears as a <strong>small</strong> figure in the main of the screen.</p>
-                </div>
-            </div>
-
-            <div class="row-fluid" data-toggle="buttons-radio">
-                <div class="span6"><button id="smallMainSymbolOn" class="btn btn-large btn-block" type="button">On</button></div>
-                <div class="span6"><button id="smallMainSymbolOff" class="btn btn-large btn-block" type="button">Off</button></div>
-            </div>
-        </div>
-
 
         <!-- main scrum value -->
         <div id="mainSegment">
@@ -194,11 +182,13 @@
     <script src="js/app/localStorage.js"></script>
     <script src="js/app/debug.js"></script>
 
+    <script src="js/ui/generalUi.js"></script>
     <script src="js/ui/mainSegment.js"></script>
     <script src="js/ui/specialCharsSegment.js"></script>
     <script src="js/ui/scrumPointsSegment.js"></script>
     <script src="js/ui/infoSegment.js"></script>
     <script src="js/ui/mainSymbolSegment.js"></script>
+    <script src="js/ui/mainSymbolFontSizeSegment.js"></script>
     <script src="js/ui/settingsSegment.js"></script>
     <script src="js/ui/themesSegment.js"></script>
 
