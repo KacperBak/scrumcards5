@@ -6,7 +6,7 @@ $("button#mainSymbolFontSize").click( function(){
 });
 
 $("button#mainSymbolOpacity").click( function(){
-   //TODO implement callback
+   displayMainSymbolOpacitySegment();
 });
 
 /**

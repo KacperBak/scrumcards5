@@ -26,6 +26,11 @@ $( "button#settings" ).click(function() {
         //back from mainSymbolFontSizeSegment
         displayMainSymbolFontSizeSegment();
 
+    } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolOpacitySegmentVisible) {
+
+        //back from mainSymbolFontSizeSegment
+        displayMainSymbolOpacitySegment();
+
     } else if (isSettingsVisible && isMainSymbolSegmentVisible){
 
         //back from mainSymbolSegment

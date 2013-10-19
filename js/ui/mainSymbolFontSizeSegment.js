@@ -1,11 +1,11 @@
 /**
  * handler
  */
-$( "button#smallMainSymbolOn" ).click(function() {
+$( "button#mainSymbolFontSizeOn" ).click(function() {
     writeToLocalStorage(LS_SMALL_MAIN_SYMBOL, true);
 });
 
-$( "button#smallMainSymbolOff" ).click(function() {
+$( "button#mainSymbolFontSizeOff" ).click(function() {
     writeToLocalStorage(LS_SMALL_MAIN_SYMBOL, false);
 });
 
@@ -30,11 +30,11 @@ var displayMainSymbolFontSizeSegment = function(){
 
 var updateUiBasedOnLocalStorage = function(){
     if(isMainSymbolSmall()){
-        setActive(   "button#smallMainSymbolOn"  );
-        setInactive( "button#smallMainSymbolOff" );
+        setActive(   "button#mainSymbolFontSizeOn"  );
+        setInactive( "button#mainSymbolFontSizeOff" );
     }else{
-        setActive(   "button#smallMainSymbolOff" );
-        setInactive( "button#smallMainSymbolOn"  );
+        setActive(   "button#mainSymbolFontSizeOff" );
+        setInactive( "button#mainSymbolFontSizeOn"  );
     }
 }
 /*
