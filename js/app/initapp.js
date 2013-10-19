@@ -13,12 +13,12 @@ var initSc5 = function(){
     initMainSymbolOpacitySegment();
     initSettingsSegment();
     initThemesSegment();
-    resizeElementDimensions(getMainSymbolFontSize());
+    resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeight());
 }
 
 /**
  * Handle window resize
  */
 window.addEventListener("resize", function() {
-    resizeElementDimensions(getMainSymbolFontSize());
+    resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeight());
 }, false);

@@ -1,9 +1,7 @@
 
 var PX_240 = 240;
 
-var getWindowHeight = function(){
-    return $(window).height();
-}
+var HEADER_AND_FOOTER_HEIGHT = 90;
 
 /**
  * some voodoo composed math
@@ -12,13 +10,6 @@ var calcMostFittingFontSize = function(height, basis, divisor){
     var pxDelta = height - PX_240;
     var emFactor = basis / PX_240;
     return (pxDelta * emFactor + basis) / divisor;
-}
-
-/**
- * content = window - header - footer; (in px)
- */
-var calcHeight = function(windowHeight){
-    return windowHeight - 90;
 }
 
 /**
@@ -38,10 +29,27 @@ var setScrumRowsRatioValues = function(height, fontSize){
     $('.selectValue').css('font-size', fontSize + "em");
 }
 
-var resizeElementDimensions = function(fontSizeFactor){
+/**
+ * content = window - header - footer; (in px)
+ */
+var getMainContentHeight = function(){
+    return getWindowDeviceHeight() - HEADER_AND_FOOTER_HEIGHT;
+}
+
+var getMainContentHeightForSettings = function(segmentHeight){
+    return getWindowDeviceHeight() - segmentHeight -  HEADER_AND_FOOTER_HEIGHT;
+}
+
+/**
+ * Absolut heigt of device
+ */
+var getWindowDeviceHeight = function(){
+    return $(window).height();
+}
+
+var resizeElementDimensions = function(fontSizeFactor, mainContentHeight){
     //main content
-    var actualHeight = getWindowHeight();
-    var mainContentHeight = calcHeight(actualHeight);
+    var actualHeight = getWindowDeviceHeight();
     var mainContentFontSize = calcMostFittingFontSize(actualHeight, 5500, 1000);
     setMainContentRatioValues(mainContentHeight, mainContentFontSize * fontSizeFactor, mainContentHeight);
 
