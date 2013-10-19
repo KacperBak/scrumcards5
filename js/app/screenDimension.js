@@ -53,7 +53,7 @@ var resizeElementDimensions = function(fontSizeFactor){
 }
 
 var getMainSymbolFontSize = function(){
-    var smallFontSize    = getSmallFontSizeInitFactor();
+    var smallFontSize    = getCustomFontSizeInitFactor();
     var normaFontSize    = getNormalFontSizeInitFactor();
     var result = normaFontSize;
 

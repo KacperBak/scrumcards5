@@ -4,7 +4,7 @@
 var LS_VISIBLE_MAIN_SYMBOL                      = "LS_VISIBLE_MAIN_SYMBOL";
 var LS_SMALL_MAIN_SYMBOL                        = "LS_SMALL_MAIN_SYMBOL";
 
-var LS_SMALL_FONT_SIZE_INIT_FACTOR   = "LS_SMALL_FONT_SIZE_INIT_FACTOR";        // 0.5
+var LS_CUSTOM_FONT_SIZE_INIT_FACTOR   = "LS_CUSTOM_FONT_SIZE_INIT_FACTOR";        // 0.5
 var LS_NORMAL_FONT_SIZE_INIT_FACTOR  = "LS_NORMAL_FONT_SIZE_INIT_FACTOR";       // 1.0
 
 var LS_COLOR_INDEX = "LS_COLOR_INDEX";  // 0
@@ -97,8 +97,8 @@ var isMainSymbolSmall = function(){
     return readFromLocalStorage(LS_SMALL_MAIN_SYMBOL, TYPE_BOOLEAN);
 }
 
-var getSmallFontSizeInitFactor = function(){
-    return readFromLocalStorage(LS_SMALL_FONT_SIZE_INIT_FACTOR , TYPE_FLOAT);
+var getCustomFontSizeInitFactor = function(){
+    return readFromLocalStorage(LS_CUSTOM_FONT_SIZE_INIT_FACTOR , TYPE_FLOAT);
 }
 
 var getNormalFontSizeInitFactor = function(){
@@ -127,14 +127,14 @@ var initLocalStorage = function(){
 }
 
 var notInitialized = function(){
-    return isMainSymbolSmall() === null || isMainSymbolVisible() === null || getSmallFontSizeInitFactor() === null || getNormalFontSizeInitFactor() === null || getColorIndexFromLocalStorage() === null;
+    return isMainSymbolSmall() === null || isMainSymbolVisible() === null || getCustomFontSizeInitFactor() === null || getNormalFontSizeInitFactor() === null || getColorIndexFromLocalStorage() === null;
 }
 
 var setLocalStorageDefaultValues = function(){
     clearLocalStorage();
     writeToLocalStorage(LS_VISIBLE_MAIN_SYMBOL,             "true");
     writeToLocalStorage(LS_SMALL_MAIN_SYMBOL,               "false");
-    writeToLocalStorage(LS_SMALL_FONT_SIZE_INIT_FACTOR,     "0.5");
+    writeToLocalStorage(LS_CUSTOM_FONT_SIZE_INIT_FACTOR,     "0.5");
     writeToLocalStorage(LS_NORMAL_FONT_SIZE_INIT_FACTOR,    "1.0");
     writeToLocalStorage(LS_COLOR_INDEX,                     "0");
     console.log(MESSAGE_TYPE_INFO + " - LocalStorageDefaultValues has been set.");
@@ -147,7 +147,7 @@ var setLocalStorageDefaultValues = function(){
 var getStorgeState = function(){
     console.log(LS_VISIBLE_MAIN_SYMBOL                      + " : " + isMainSymbolVisible());
     console.log(LS_SMALL_MAIN_SYMBOL                        + " : " + isMainSymbolSmall());
-    console.log(LS_SMALL_FONT_SIZE_INIT_FACTOR              + " : " + getSmallFontSizeInitFactor());
+    console.log(LS_CUSTOM_FONT_SIZE_INIT_FACTOR             + " : " + getCustomFontSizeInitFactor());
     console.log(LS_NORMAL_FONT_SIZE_INIT_FACTOR             + " : " + getNormalFontSizeInitFactor());
     console.log(LS_COLOR_INDEX                              + " : " + getColorIndexFromLocalStorage());
 }
