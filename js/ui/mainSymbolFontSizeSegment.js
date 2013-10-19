@@ -11,6 +11,18 @@ $( "button#mainSymbolFontSizeOff" ).click(function() {
     updateMainSymbol();
 });
 
+$( "button#mainSymbolFontSizeMinus" ).click(function() {
+    decreaseCustomFontSize();
+    setCustomizedFontSizeValueToUi(getCustomFontSizeFactor());
+    updateMainSymbol();
+});
+
+$( "button#mainSymbolFontSizePlus" ).click(function() {
+    increaseCustomFontSize();
+    setCustomizedFontSizeValueToUi(getCustomFontSizeFactor());
+    updateMainSymbol();
+});
+
 /**
  * display
  */
@@ -31,6 +43,7 @@ var displayMainSymbolFontSizeSegment = function(){
 
         $("div#mainSegment").show();
         updateMainSymbol();
+        setCustomizedFontSizeValueToUi(getCustomFontSizeFactor());
     }
 }
 
@@ -40,9 +53,29 @@ var updateMainSymbol = function(){
     resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeightForSettings(segmentHeight));
 }
 
+var setCustomizedFontSizeValueToUi = function(customizedValue){
+    var child = "span#customizedFontSizeValue";
+    var parent = "h4#customizedFontSizeParent";
+    var replaceFragment = $('<span id="customizedFontSizeValue">Customized font size: '+ customizedValue +'</span>');
+    replaceContent(parent, child, replaceFragment);
+}
 /*
  * app logic
  */
+var increaseCustomFontSize = function(){
+    var currentFontSize = getCustomFontSizeFactor();
+    currentFontSize = currentFontSize + 0.1;
+    setCustomFontSizeFactor(currentFontSize);
+}
+
+var decreaseCustomFontSize = function(){
+    var currentFontSize = getCustomFontSizeFactor();
+    currentFontSize = currentFontSize - 0.1;
+    if(currentFontSize > 0){
+        setCustomFontSizeFactor(currentFontSize);
+    }
+}
+
 
 /**
  * init

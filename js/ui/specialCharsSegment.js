@@ -81,7 +81,7 @@ var setSpecialCharacterBasedOnIndex = function(i){
 }
 
 var replaceSpecialCharacterValue = function(scValue){
-    replaceMainContent($( '<div id="mainContent" class="span12 text-center large-figure" data-icon="'+ scValue +'"></div>'));
+    replaceMainContent( mainContentParent, mainContentChild, $( '<div id="mainContent" class="span12 text-center large-figure" data-icon="'+ scValue +'"></div>'));
     switchLargeFigureColor(isControlButtonsVisible);
 }
 

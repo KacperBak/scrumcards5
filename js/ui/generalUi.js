@@ -1,3 +1,8 @@
+/**
+ * consts
+ */
+var mainContentParent = "div#mainSegment";
+var mainContentChild = "div#mainContent";
 
 /*
  * toggle button pressed CSS style
@@ -18,4 +23,9 @@ var updateUiBasedOnLocalStorage = function(visibleState, onSelector, offSelector
         setActive(offSelector);
         setInactive(onSelector);
     }
+}
+
+var replaceContent = function(parent, child, replaceFragment){
+    $(child).remove();
+    $(parent).append(replaceFragment);
 }

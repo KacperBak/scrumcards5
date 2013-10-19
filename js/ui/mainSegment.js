@@ -81,17 +81,16 @@ var toggleButtonsVisible = function(){
 }
 
 var replaceScrumValue = function(scrumCardValue){
-    replaceMainContent($( '<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>'));
+    replaceMainContent( mainContentParent, mainContentChild, $( '<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>'));
     switchLargeFigureColor(isControlButtonsVisible);
 }
 
 var setAppIcon = function (){
     var replaceFragment = $('<div id="mainContent" class="span12 text-center large-figure" data-icon="&#xe00e;"></div>');
-    replaceMainContent(replaceFragment);
+    replaceMainContent(mainContentParent, mainContentChild ,replaceFragment);
 }
 
-var replaceMainContent = function(replaceFragment){
-    $("div#mainContent").remove();
-    $("div#mainSegment").append(replaceFragment);
+var replaceMainContent = function(parent, child, replaceFragment){
+    replaceContent(parent, child, replaceFragment);
     resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeight());
 }
