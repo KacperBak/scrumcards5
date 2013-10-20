@@ -1,15 +1,15 @@
 /**
  * handler
  */
-$( "button#specialChars" ).click(function() {
+$("button#specialChars").click(function() {
     displaySpecialChars();
 });
 
-$( "button#fullscreen" ).click(function() {
+$("button#fullscreen").click(function() {
     toggleButtonsVisible();
 });
 
-$( "button#settings" ).click(function() {
+$("button#settings").click(function() {
 
     if( isSettingsVisible && isThemesVisible){
 
@@ -41,19 +41,21 @@ $( "button#settings" ).click(function() {
     }
 });
 
-$( "div#mainSegment" ).click(function() {
-    toggleButtonsVisible();
+$("div#mainSegment").click(function() {
+    if(!isControlButtonsVisible){
+        toggleButtonsVisible();
+    }
 });
 
-$( "button#minus" ).click(function() {
+$("button#minus").click(function() {
     replaceScrumValueByPlusOrMinus(lastScrumValue());
 });
 
-$( "button#scrumPoints").click(function(){
+$("button#scrumPoints").click(function(){
     displayScrumPoints();
 });
 
-$( "button#plus" ).click(function() {
+$("button#plus").click(function() {
     replaceScrumValueByPlusOrMinus(nextScrumValue());
 });
 
@@ -81,7 +83,7 @@ var toggleButtonsVisible = function(){
 }
 
 var replaceScrumValue = function(scrumCardValue){
-    replaceMainContent( mainContentParent, mainContentChild, $( '<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>'));
+    replaceMainContent( mainContentParent, mainContentChild, $('<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>'));
     switchLargeFigureColor(isControlButtonsVisible);
 }
 

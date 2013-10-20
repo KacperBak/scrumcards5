@@ -1,23 +1,23 @@
 /**
  * handler
  */
-$( "button#mainSymbolFontSizeOn" ).click(function() {
+$("button#mainSymbolFontSizeOn").click(function() {
     writeToLocalStorage(LS_SMALL_MAIN_SYMBOL, true);
     updateMainSymbol();
 });
 
-$( "button#mainSymbolFontSizeOff" ).click(function() {
+$("button#mainSymbolFontSizeOff").click(function() {
     writeToLocalStorage(LS_SMALL_MAIN_SYMBOL, false);
     updateMainSymbol();
 });
 
-$( "button#mainSymbolFontSizeMinus" ).click(function() {
+$("button#mainSymbolFontSizeMinus").click(function() {
     decreaseCustomFontSize();
     setCustomizedFontSizeValueToUi(getCustomFontSizeFactor());
     updateMainSymbol();
 });
 
-$( "button#mainSymbolFontSizePlus" ).click(function() {
+$("button#mainSymbolFontSizePlus").click(function() {
     increaseCustomFontSize();
     setCustomizedFontSizeValueToUi(getCustomFontSizeFactor());
     updateMainSymbol();
