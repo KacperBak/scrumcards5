@@ -2,7 +2,7 @@
  * handler
  */
 $("button#mainSymbolFontSize").click( function(){
-    displayMainSymbolFontSizeSegment();
+    displayMainSymbolPreviewFontSizeSegment();
 });
 
 $("button#mainSymbolOpacity").click( function(){

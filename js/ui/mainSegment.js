@@ -21,10 +21,10 @@ $("button#settings").click(function() {
         //back from info
         displayInfo();
 
-    } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolFontSizeSegmentVisible) {
+    } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolPreviewFontSizeSegmentVisible) {
 
         //back from mainSymbolFontSizeSegment
-        displayMainSymbolFontSizeSegment();
+        displayMainSymbolPreviewFontSizeSegment();
 
     } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolOpacitySegmentVisible) {
 

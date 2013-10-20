@@ -9,7 +9,7 @@ var initSc5 = function(){
     initSpecialCharsSegment();
     initInfoSegment();
     initMainSymbolSegment();
-    initMainSymbolFontSizeSegment();
+    initMainSymbolPreviewFontSizeSegment();
     initMainSymbolOpacitySegment();
     initSettingsSegment();
     initThemesSegment();

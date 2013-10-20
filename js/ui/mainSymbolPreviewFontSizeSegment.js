@@ -1,23 +1,23 @@
 /**
  * handler
  */
-$("button#mainSymbolFontSizeOn").click(function() {
+$("button#mainSymbolPreviewFontSizeOn").click(function() {
     writeToLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL, true);
     updateMainSymbol();
 });
 
-$("button#mainSymbolFontSizeOff").click(function() {
+$("button#mainSymbolPreviewFontSizeOff").click(function() {
     writeToLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL, false);
     updateMainSymbol();
 });
 
-$("button#mainSymbolFontSizeMinus").click(function() {
+$("button#mainSymbolPreviewFontSizeMinus").click(function() {
     decreaseCustomFontSize();
     setCustomizedFontSizeValueToUi(getPreviewFontSizeFactor());
     updateMainSymbol();
 });
 
-$("button#mainSymbolFontSizePlus").click(function() {
+$("button#mainSymbolPreviewFontSizePlus").click(function() {
     increaseCustomFontSize();
     setCustomizedFontSizeValueToUi(getPreviewFontSizeFactor());
     updateMainSymbol();
@@ -26,25 +26,25 @@ $("button#mainSymbolFontSizePlus").click(function() {
 /**
  * display
  */
-var isMainSymbolFontSizeSegmentVisible = false;
+var isMainSymbolPreviewFontSizeSegmentVisible = false;
 
-var displayMainSymbolFontSizeSegment = function(){
-    if(isMainSymbolFontSizeSegmentVisible){
+var displayMainSymbolPreviewFontSizeSegment = function(){
+    if(isMainSymbolPreviewFontSizeSegmentVisible){
 
-        //fontSizeSegment
-        $("#mainSymbolFontSizeSegment").hide();
+        //previewFontSizeSegment
+        $("#mainSymbolPreviewFontSizeSegment").hide();
         $("#mainSymbolSegment").show();
-        isMainSymbolFontSizeSegmentVisible = false;
+        isMainSymbolPreviewFontSizeSegmentVisible = false;
 
         //mainSegment
         $("div#mainSegment").hide();
     }else{
 
-        //fontSizeSegment
-        updateUiBasedOnLocalStorage(isPreviewOverrideActive(), "button#mainSymbolFontSizeOn", "button#mainSymbolFontSizeOff" );
+        //previewFontSizeSegment
+        updateUiBasedOnLocalStorage(isPreviewOverrideActive(), "button#mainSymbolPreviewFontSizeOn", "button#mainSymbolPreviewFontSizeOff" );
         $("#mainSymbolSegment").hide();
-        $("#mainSymbolFontSizeSegment").show();
-        isMainSymbolFontSizeSegmentVisible = true;
+        $("#mainSymbolPreviewFontSizeSegment").show();
+        isMainSymbolPreviewFontSizeSegmentVisible = true;
 
         //mainSegment
         $("div#mainSegment").show();
@@ -55,7 +55,7 @@ var displayMainSymbolFontSizeSegment = function(){
 
 var updateMainSymbol = function(){
     setVisibleMainSymbol();
-    var segmentHeight = $("#mainSymbolFontSizeSegment").outerHeight(true);
+    var segmentHeight = $("#mainSymbolPreviewFontSizeSegment").outerHeight(true);
     resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeightForSettings(segmentHeight));
 }
 
@@ -86,6 +86,6 @@ var decreaseCustomFontSize = function(){
 /**
  * init
  */
-var initMainSymbolFontSizeSegment = function(){
-    $("div#mainSymbolFontSizeSegment").hide();
+var initMainSymbolPreviewFontSizeSegment = function(){
+    $("div#mainSymbolPreviewFontSizeSegment").hide();
 }
