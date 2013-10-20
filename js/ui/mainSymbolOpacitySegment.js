@@ -2,11 +2,11 @@
  * handler
  */
 $( "button#mainSymbolOpacityOn" ).click(function() {
-    writeToLocalStorage(LS_VISIBLE_MAIN_SYMBOL, true);
+    writeToLocalStorage(LS_OVERRIDE_OPACITY_MAIN_SYMBOL, true);
 });
 
 $( "button#mainSymbolOpacityOff" ).click(function() {
-    writeToLocalStorage(LS_VISIBLE_MAIN_SYMBOL, false);
+    writeToLocalStorage(LS_OVERRIDE_OPACITY_MAIN_SYMBOL, false);
 });
 
 
@@ -21,7 +21,7 @@ var displayMainSymbolOpacitySegment = function(){
         $("#mainSymbolSegment").show();
         isMainSymbolOpacitySegmentVisible = false;
     }else{
-        updateUiBasedOnLocalStorage(isMainSymbolVisible(), "button#mainSymbolOpacityOn", "button#mainSymbolOpacityOff");
+        updateUiBasedOnLocalStorage(isOpacityOverrideActive(), "button#mainSymbolOpacityOn", "button#mainSymbolOpacityOff");
         $("#mainSymbolSegment").hide();
         $("#mainSymbolOpacitySegment").show();
         isMainSymbolOpacitySegmentVisible = true;

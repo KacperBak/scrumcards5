@@ -2,24 +2,24 @@
  * handler
  */
 $("button#mainSymbolFontSizeOn").click(function() {
-    writeToLocalStorage(LS_SMALL_MAIN_SYMBOL, true);
+    writeToLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL, true);
     updateMainSymbol();
 });
 
 $("button#mainSymbolFontSizeOff").click(function() {
-    writeToLocalStorage(LS_SMALL_MAIN_SYMBOL, false);
+    writeToLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL, false);
     updateMainSymbol();
 });
 
 $("button#mainSymbolFontSizeMinus").click(function() {
     decreaseCustomFontSize();
-    setCustomizedFontSizeValueToUi(getCustomFontSizeFactor());
+    setCustomizedFontSizeValueToUi(getPreviewFontSizeFactor());
     updateMainSymbol();
 });
 
 $("button#mainSymbolFontSizePlus").click(function() {
     increaseCustomFontSize();
-    setCustomizedFontSizeValueToUi(getCustomFontSizeFactor());
+    setCustomizedFontSizeValueToUi(getPreviewFontSizeFactor());
     updateMainSymbol();
 });
 
@@ -30,20 +30,26 @@ var isMainSymbolFontSizeSegmentVisible = false;
 
 var displayMainSymbolFontSizeSegment = function(){
     if(isMainSymbolFontSizeSegmentVisible){
+
+        //fontSizeSegment
         $("#mainSymbolFontSizeSegment").hide();
         $("#mainSymbolSegment").show();
         isMainSymbolFontSizeSegmentVisible = false;
 
+        //mainSegment
         $("div#mainSegment").hide();
     }else{
-        updateUiBasedOnLocalStorage(isMainSymbolSmall(), "button#mainSymbolFontSizeOn", "button#mainSymbolFontSizeOff" );
+
+        //fontSizeSegment
+        updateUiBasedOnLocalStorage(isPreviewOverrideActive(), "button#mainSymbolFontSizeOn", "button#mainSymbolFontSizeOff" );
         $("#mainSymbolSegment").hide();
         $("#mainSymbolFontSizeSegment").show();
         isMainSymbolFontSizeSegmentVisible = true;
 
+        //mainSegment
         $("div#mainSegment").show();
         updateMainSymbol();
-        setCustomizedFontSizeValueToUi(getCustomFontSizeFactor());
+        setCustomizedFontSizeValueToUi(getPreviewFontSizeFactor());
     }
 }
 
@@ -63,16 +69,16 @@ var setCustomizedFontSizeValueToUi = function(customizedValue){
  * app logic
  */
 var increaseCustomFontSize = function(){
-    var currentFontSize = getCustomFontSizeFactor();
+    var currentFontSize = getPreviewFontSizeFactor();
     currentFontSize = currentFontSize + 0.1;
-    setCustomFontSizeFactor(currentFontSize);
+    setPreviewFontSizeFactor(currentFontSize);
 }
 
 var decreaseCustomFontSize = function(){
-    var currentFontSize = getCustomFontSizeFactor();
+    var currentFontSize = getPreviewFontSizeFactor();
     currentFontSize = currentFontSize - 0.1;
     if(currentFontSize > 0){
-        setCustomFontSizeFactor(currentFontSize);
+        setPreviewFontSizeFactor(currentFontSize);
     }
 }
 

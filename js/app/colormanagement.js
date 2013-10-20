@@ -68,7 +68,7 @@ var switchLargeFigureColor = function(lightColorTrigger){
 }
 
 var setVisibleMainSymbol = function(){
-    if(isMainSymbolVisible()){
+    if(isOpacityOverrideActive()){
         $(".large-figure").css("color", getFontColorLight());
     }else{
         $(".large-figure").css("color", getMainColor());

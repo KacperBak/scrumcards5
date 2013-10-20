@@ -61,15 +61,15 @@ var resizeElementDimensions = function(fontSizeFactor, mainContentHeight){
 }
 
 var getMainSymbolFontSize = function(){
-    var smallFontSize    = getCustomFontSizeFactor();
-    var normaFontSize    = getNormalFontSizeFactor();
-    var result = normaFontSize;
+    var smallFontSize     = getPreviewFontSizeFactor();
+    var normalFontSize    = getPresentFontSizeFactor();
+    var result = normalFontSize;
 
-    if(isMainSymbolSmall()){
+    if(isPreviewOverrideActive()){
         result = smallFontSize;
     }
     if(!isControlButtonsVisible){
-        result = normaFontSize;
+        result = normalFontSize;
     }
     return result;
 }

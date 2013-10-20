@@ -1,11 +1,13 @@
 /*
  * key constants
  */
-var LS_VISIBLE_MAIN_SYMBOL                      = "LS_VISIBLE_MAIN_SYMBOL";
-var LS_SMALL_MAIN_SYMBOL                        = "LS_SMALL_MAIN_SYMBOL";
+var LS_OVERRIDE_OPACITY_MAIN_SYMBOL                      = "LS_OVERRIDE_OPACITY_MAIN_SYMBOL";
+var LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL            = "LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL";
+var LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL            = "LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL";
 
-var LS_CUSTOM_FONT_SIZE_FACTOR   = "LS_CUSTOM_FONT_SIZE_FACTOR";        // 0.5
-var LS_NORMAL_FONT_SIZE_FACTOR   = "LS_NORMAL_FONT_SIZE_FACTOR";       // 1.0
+var LS_OPACITY_FACTOR             = "LS_OPACITY_FACTOR";                    // 1.0
+var LS_PREVIEW_FONT_SIZE_FACTOR   = "LS_PREVIEW_FONT_SIZE_FACTOR";          // 0.5
+var LS_PRESENT_FONT_SIZE_FACTOR   = "LS_PRESENT_FONT_SIZE_FACTOR";          // 1.0
 
 var LS_COLOR_INDEX = "LS_COLOR_INDEX";  // 0
 /*
@@ -89,20 +91,24 @@ var extractInteger = function(string){
 /*
  * GETTER
  */
-var isMainSymbolVisible = function(){
-    return readFromLocalStorage(LS_VISIBLE_MAIN_SYMBOL, TYPE_BOOLEAN);
+var isOpacityOverrideActive = function(){
+    return readFromLocalStorage(LS_OVERRIDE_OPACITY_MAIN_SYMBOL, TYPE_BOOLEAN);
 }
 
-var isMainSymbolSmall = function(){
-    return readFromLocalStorage(LS_SMALL_MAIN_SYMBOL, TYPE_BOOLEAN);
+var isPreviewOverrideActive = function(){
+    return readFromLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL, TYPE_BOOLEAN);
 }
 
-var getCustomFontSizeFactor = function(){
-    return readFromLocalStorage(LS_CUSTOM_FONT_SIZE_FACTOR , TYPE_FLOAT);
+var isPresentOverrideActive = function(){
+    return readFromLocalStorage(LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL, TYPE_BOOLEAN);
 }
 
-var getNormalFontSizeFactor = function(){
-    return readFromLocalStorage(LS_NORMAL_FONT_SIZE_FACTOR , TYPE_FLOAT);
+var getPreviewFontSizeFactor = function(){
+    return readFromLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR , TYPE_FLOAT);
+}
+
+var getPresentFontSizeFactor = function(){
+    return readFromLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR , TYPE_FLOAT);
 }
 
 var getColorIndexFromLocalStorage = function(){
@@ -116,8 +122,8 @@ var setColorIndexInLocalStorage = function(i){
     writeToLocalStorage(LS_COLOR_INDEX, i);
 }
 
-var setCustomFontSizeFactor = function(customizedValue){
-    writeToLocalStorage(LS_CUSTOM_FONT_SIZE_FACTOR , customizedValue);
+var setPreviewFontSizeFactor = function(factor){
+    writeToLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR , factor);
 }
 
 
@@ -131,16 +137,26 @@ var initLocalStorage = function(){
 }
 
 var notInitialized = function(){
-    return isMainSymbolSmall() === null || isMainSymbolVisible() === null || getCustomFontSizeFactor() === null || getNormalFontSizeFactor() === null || getColorIndexFromLocalStorage() === null;
+    return isPreviewOverrideActive() === null || isOpacityOverrideActive() === null || getPreviewFontSizeFactor() === null || getPresentFontSizeFactor() === null || getColorIndexFromLocalStorage() === null;
 }
 
 var setLocalStorageDefaultValues = function(){
     clearLocalStorage();
-    writeToLocalStorage(LS_VISIBLE_MAIN_SYMBOL,             "true");
-    writeToLocalStorage(LS_SMALL_MAIN_SYMBOL,               "false");
-    writeToLocalStorage(LS_CUSTOM_FONT_SIZE_FACTOR,     "0.5");
-    writeToLocalStorage(LS_NORMAL_FONT_SIZE_FACTOR,    "1.0");
-    writeToLocalStorage(LS_COLOR_INDEX,                     "0");
+
+    //overrides
+    writeToLocalStorage(LS_OVERRIDE_OPACITY_MAIN_SYMBOL,                    "true");
+    writeToLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL,          "false");
+    writeToLocalStorage(LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL,          "false");
+
+    //factors
+    writeToLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR,                        "1.0");
+    writeToLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR,                        "1.0");
+    writeToLocalStorage(LS_OPACITY_FACTOR,                                  "1.0");
+
+    //start color
+    writeToLocalStorage(LS_COLOR_INDEX,                                     "0");
+
+    //debug
     console.log(MESSAGE_TYPE_INFO + " - LocalStorageDefaultValues has been set.");
 }
 
@@ -149,10 +165,11 @@ var setLocalStorageDefaultValues = function(){
  * debug
  */
 var getStorgeState = function(){
-    console.log(LS_VISIBLE_MAIN_SYMBOL                      + " : " + isMainSymbolVisible());
-    console.log(LS_SMALL_MAIN_SYMBOL                        + " : " + isMainSymbolSmall());
-    console.log(LS_CUSTOM_FONT_SIZE_FACTOR             + " : " + getCustomFontSizeFactor());
-    console.log(LS_NORMAL_FONT_SIZE_FACTOR             + " : " + getNormalFontSizeFactor());
-    console.log(LS_COLOR_INDEX                              + " : " + getColorIndexFromLocalStorage());
+    console.log(LS_OVERRIDE_OPACITY_MAIN_SYMBOL                      + " : " + isOpacityOverrideActive());
+    console.log(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL            + " : " + isPreviewOverrideActive());
+    console.log(LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL            + " : " + isPresentOverrideActive());
+    console.log(LS_PREVIEW_FONT_SIZE_FACTOR                          + " : " + getPreviewFontSizeFactor());
+    console.log(LS_PRESENT_FONT_SIZE_FACTOR                          + " : " + getPresentFontSizeFactor());
+    console.log(LS_COLOR_INDEX                                       + " : " + getColorIndexFromLocalStorage());
 }
 
