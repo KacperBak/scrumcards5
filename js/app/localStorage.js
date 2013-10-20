@@ -111,6 +111,10 @@ var getPresentFontSizeFactor = function(){
     return readFromLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR , TYPE_FLOAT);
 }
 
+var getOpacityFactor = function(){
+    return readFromLocalStorage(LS_OPACITY_FACTOR, TYPE_FLOAT);
+}
+
 var getColorIndexFromLocalStorage = function(){
     return readFromLocalStorage(LS_COLOR_INDEX, TYPE_INTEGER);
 }
@@ -137,7 +141,13 @@ var initLocalStorage = function(){
 }
 
 var notInitialized = function(){
-    return isPreviewOverrideActive() === null || isOpacityOverrideActive() === null || getPreviewFontSizeFactor() === null || getPresentFontSizeFactor() === null || getColorIndexFromLocalStorage() === null;
+    return  isPreviewOverrideActive() === null ||
+            isPresentOverrideActive() === null ||
+            isOpacityOverrideActive() === null ||
+            getPreviewFontSizeFactor() === null ||
+            getPresentFontSizeFactor() === null ||
+            getOpacityFactor() === null ||
+            getColorIndexFromLocalStorage() === null;
 }
 
 var setLocalStorageDefaultValues = function(){
