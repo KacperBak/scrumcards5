@@ -1,8 +1,12 @@
 /**
  * handler
  */
-$("button#mainSymbolFontSize").click( function(){
+$("button#mainSymbolPreviewFontSize").click( function(){
     displayMainSymbolPreviewFontSizeSegment();
+});
+
+$("button#mainSymbolPresentFontSize").click( function(){
+    displayMainSymbolPresentFontSizeSegment();
 });
 
 $("button#mainSymbolOpacity").click( function(){

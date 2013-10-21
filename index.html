@@ -82,16 +82,17 @@
 
         <!-- mainSymbolSegment menu -->
         <div id="mainSymbolSegment">
-            <div class="row-fluid"><div class="span12"><button id="mainSymbolFontSize" class="btn btn-large btn-block" type="button">Preview Font size</button></div></div>
-            <div class="row-fluid"><div class="span12"><button id="mainSymbolOpacity" class="btn btn-large btn-block" type="button">Preview Opacity</button></div></div>
+            <div class="row-fluid"><div class="span12"><button id="mainSymbolPresentFontSize" class="btn btn-large btn-block" type="button">Presentation font size</button></div></div>
+            <div class="row-fluid"><div class="span12"><button id="mainSymbolPreviewFontSize" class="btn btn-large btn-block" type="button">Preview font size</button></div></div>
+            <div class="row-fluid"><div class="span12"><button id="mainSymbolOpacity" class="btn btn-large btn-block" type="button">Preview opacity</button></div></div>
         </div>
 
         <!-- mainSymbolPreviewFontSize menu -->
         <div id="mainSymbolPreviewFontSizeSegment" class="row-fluid">
             <div class="row-fluid">
                 <div class="span12">
-                    <h4 id="customizedFontSizeParent" class="settingsContent">
-                        <span id="customizedFontSizeValue">Font size factor: </span>
+                    <h4 id="customizedPreviewFontSizeParent" class="settingsContent">
+                        <span id="customizedPreviewFontSizeValue">Font size factor: </span>
                     </h4>
                 </div>
             </div>
@@ -99,6 +100,22 @@
             <div class="row-fluid">
                 <div class="span6"><button id="mainSymbolPreviewFontSizeMinus" class="btn btn-large btn-block" type="button"><i class="icon-minus"></i></button></div>
                 <div class="span6"><button id="mainSymbolPreviewFontSizePlus" class="btn btn-large btn-block" type="button"><i class="icon-plus"></i></button></div>
+            </div>
+        </div>
+
+        <!-- mainSymbolPresentFontSize menu -->
+        <div id="mainSymbolPresentFontSizeSegment" class="row-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h4 id="customizedPresentFontSizeParent" class="settingsContent">
+                        <span id="customizedPresentFontSizeValue">Font size factor: </span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span6"><button id="mainSymbolPresentFontSizeMinus" class="btn btn-large btn-block" type="button"><i class="icon-minus"></i></button></div>
+                <div class="span6"><button id="mainSymbolPresentFontSizePlus" class="btn btn-large btn-block" type="button"><i class="icon-plus"></i></button></div>
             </div>
         </div>
 
@@ -198,6 +215,7 @@
     <script src="js/ui/infoSegment.js"></script>
     <script src="js/ui/mainSymbolSegment.js"></script>
     <script src="js/ui/mainSymbolPreviewFontSizeSegment.js"></script>
+    <script src="js/ui/mainSymbolPresentFontSizeSegment.js"></script>
     <script src="js/ui/mainSymbolOpacitySegment.js"></script>
     <script src="js/ui/settingsSegment.js"></script>
     <script src="js/ui/themesSegment.js"></script>

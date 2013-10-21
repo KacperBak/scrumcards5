@@ -2,14 +2,14 @@
  * handler
  */
 $("button#mainSymbolPreviewFontSizeMinus").click(function() {
-    decreaseCustomFontSize();
-    setCustomizedFontSizeValueToUi(getPreviewFontSizeFactor());
+    decreasePreviewFontSize();
+    setPreviewFontSizeValueToUi(getPreviewFontSizeFactor());
     updateMainSymbol();
 });
 
 $("button#mainSymbolPreviewFontSizePlus").click(function() {
-    increaseCustomFontSize();
-    setCustomizedFontSizeValueToUi(getPreviewFontSizeFactor());
+    increasePreviewFontSize();
+    setPreviewFontSizeValueToUi(getPreviewFontSizeFactor());
     updateMainSymbol();
 });
 
@@ -38,7 +38,7 @@ var displayMainSymbolPreviewFontSizeSegment = function(){
         //mainSegment
         $("div#mainSegment").show();
         updateMainSymbol();
-        setCustomizedFontSizeValueToUi(getPreviewFontSizeFactor());
+        setPreviewFontSizeValueToUi(getPreviewFontSizeFactor());
     }
 }
 
@@ -48,29 +48,28 @@ var updateMainSymbol = function(){
     resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeightForSettings(segmentHeight));
 }
 
-var setCustomizedFontSizeValueToUi = function(customizedValue){
-    var child = "span#customizedFontSizeValue";
-    var parent = "h4#customizedFontSizeParent";
-    var replaceFragment = $('<span id="customizedFontSizeValue">Customized font size: '+ customizedValue +'</span>');
+var setPreviewFontSizeValueToUi = function(customizedValue){
+    var child = "span#customizedPreviewFontSizeValue";
+    var parent = "h4#customizedPreviewFontSizeParent";
+    var replaceFragment = $('<span id="customizedPreviewFontSizeValue">Customized font size: '+ customizedValue +'</span>');
     replaceContent(parent, child, replaceFragment);
 }
 /*
  * app logic
  */
-var increaseCustomFontSize = function(){
+var increasePreviewFontSize = function(){
     var currentFontSize = getPreviewFontSizeFactor();
     currentFontSize = currentFontSize + 0.1;
     setPreviewFontSizeFactor(currentFontSize);
 }
 
-var decreaseCustomFontSize = function(){
+var decreasePreviewFontSize = function(){
     var currentFontSize = getPreviewFontSizeFactor();
     currentFontSize = currentFontSize - 0.1;
     if(currentFontSize > 0){
         setPreviewFontSizeFactor(currentFontSize);
     }
 }
-
 
 /**
  * init

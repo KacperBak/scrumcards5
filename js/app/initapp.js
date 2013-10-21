@@ -10,6 +10,7 @@ var initSc5 = function(){
     initInfoSegment();
     initMainSymbolSegment();
     initMainSymbolPreviewFontSizeSegment();
+    initMainSymbolPresentFontSizeSegment();
     initMainSymbolOpacitySegment();
     initSettingsSegment();
     initThemesSegment();

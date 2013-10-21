@@ -120,6 +120,9 @@ var setPreviewFontSizeFactor = function(factor){
     writeToLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR , factor);
 }
 
+var setPresentFontSizeFactor = function(factor){
+    writeToLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR , factor);
+}
 
 /*
  * set default values in the application

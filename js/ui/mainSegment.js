@@ -23,13 +23,18 @@ $("button#settings").click(function() {
 
     } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolPreviewFontSizeSegmentVisible) {
 
-        //back from mainSymbolFontSizeSegment
+        //back from mainSymbolPreviewFontSizeSegment
         displayMainSymbolPreviewFontSizeSegment();
 
     } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolOpacitySegmentVisible) {
 
         //back from mainSymbolFontSizeSegment
         displayMainSymbolOpacitySegment();
+
+    } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolPresentFontSizeSegmentVisible) {
+
+        //back from mainSymbolPresentFontSizeSegment
+        displayMainSymbolPresentFontSizeSegment();
 
     } else if (isSettingsVisible && isMainSymbolSegmentVisible){
 
@@ -42,7 +47,7 @@ $("button#settings").click(function() {
 });
 
 $("div#mainSegment").click(function() {
-    if(!isControlButtonsVisible){
+    if(!isMainSymbolPresentFontSizeSegmentVisible && !isMainSymbolPreviewFontSizeSegmentVisible){
         toggleButtonsVisible();
     }
 });
