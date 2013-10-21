@@ -1,16 +1,6 @@
 /**
  * handler
  */
-$("button#mainSymbolPreviewFontSizeOn").click(function() {
-    writeToLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL, true);
-    updateMainSymbol();
-});
-
-$("button#mainSymbolPreviewFontSizeOff").click(function() {
-    writeToLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL, false);
-    updateMainSymbol();
-});
-
 $("button#mainSymbolPreviewFontSizeMinus").click(function() {
     decreaseCustomFontSize();
     setCustomizedFontSizeValueToUi(getPreviewFontSizeFactor());
@@ -41,7 +31,6 @@ var displayMainSymbolPreviewFontSizeSegment = function(){
     }else{
 
         //previewFontSizeSegment
-        updateUiBasedOnLocalStorage(isPreviewOverrideActive(), "button#mainSymbolPreviewFontSizeOn", "button#mainSymbolPreviewFontSizeOff" );
         $("#mainSymbolSegment").hide();
         $("#mainSymbolPreviewFontSizeSegment").show();
         isMainSymbolPreviewFontSizeSegmentVisible = true;

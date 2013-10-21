@@ -2,8 +2,6 @@
  * key constants
  */
 var LS_OVERRIDE_OPACITY_MAIN_SYMBOL                      = "LS_OVERRIDE_OPACITY_MAIN_SYMBOL";
-var LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL            = "LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL";
-var LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL            = "LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL";
 
 var LS_OPACITY_FACTOR             = "LS_OPACITY_FACTOR";                    // 1.0
 var LS_PREVIEW_FONT_SIZE_FACTOR   = "LS_PREVIEW_FONT_SIZE_FACTOR";          // 0.5
@@ -95,14 +93,6 @@ var isOpacityOverrideActive = function(){
     return readFromLocalStorage(LS_OVERRIDE_OPACITY_MAIN_SYMBOL, TYPE_BOOLEAN);
 }
 
-var isPreviewOverrideActive = function(){
-    return readFromLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL, TYPE_BOOLEAN);
-}
-
-var isPresentOverrideActive = function(){
-    return readFromLocalStorage(LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL, TYPE_BOOLEAN);
-}
-
 var getPreviewFontSizeFactor = function(){
     return readFromLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR , TYPE_FLOAT);
 }
@@ -141,9 +131,7 @@ var initLocalStorage = function(){
 }
 
 var notInitialized = function(){
-    return  isPreviewOverrideActive() === null ||
-            isPresentOverrideActive() === null ||
-            isOpacityOverrideActive() === null ||
+    return  isOpacityOverrideActive() === null ||
             getPreviewFontSizeFactor() === null ||
             getPresentFontSizeFactor() === null ||
             getOpacityFactor() === null ||
@@ -155,8 +143,6 @@ var setLocalStorageDefaultValues = function(){
 
     //overrides
     writeToLocalStorage(LS_OVERRIDE_OPACITY_MAIN_SYMBOL,                    "true");
-    writeToLocalStorage(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL,          "false");
-    writeToLocalStorage(LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL,          "false");
 
     //factors
     writeToLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR,                        "1.0");
@@ -176,8 +162,6 @@ var setLocalStorageDefaultValues = function(){
  */
 var getStorgeState = function(){
     console.log(LS_OVERRIDE_OPACITY_MAIN_SYMBOL                      + " : " + isOpacityOverrideActive());
-    console.log(LS_OVERRIDE_PREVIEW_FONT_SIZE_MAIN_SYMBOL            + " : " + isPreviewOverrideActive());
-    console.log(LS_OVERRIDE_PRESENT_FONT_SIZE_MAIN_SYMBOL            + " : " + isPresentOverrideActive());
     console.log(LS_PREVIEW_FONT_SIZE_FACTOR                          + " : " + getPreviewFontSizeFactor());
     console.log(LS_PRESENT_FONT_SIZE_FACTOR                          + " : " + getPresentFontSizeFactor());
     console.log(LS_COLOR_INDEX                                       + " : " + getColorIndexFromLocalStorage());

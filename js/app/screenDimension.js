@@ -67,12 +67,12 @@ var getMainSymbolFontSize = function(){
     var result = presentFontSize;
 
     //ui in preview state
-    if(isPreviewOverrideActive() && isControlButtonsVisible){
+    if(isControlButtonsVisible){
         result = previewFontSize;
     }
 
     //ui in present state
-    if(isPresentOverrideActive() && !isControlButtonsVisible){
+    if(!isControlButtonsVisible){
         result = presentFontSize;
     }
     return result;
