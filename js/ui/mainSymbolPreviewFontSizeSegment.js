@@ -4,13 +4,13 @@
 $("button#mainSymbolPreviewFontSizeMinus").click(function() {
     decreasePreviewFontSize();
     setPreviewFontSizeValueToUi(getPreviewFontSizeFactor());
-    updateMainSymbol();
+    updatePreviewMainSymbol();
 });
 
 $("button#mainSymbolPreviewFontSizePlus").click(function() {
     increasePreviewFontSize();
     setPreviewFontSizeValueToUi(getPreviewFontSizeFactor());
-    updateMainSymbol();
+    updatePreviewMainSymbol();
 });
 
 /**
@@ -37,15 +37,14 @@ var displayMainSymbolPreviewFontSizeSegment = function(){
 
         //mainSegment
         $("div#mainSegment").show();
-        updateMainSymbol();
+        updatePreviewMainSymbol();
         setPreviewFontSizeValueToUi(getPreviewFontSizeFactor());
     }
 }
 
-var updateMainSymbol = function(){
-    setVisibleMainSymbol();
+var updatePreviewMainSymbol = function(){
     var segmentHeight = $("#mainSymbolPreviewFontSizeSegment").outerHeight(true);
-    resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeightForSettings(segmentHeight));
+    resizeElementDimensions(getPreviewFontSizeFactor(), getMainContentHeightForSettings(segmentHeight));
 }
 
 var setPreviewFontSizeValueToUi = function(customizedValue){

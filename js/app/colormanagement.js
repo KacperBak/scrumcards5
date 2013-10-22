@@ -61,12 +61,13 @@ var getFontColorLight = function(){
 
 var switchLargeFigureColor = function(lightColorTrigger){
     if(lightColorTrigger){
-        setVisibleMainSymbol();
+        $(".large-figure").css("color", getFontColorLight());
     }else{
         $(".large-figure").css("color", getFontColor());
     }
 }
 
+//TODO remove this hack, with customized opacity value
 var setVisibleMainSymbol = function(){
     if(isOpacityOverrideActive()){
         $(".large-figure").css("color", getFontColorLight());

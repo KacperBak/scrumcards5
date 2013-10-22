@@ -4,13 +4,13 @@
 $("button#mainSymbolPresentFontSizeMinus").click(function() {
     decreasePresentFontSize();
     setPresentFontSizeValueToUi(getPresentFontSizeFactor());
-    updateMainSymbol();
+    updatePresentMainSymbol();
 });
 
 $("button#mainSymbolPresentFontSizePlus").click(function() {
     increasePresentFontSize();
     setPresentFontSizeValueToUi(getPresentFontSizeFactor());
-    updateMainSymbol();
+    updatePresentMainSymbol();
 });
 
 /**
@@ -28,6 +28,8 @@ var displayMainSymbolPresentFontSizeSegment = function(){
 
         //mainSegment
         $("div#mainSegment").hide();
+        switchLargeFigureColor(!isMainSymbolPresentFontSizeSegmentVisible);
+        switchLargeFigureBackground(!isMainSymbolPresentFontSizeSegmentVisible);
     }else{
 
         //PresentFontSizeSegment
@@ -37,15 +39,16 @@ var displayMainSymbolPresentFontSizeSegment = function(){
 
         //mainSegment
         $("div#mainSegment").show();
-        updateMainSymbol();
+        switchLargeFigureColor(!isMainSymbolPresentFontSizeSegmentVisible);
+        switchLargeFigureBackground(!isMainSymbolPresentFontSizeSegmentVisible);
+        updatePresentMainSymbol();
         setPresentFontSizeValueToUi(getPresentFontSizeFactor());
     }
 }
 
-var updateMainSymbol = function(){
-    setVisibleMainSymbol();
+var updatePresentMainSymbol = function(){
     var segmentHeight = $("#mainSymbolPresentFontSizeSegment").outerHeight(true);
-    resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeightForSettings(segmentHeight));
+    resizeElementDimensions(getPresentFontSizeFactor(), getMainContentHeightForSettings(segmentHeight));
 }
 
 var setPresentFontSizeValueToUi = function(customizedValue){
