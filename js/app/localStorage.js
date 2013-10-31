@@ -1,14 +1,12 @@
 /*
  * key constants
  */
-var LS_OVERRIDE_OPACITY_MAIN_SYMBOL                      = "LS_OVERRIDE_OPACITY_MAIN_SYMBOL";
-
 var LS_OPACITY_FACTOR             = "LS_OPACITY_FACTOR";                    // 0.5
 var LS_PREVIEW_FONT_SIZE_FACTOR   = "LS_PREVIEW_FONT_SIZE_FACTOR";          // 1.0
 var LS_PRESENT_FONT_SIZE_FACTOR   = "LS_PRESENT_FONT_SIZE_FACTOR";          // 1.0
 
 var LS_COLOR_INDEX                = "LS_COLOR_INDEX";                         // 0
-var LS_OPACITY_INDEX              = "LS_OPACITY_INDEX";                       // 4
+var LS_OPACITY_INDEX              = "LS_OPACITY_INDEX";                       // 6
 
 /*
  * type constants
@@ -99,10 +97,6 @@ var getPresentFontSizeFactor = function(){
     return readFromLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR , TYPE_FLOAT);
 }
 
-var getOpacityFactor = function(){
-    return readFromLocalStorage(LS_OPACITY_FACTOR, TYPE_FLOAT);
-}
-
 var getOpacityIndexFromLocalStorage = function(){
     return readFromLocalStorage(LS_OPACITY_INDEX, TYPE_INTEGER);
 }
@@ -124,10 +118,6 @@ var setPreviewFontSizeFactor = function(factor){
 
 var setPresentFontSizeFactor = function(factor){
     writeToLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR , factor);
-}
-
-var setOpacityFactor = function(factor){
-    writeToLocalStorage(LS_OPACITY_FACTOR, factor);
 }
 
 var setOpacityIndex = function(index){
@@ -156,7 +146,6 @@ var setLocalStorageDefaultValues = function(){
     //factors
     writeToLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR,                        "1.0");
     writeToLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR,                        "1.0");
-    writeToLocalStorage(LS_OPACITY_FACTOR,                                  "0.5");
 
     //start color
     writeToLocalStorage(LS_COLOR_INDEX,                                     "0");
