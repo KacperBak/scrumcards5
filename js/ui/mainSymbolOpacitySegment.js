@@ -3,13 +3,13 @@
  */
 $("button#mainSymbolPreviewOpacityMinus").click(function() {
     decreaseOpacity();
-    setOpacityValueToUi(getOpacityFactor());
+    setOpacityValueToUi(getOpacityFactorBasedOnIndex());
     updateOpacityMainSymbol();
 });
 
 $("button#mainSymbolPreviewOpacityPlus").click(function() {
     increaseOpacity();
-    setOpacityValueToUi(getOpacityFactor());
+    setOpacityValueToUi(getOpacityFactorBasedOnIndex());
     updateOpacityMainSymbol();
 });
 
@@ -33,7 +33,7 @@ var displayMainSymbolOpacitySegment = function(){
 
         $("div#mainSegment").show();
         updateOpacityMainSymbol();
-        setOpacityValueToUi(getOpacityFactor());
+        setOpacityValueToUi(getOpacityFactorBasedOnIndex());
     }
 }
 
@@ -52,21 +52,21 @@ var updateOpacityMainSymbol = function(){
 /*
  * app logic
  */
-
-
 var opacityValues = [0.0 , 0.025 , 0.05 , 0.075 , 0.1 , 0.2 , 0.3 , 0.4 , 0.5 , 0.6 , 0.7 , 0.8 , 0.9, 1.0];
 var opacityValueMaxIndex = _.size(opacityValues) - 1;
-var opacityIndex = opacityValueMaxIndex;
+var opacityIndex = 0;
+
+var getOpacityFactorBasedOnIndex = function(){
+    return opacityValues[opacityIndex];
+}
 
 var nextOpacityValue = function(){
-    var result = opacityValues[0];
     if( opacityIndex + 1 <= opacityValueMaxIndex){
         opacityIndex++;
-        result = opacityValues[opacityIndex];
     } else {
         opacityIndex = 0;
     }
-    return result;
+    return getOpacityFactorBasedOnIndex();
 }
 
 var lastOpacityValue = function(){
@@ -75,18 +75,18 @@ var lastOpacityValue = function(){
     } else {
         opacityIndex = opacityValueMaxIndex;
     }
-    return opacityValues[opacityIndex];
+    return getOpacityFactorBasedOnIndex();
 }
 
 var decreaseOpacity = function(){
     var opacity = lastOpacityValue();
-    setOpacityFactor(opacity);
+    setOpacityIndex(opacityIndex);
     console.log("decreaseOpacity to: " + opacity);
 }
 
 var increaseOpacity = function(){
     var opacity = nextOpacityValue();
-    setOpacityFactor(opacity);
+    setOpacityIndex(opacityIndex);
     console.log("increaseOpacity to: " + opacity);
 }
 

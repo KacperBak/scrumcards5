@@ -51,7 +51,7 @@ var getFontColor = function(){
 
 var applyOpacityToMainSymbol = function(){
     $(".large-figure").css("color", getFontColor());
-    $(".large-figure").css("opacity", getOpacityFactor());
+    $(".large-figure").css("opacity", getOpacityFactorBasedOnIndex());
 }
 
 var applyMainColorToMainSymbol = function(){
@@ -105,7 +105,11 @@ var changeTheme = function(){
 }
 
 var initAppColor = function(){
+    //main color
     colorIndex = getColorIndexFromLocalStorage();
+
+    //main font color opacity
+    opacityIndex = getOpacityIndexFromLocalStorage();
 
     //background
     $("body").css("background-color", getMainColor());
