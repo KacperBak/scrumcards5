@@ -42,7 +42,6 @@ var displaySettings = function(){
         $("button#scrumPoints").fadeIn();
         $("button#plus").fadeIn();
         isSettingsVisible = false;
-        setVisibleMainSymbol();
         resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeight());
     }else{
         $("div#mainSegment").hide();

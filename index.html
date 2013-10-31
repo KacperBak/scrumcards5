@@ -120,16 +120,18 @@
         </div>
 
         <!-- mainSymbolOpacitySegment menu -->
-        <div id="mainSymbolOpacitySegment" class="row-fluid" data-toggle="buttons-radio">
+        <div id="mainSymbolOpacitySegment" class="row-fluid">
             <div class="row-fluid">
                 <div class="span12">
-                    <h4 class="settingsContent">Enable font opacity</h4>
+                    <h4 id="customizedOpacityParent" class="settingsContent">
+                        <span id="customizedOpacityValue">Opacity factor: </span>
+                    </h4>
                 </div>
             </div>
 
-            <div class="row-fluid" data-toggle="buttons-radio">
-                <div class="span6"><button id="mainSymbolOpacityOn" class="btn btn-large btn-block" type="button">On</button></div>
-                <div class="span6"><button id="mainSymbolOpacityOff" class="btn btn-large btn-block" type="button">Off</button></div>
+            <div class="row-fluid">
+                <div class="span6"><button id="mainSymbolPreviewOpacityMinus" class="btn btn-large btn-block" type="button"><i class="icon-minus"></i></button></div>
+                <div class="span6"><button id="mainSymbolPreviewOpacityPlus" class="btn btn-large btn-block" type="button"><i class="icon-plus"></i></button></div>
             </div>
         </div>
 

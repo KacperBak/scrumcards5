@@ -24,7 +24,6 @@ var displayMainSymbolSegment = function(){
         $("#settingsSegment").show();
         isMainSymbolSegmentVisible = false;
     }else{
-        updateUiBasedOnLocalStorage();
         $("#settingsSegment").hide();
         $("#mainSymbolSegment").show();
         isMainSymbolSegmentVisible = true;

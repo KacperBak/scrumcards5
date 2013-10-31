@@ -62,12 +62,10 @@ var displaySpecialChars = function(){
         isSpecialCharsVisible = false;
         $("div#mainSegment").show();
         $("div#specialCharsSegment").hide();
-        switchLargeFigureColor(!isSpecialCharsVisible);
     }else{
         isSpecialCharsVisible = true;
         $("div#mainSegment").hide();
         $("div#specialCharsSegment").show();
-        switchLargeFigureColor(!isScrumPointsVisible);
     }
 }
 
