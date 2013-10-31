@@ -106,11 +106,12 @@ var changeTheme = function(){
 
 var initAppColor = function(){
     colorIndex = getColorIndexFromLocalStorage();
+
     //background
     $("body").css("background-color", getMainColor());
 
     //font
-    applyMainColorToMainSymbol();
+    applyOpacityToMainSymbol();
 }
 
 var resetColor = function(){

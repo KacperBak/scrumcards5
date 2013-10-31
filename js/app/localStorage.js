@@ -3,11 +3,12 @@
  */
 var LS_OVERRIDE_OPACITY_MAIN_SYMBOL                      = "LS_OVERRIDE_OPACITY_MAIN_SYMBOL";
 
-var LS_OPACITY_FACTOR             = "LS_OPACITY_FACTOR";                    // 1.0
+var LS_OPACITY_FACTOR             = "LS_OPACITY_FACTOR";                    // 0.5
 var LS_PREVIEW_FONT_SIZE_FACTOR   = "LS_PREVIEW_FONT_SIZE_FACTOR";          // 1.0
 var LS_PRESENT_FONT_SIZE_FACTOR   = "LS_PRESENT_FONT_SIZE_FACTOR";          // 1.0
 
-var LS_COLOR_INDEX = "LS_COLOR_INDEX";  // 0
+var LS_COLOR_INDEX                = "LS_COLOR_INDEX";                       // 0
+
 /*
  * type constants
  */
@@ -146,7 +147,7 @@ var setLocalStorageDefaultValues = function(){
     //factors
     writeToLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR,                        "1.0");
     writeToLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR,                        "1.0");
-    writeToLocalStorage(LS_OPACITY_FACTOR,                                  "1.0");
+    writeToLocalStorage(LS_OPACITY_FACTOR,                                  "0.5");
 
     //start color
     writeToLocalStorage(LS_COLOR_INDEX,                                     "0");
