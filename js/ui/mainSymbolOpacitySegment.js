@@ -47,6 +47,7 @@ var setOpacityValueToUi = function(customizedValue){
 var updateOpacityMainSymbol = function(){
     var segmentHeight = $("#mainSymbolOpacitySegment").outerHeight(true);
     resizeElementDimensions(getPresentFontSizeFactor(), getMainContentHeightForSettings(segmentHeight));
+    switchLargeFigureColor(isControlButtonsVisible);
 }
 
 /*
@@ -81,13 +82,11 @@ var lastOpacityValue = function(){
 var decreaseOpacity = function(){
     var opacity = lastOpacityValue();
     setOpacityIndex(opacityIndex);
-    console.log("decreaseOpacity to: " + opacity);
 }
 
 var increaseOpacity = function(){
     var opacity = nextOpacityValue();
     setOpacityIndex(opacityIndex);
-    console.log("increaseOpacity to: " + opacity);
 }
 
 /**
