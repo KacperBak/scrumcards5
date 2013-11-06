@@ -36,7 +36,7 @@ var displaySettings = function(){
         $("div#settingsSegment").hide();
         $("div#mainSegment").show();
 
-        $("button#specialChars").fadeIn();
+        $("button#decks").fadeIn();
         $("button#fullscreen").fadeIn();
         $("button#minus").fadeIn();
         $("button#scrumPoints").fadeIn();
@@ -47,7 +47,7 @@ var displaySettings = function(){
         $("div#mainSegment").hide();
         $("div#settingsSegment").show();
 
-        $("button#specialChars").fadeOut();
+        $("button#decks").fadeOut();
         $("button#fullscreen").fadeOut();
         $("button#minus").fadeOut();
         $("button#scrumPoints").fadeOut();

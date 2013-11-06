@@ -6,7 +6,7 @@ var initSc5 = function(){
     initLocalStorage();
     initAppColor();
     initScrumPointsSegment();
-    initSpecialCharsSegment();
+    initDecksSegment();
     initInfoSegment();
     initMainSymbolSegment();
     initMainSymbolPreviewFontSizeSegment();

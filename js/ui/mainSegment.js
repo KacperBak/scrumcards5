@@ -1,8 +1,8 @@
 /**
  * handler
  */
-$("button#specialChars").click(function() {
-    displaySpecialChars();
+$("button#decks").click(function() {
+    displayDecksSegment();
 });
 
 $("button#fullscreen").click(function() {

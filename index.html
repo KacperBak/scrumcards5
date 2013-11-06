@@ -29,38 +29,24 @@
     <body>
 
     <div id="header" class="header row-fluid">
-        <div class="span4"><button id="specialChars" class="btn btn-large btn-block" type="button"><i class="icon-star"></i></button></div>
+        <div class="span4"><button id="decks" class="btn btn-large btn-block" type="button"><i class="icon-star"></i></button></div>
         <div class="span4"><button id="fullscreen" class="btn btn-large btn-block" type="button"><i class="icon-fullscreen"></i></button></div>
         <div class="span4"><button id="settings" class="btn btn-large btn-block" type="button"><i class="icon-cog"></i></button></div>
     </div>
 
     <div id="main" class="content row-fluid">
 
-        <!-- special characters -->
-        <div id="specialCharsSegment">
-            <div class="row-fluid spRow1">
-                <div id="specialChar0" class="span4 text-center well well-small selectValue" data-icon="&#xe007;"></div>
-                <div id="specialChar1" class="span4 text-center well well-small selectValue" data-icon="&#xe009;"></div>
-                <div id="specialChar2" class="span4 text-center well well-small selectValue" data-icon="&#xe008;"></div>
-            </div>
-
-            <div class="row-fluid spRow2">
-                <div id="specialChar3" class="span4 text-center well well-small selectValue" data-icon="&#xe004;"></div>
-                <div id="specialChar4" class="span4 text-center well well-small selectValue" data-icon="&#xe000;"></div>
-                <div id="specialChar5" class="span4 text-center well well-small selectValue" data-icon="&#xe005;"></div>
-            </div>
-
-            <div class="row-fluid spRow3">
-                <div id="specialChar6" class="span4 text-center well well-small selectValue" data-icon="&#xe003;"></div>
-                <div id="specialChar7" class="span4 text-center well well-small selectValue" data-icon="&#xe00b;"></div>
-                <div id="specialChar8" class="span4 text-center well well-small selectValue" data-icon="&#xe00a;"></div>
-            </div>
-
-            <div class="row-fluid spRow4">
-                <div id="specialChar9" class="span4 text-center well well-small selectValue" data-icon="&#xe00c;"></div>
-                <div id="specialChar10" class="span4 text-center well well-small selectValue" data-icon="&#xe00e;"></div>
-                <div id="specialChar11" class="span4 text-center well well-small selectValue" data-icon="&#xe00d;"></div>
-            </div>
+        <!-- different decks-->
+        <div id="decksSegment">
+            <div class="row-fluid"><div class="span12"><button id="normal" class="btn btn-large btn-block" type="button">0 , &#189; , 1 , 2 , 3, ...</button></div></div>
+            <div class="row-fluid"><div class="span12"><button id="special" class="btn btn-large btn-block" type="button">
+                <span data-icon="&#xe007;"></span>,
+                <span data-icon="&#xe009;"></span>,
+                <span data-icon="&#xe008;"></span>,
+                <span data-icon="&#xe004;"></span>,
+                <span data-icon="&#xe000;"></span>,
+                ...
+            </button></div></div>
         </div>
 
         <!-- settings menu -->
@@ -212,7 +198,7 @@
 
     <script src="js/ui/generalUi.js"></script>
     <script src="js/ui/mainSegment.js"></script>
-    <script src="js/ui/specialCharsSegment.js"></script>
+    <script src="js/ui/decksSegment.js"></script>
     <script src="js/ui/scrumPointsSegment.js"></script>
     <script src="js/ui/infoSegment.js"></script>
     <script src="js/ui/mainSymbolSegment.js"></script>
