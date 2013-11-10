@@ -3,13 +3,13 @@
  */
 $("button#mainSymbolPresentFontSizeMinus").click(function() {
     decreasePresentFontSize();
-    setPresentFontSizeValueToUi(getPresentFontSizeFactor());
+    setPresentFontSizeValueToUi(getPresentFontSizeFactorFromLocalStorage());
     updatePresentMainSymbol();
 });
 
 $("button#mainSymbolPresentFontSizePlus").click(function() {
     increasePresentFontSize();
-    setPresentFontSizeValueToUi(getPresentFontSizeFactor());
+    setPresentFontSizeValueToUi(getPresentFontSizeFactorFromLocalStorage());
     updatePresentMainSymbol();
 });
 
@@ -42,13 +42,13 @@ var displayMainSymbolPresentFontSizeSegment = function(){
         switchLargeFigureColor(!isMainSymbolPresentFontSizeSegmentVisible);
         switchLargeFigureBackground(!isMainSymbolPresentFontSizeSegmentVisible);
         updatePresentMainSymbol();
-        setPresentFontSizeValueToUi(getPresentFontSizeFactor());
+        setPresentFontSizeValueToUi(getPresentFontSizeFactorFromLocalStorage());
     }
 }
 
 var updatePresentMainSymbol = function(){
     var segmentHeight = $("#mainSymbolPresentFontSizeSegment").outerHeight(true);
-    resizeElementDimensions(getPresentFontSizeFactor(), getMainContentHeightForSettings(segmentHeight));
+    resizeElementDimensions(getPresentFontSizeFactorFromLocalStorage(), getMainContentHeightForSettings(segmentHeight));
 }
 
 var setPresentFontSizeValueToUi = function(customizedValue){
@@ -61,16 +61,16 @@ var setPresentFontSizeValueToUi = function(customizedValue){
  * app logic
  */
 var increasePresentFontSize = function(){
-    var currentFontSize = getPresentFontSizeFactor();
+    var currentFontSize = getPresentFontSizeFactorFromLocalStorage();
     currentFontSize = currentFontSize + 0.1;
-    setPresentFontSizeFactor(currentFontSize);
+    setPresentFontSizeFactorInLocalStorage(currentFontSize);
 }
 
 var decreasePresentFontSize = function(){
-    var currentFontSize = getPresentFontSizeFactor();
+    var currentFontSize = getPresentFontSizeFactorFromLocalStorage();
     currentFontSize = currentFontSize - 0.1;
     if(currentFontSize > 0){
-        setPresentFontSizeFactor(currentFontSize);
+        setPresentFontSizeFactorInLocalStorage(currentFontSize);
     }
 }
 

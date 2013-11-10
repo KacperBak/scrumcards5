@@ -3,13 +3,13 @@
  */
 $("button#mainSymbolPreviewFontSizeMinus").click(function() {
     decreasePreviewFontSize();
-    setPreviewFontSizeValueToUi(getPreviewFontSizeFactor());
+    setPreviewFontSizeValueToUi(getPreviewFontSizeFactorFromLocalStorage());
     updatePreviewMainSymbol();
 });
 
 $("button#mainSymbolPreviewFontSizePlus").click(function() {
     increasePreviewFontSize();
-    setPreviewFontSizeValueToUi(getPreviewFontSizeFactor());
+    setPreviewFontSizeValueToUi(getPreviewFontSizeFactorFromLocalStorage());
     updatePreviewMainSymbol();
 });
 
@@ -38,13 +38,13 @@ var displayMainSymbolPreviewFontSizeSegment = function(){
         //mainSegment
         $("div#mainSegment").show();
         updatePreviewMainSymbol();
-        setPreviewFontSizeValueToUi(getPreviewFontSizeFactor());
+        setPreviewFontSizeValueToUi(getPreviewFontSizeFactorFromLocalStorage());
     }
 }
 
 var updatePreviewMainSymbol = function(){
     var segmentHeight = $("#mainSymbolPreviewFontSizeSegment").outerHeight(true);
-    resizeElementDimensions(getPreviewFontSizeFactor(), getMainContentHeightForSettings(segmentHeight));
+    resizeElementDimensions(getPreviewFontSizeFactorFromLocalStorage(), getMainContentHeightForSettings(segmentHeight));
 }
 
 var setPreviewFontSizeValueToUi = function(customizedValue){
@@ -57,16 +57,16 @@ var setPreviewFontSizeValueToUi = function(customizedValue){
  * app logic
  */
 var increasePreviewFontSize = function(){
-    var currentFontSize = getPreviewFontSizeFactor();
+    var currentFontSize = getPreviewFontSizeFactorFromLocalStorage();
     currentFontSize = currentFontSize + 0.1;
-    setPreviewFontSizeFactor(currentFontSize);
+    setPreviewFontSizeFactorInLocalStorage(currentFontSize);
 }
 
 var decreasePreviewFontSize = function(){
-    var currentFontSize = getPreviewFontSizeFactor();
+    var currentFontSize = getPreviewFontSizeFactorFromLocalStorage();
     currentFontSize = currentFontSize - 0.1;
     if(currentFontSize > 0){
-        setPreviewFontSizeFactor(currentFontSize);
+        setPreviewFontSizeFactorInLocalStorage(currentFontSize);
     }
 }
 

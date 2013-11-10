@@ -89,11 +89,11 @@ var extractInteger = function(string){
 /*
  * GETTER
  */
-var getPreviewFontSizeFactor = function(){
+var getPreviewFontSizeFactorFromLocalStorage = function(){
     return readFromLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR , TYPE_FLOAT);
 }
 
-var getPresentFontSizeFactor = function(){
+var getPresentFontSizeFactorFromLocalStorage = function(){
     return readFromLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR , TYPE_FLOAT);
 }
 
@@ -105,6 +105,11 @@ var getColorIndexFromLocalStorage = function(){
     return readFromLocalStorage(LS_COLOR_INDEX, TYPE_INTEGER);
 }
 
+var getDeckIndexFromLocalStorage = function(){
+    return 0;
+}
+
+
 /*
  * SETTER
  */
@@ -112,15 +117,15 @@ var setColorIndexInLocalStorage = function(i){
     writeToLocalStorage(LS_COLOR_INDEX, i);
 }
 
-var setPreviewFontSizeFactor = function(factor){
+var setPreviewFontSizeFactorInLocalStorage = function(factor){
     writeToLocalStorage(LS_PREVIEW_FONT_SIZE_FACTOR , factor);
 }
 
-var setPresentFontSizeFactor = function(factor){
+var setPresentFontSizeFactorInLocalStorage = function(factor){
     writeToLocalStorage(LS_PRESENT_FONT_SIZE_FACTOR , factor);
 }
 
-var setOpacityIndex = function(index){
+var setOpacityIndexInLocalStorage = function(index){
     writeToLocalStorage(LS_OPACITY_INDEX, index);
 }
 
@@ -134,8 +139,8 @@ var initLocalStorage = function(){
 }
 
 var notInitialized = function(){
-    return  getPreviewFontSizeFactor() === null ||
-            getPresentFontSizeFactor() === null ||
+    return  getPreviewFontSizeFactorFromLocalStorage() === null ||
+            getPresentFontSizeFactorFromLocalStorage() === null ||
             getOpacityIndexFromLocalStorage() === null ||
             getColorIndexFromLocalStorage() === null;
 }
@@ -160,8 +165,8 @@ var setLocalStorageDefaultValues = function(){
  * debug
  */
 var getStorgeState = function(){
-    console.log(LS_PREVIEW_FONT_SIZE_FACTOR                          + " : " + getPreviewFontSizeFactor());
-    console.log(LS_PRESENT_FONT_SIZE_FACTOR                          + " : " + getPresentFontSizeFactor());
+    console.log(LS_PREVIEW_FONT_SIZE_FACTOR                          + " : " + getPreviewFontSizeFactorFromLocalStorage());
+    console.log(LS_PRESENT_FONT_SIZE_FACTOR                          + " : " + getPresentFontSizeFactorFromLocalStorage());
     console.log(LS_COLOR_INDEX                                       + " : " + getColorIndexFromLocalStorage());
 }
 

@@ -61,8 +61,8 @@ var resizeElementDimensions = function(fontSizeFactor, mainContentHeight){
 }
 
 var getMainSymbolFontSize = function(){
-    var previewFontSize     = getPreviewFontSizeFactor();
-    var presentFontSize     = getPresentFontSizeFactor();
+    var previewFontSize     = getPreviewFontSizeFactorFromLocalStorage();
+    var presentFontSize     = getPresentFontSizeFactorFromLocalStorage();
 
     var result = presentFontSize;
 
