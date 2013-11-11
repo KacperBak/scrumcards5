@@ -5,10 +5,11 @@ var initSc5 = function(){
 
     initLocalStorage();
     initAppColor();
-    initScrumPointsSegment();
-    initDecksSegment();
     initInfoSegment();
     initMainSymbolSegment();
+    initDecksSegment();
+    initDeck0Segment();
+    initDeck1Segment();
     initMainSymbolPreviewFontSizeSegment();
     initMainSymbolPresentFontSizeSegment();
     initMainSymbolOpacitySegment();

@@ -53,17 +53,17 @@ $("div#mainSegment").click(function() {
 });
 
 $("button#minus").click(function() {
-    lastScrumValue();
-    replaceMainValueByPlusOrMinus();
+    lastDeckValue();
+    replaceDeckValueByPlusOrMinus();
 });
 
 $("button#scrumPoints").click(function(){
-    displayScrumPoints();
+    displaySelectedDeck();
 });
 
 $("button#plus").click(function() {
-    nextScrumValue();
-    replaceMainValueByPlusOrMinus();
+    nextDeckValue();
+    replaceDeckValueByPlusOrMinus();
 });
 
 /**
@@ -72,7 +72,7 @@ $("button#plus").click(function() {
 var isControlButtonsVisible = true;
 
 var toggleButtonsVisible = function(){
-    if(!isScrumPointsVisible){
+    if(!isDeck0Visible){
         if(isControlButtonsVisible){
             isControlButtonsVisible = false;
             $("button").fadeOut();

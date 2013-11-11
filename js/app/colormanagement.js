@@ -4,25 +4,21 @@ var silverUltraLightMainColor = "#FFFFFF";
 var silverFontColor = "#000000";
 
 var redMainColor = "#C82040";
-//var redLightMainColor = "#fceef0";
 var redLightMainColor = "#FFFFFF";
 var redUltraLightMainColor = "#FFFFFF";
 var redFontColor = "#000000";
 
 var greenMainColor = "#2ca02c";
-//var greenLightMainColor = "#d9f5d9";
 var greenLightMainColor = "#FFFFFF";
 var greenUltraLightMainColor = "#FFFFFF";
 var greenFontColor = "#000000";
 
 var blueMainColor = "#0066ff";
-//var blueLightMainColor = "#ebf3ff";
 var blueLightMainColor = "#FFFFFF";
 var blueUltraLightMainColor = "#FFFFFF";
 var blueFontColor = "#000000";
 
 var yellowMainColor = "#ffd42a";
-//var yellowLightMainColor = "#fff5cf";
 var yellowLightMainColor = "#ffffff";
 var yellowUltraLightMainColor = "#FFFFFF";
 var yellowFontColor = "#000000";
