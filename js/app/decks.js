@@ -38,6 +38,20 @@ var valueIndex              = 0;
 var deckIndex               = 0;
 var valueMaxIndex      = _.size(deckValues[deckIndex]) - 1;
 
+/**
+ * returns the html fragment that has to be replaced, depending on the deckIndex
+ */
+var getReplaceFragment = function(){
+    if(deckIndex === 0){
+        return $('<div id="mainContent" class="span12 text-center large-figure">'+ getValueBasedOnDeckIndex() +'</div>');
+    } else if(deckIndex === 1){
+        return $('<div id="mainContent" class="span12 text-center large-figure" data-icon="'+ getValueBasedOnDeckIndex() +'"></div>');
+    }
+}
+
+/**
+ * return the raw value from array, based on deck- and valueIndex
+ */
 var getValueBasedOnDeckIndex = function(){
     return deckValues[deckIndex][valueIndex];
 }

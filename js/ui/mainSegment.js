@@ -53,7 +53,8 @@ $("div#mainSegment").click(function() {
 });
 
 $("button#minus").click(function() {
-    replaceScrumValueByPlusOrMinus(lastScrumValue());
+    lastScrumValue();
+    replaceMainValueByPlusOrMinus();
 });
 
 $("button#scrumPoints").click(function(){
@@ -61,7 +62,8 @@ $("button#scrumPoints").click(function(){
 });
 
 $("button#plus").click(function() {
-    replaceScrumValueByPlusOrMinus(nextScrumValue());
+    nextScrumValue();
+    replaceMainValueByPlusOrMinus();
 });
 
 /**
@@ -87,8 +89,9 @@ var toggleButtonsVisible = function(){
     }
 }
 
-var replaceScrumValue = function(scrumCardValue){
-    replaceMainContent( mainContentParent, mainContentChild, $('<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>'));
+var replaceMainValue = function(){
+    var replaceFragment = getReplaceFragment();
+    replaceMainContent( mainContentParent, mainContentChild, replaceFragment);
     switchLargeFigureColor(isControlButtonsVisible);
 }
 

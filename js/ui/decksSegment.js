@@ -2,10 +2,14 @@
  * handler
  */
 $("button#normal").click( function(){
+    deckIndex = 0;
+    replaceMainValue();
     displayDecksSegment();
 });
 
 $("button#special").click( function(){
+    deckIndex = 1;
+    replaceMainValue();
     displayDecksSegment();
 });
 

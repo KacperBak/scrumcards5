@@ -140,7 +140,6 @@ var initLocalStorage = function(){
 
 var notInitialized = function(){
     return  getPreviewFontSizeFactorFromLocalStorage() === null ||
-            getPresentFontSizeFactorFromLocalStorage() === null ||
             getOpacityIndexFromLocalStorage() === null ||
             getColorIndexFromLocalStorage() === null;
 }
@@ -166,7 +165,6 @@ var setLocalStorageDefaultValues = function(){
  */
 var getStorgeState = function(){
     console.log(LS_PREVIEW_FONT_SIZE_FACTOR                          + " : " + getPreviewFontSizeFactorFromLocalStorage());
-    console.log(LS_PRESENT_FONT_SIZE_FACTOR                          + " : " + getPresentFontSizeFactorFromLocalStorage());
     console.log(LS_COLOR_INDEX                                       + " : " + getColorIndexFromLocalStorage());
 }
 

@@ -62,22 +62,21 @@ var displayScrumPoints = function(){
 var setScrumValueBasedOnIndex = function(i){
     if(isScrumPointsVisible){
         valueIndex = i;
-        replaceScrumValue(getValueBasedOnDeckIndex());
+        replaceMainValue();
         displayScrumPoints();
         $("button").fadeIn();
     }
 }
 
-var replaceScrumValueByPlusOrMinus = function(scrumCardValue){
+var replaceMainValueByPlusOrMinus = function(){
     if(!isScrumPointsVisible){
-        replaceScrumValue(scrumCardValue);
+        replaceMainValue();
     }
 }
 
 /*
  * app logic
  */
-
 
 /**
  * init
