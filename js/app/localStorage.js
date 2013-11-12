@@ -1,12 +1,12 @@
 /*
  * key constants
  */
-var LS_OPACITY_FACTOR             = "LS_OPACITY_FACTOR";                    // 0.5
 var LS_PREVIEW_FONT_SIZE_FACTOR   = "LS_PREVIEW_FONT_SIZE_FACTOR";          // 1.0
 var LS_PRESENT_FONT_SIZE_FACTOR   = "LS_PRESENT_FONT_SIZE_FACTOR";          // 1.0
 
 var LS_COLOR_INDEX                = "LS_COLOR_INDEX";                         // 0
 var LS_OPACITY_INDEX              = "LS_OPACITY_INDEX";                       // 6
+var LS_DECK_INDEX                 = "LS_DECK_INDEX";                          // 0
 
 /*
  * type constants
@@ -106,7 +106,7 @@ var getColorIndexFromLocalStorage = function(){
 }
 
 var getDeckIndexFromLocalStorage = function(){
-    return 0;
+    return readFromLocalStorage(LS_DECK_INDEX, TYPE_INTEGER);
 }
 
 
@@ -129,6 +129,12 @@ var setOpacityIndexInLocalStorage = function(index){
     writeToLocalStorage(LS_OPACITY_INDEX, index);
 }
 
+var setDeckIndexInLocalStorage = function(index){
+    writeToLocalStorage(LS_DECK_INDEX, index);
+}
+
+
+
 /*
  * set default values in the application
  */
@@ -139,9 +145,11 @@ var initLocalStorage = function(){
 }
 
 var notInitialized = function(){
-    return  getPreviewFontSizeFactorFromLocalStorage() === null ||
+     return getPresentFontSizeFactorFromLocalStorage() === null ||
+            getPreviewFontSizeFactorFromLocalStorage() === null ||
             getOpacityIndexFromLocalStorage() === null ||
-            getColorIndexFromLocalStorage() === null;
+            getColorIndexFromLocalStorage() === null ||
+            getDeckIndexFromLocalStorage() === null;
 }
 
 var setLocalStorageDefaultValues = function(){
@@ -154,6 +162,7 @@ var setLocalStorageDefaultValues = function(){
     //start color
     writeToLocalStorage(LS_COLOR_INDEX,                                     "0");
     writeToLocalStorage(LS_OPACITY_INDEX,                                   "6");
+    writeToLocalStorage(LS_DECK_INDEX,                                      "0");
 
     //debug
     console.log(MESSAGE_TYPE_INFO + " - LocalStorageDefaultValues has been set.");

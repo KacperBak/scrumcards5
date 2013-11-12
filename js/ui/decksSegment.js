@@ -2,15 +2,11 @@
  * handler
  */
 $("button#normal").click( function(){
-    deckIndex = 0;
-    replaceMainValue();
-    displayDecksSegment();
+    applyDeckIndex(0);
 });
 
 $("button#special").click( function(){
-    deckIndex = 1;
-    replaceMainValue();
-    displayDecksSegment();
+    applyDeckIndex(1);
 });
 
 /**
@@ -44,6 +40,12 @@ var displayDecksSegment = function(){
 /*
  * app logic
  */
+var applyDeckIndex = function(i){
+    deckIndex = i;
+    setDeckIndexInLocalStorage(i);
+    replaceMainValue();
+    displayDecksSegment();
+}
 
 
 /**

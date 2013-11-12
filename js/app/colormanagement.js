@@ -101,6 +101,10 @@ var changeTheme = function(){
 }
 
 var initAppColor = function(){
+
+    //deck
+    deckIndex = getDeckIndexFromLocalStorage();
+
     //main color
     colorIndex = getColorIndexFromLocalStorage();
 
