@@ -9,6 +9,10 @@ $("button#special").click( function(){
     applyDeckIndex(1);
 });
 
+$("button#fibonacci").click( function(){
+    applyDeckIndex(2);
+});
+
 /**
  * display
  */

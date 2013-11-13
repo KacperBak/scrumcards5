@@ -10,6 +10,7 @@ var initSc5 = function(){
     initDecksSegment();
     initDeck0Segment();
     initDeck1Segment();
+    initDeck2Segment();
     initMainSymbolPreviewFontSizeSegment();
     initMainSymbolPresentFontSizeSegment();
     initMainSymbolOpacitySegment();
