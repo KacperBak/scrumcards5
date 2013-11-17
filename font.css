@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-mug, .icon-thumbs-up, .icon-thumbs-up-2, .icon-smiley, .icon-sad, .icon-confused, .icon-warning, .icon-loop, .icon-pentasys-logo-002, .icon-how-about-no-003, .icon-sc5-005, .icon-busy {
+.icon-mug, .icon-thumbs-up, .icon-thumbs-up-2, .icon-smiley, .icon-sad, .icon-confused, .icon-warning, .icon-loop, .icon-pentasys-logo-002, .icon-how-about-no-003, .icon-sc5-005, .icon-busy, .icon-infinity-001 {
 	font-family: 'sc5Font';
 	speak: none;
 	font-style: normal;
@@ -73,4 +73,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon-busy:before {
 	content: "\e000";
+}
+.icon-infinity-001:before {
+	content: "\e001";
 }
