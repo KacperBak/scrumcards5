@@ -40,3 +40,7 @@ var getReplaceFragment = function(){
         return $('<div id="mainContent" class="span12 text-center large-figure" data-icon="'+ getValueBasedOnDeckIndex() +'"></div>');
     }
 }
+
+var checkPresentSegmentConditions = function(){
+    return !isMainSymbolPresentFontSizeSegmentVisible && !isMainSymbolPreviewFontSizeSegmentVisible && !isMainSymbolOpacitySegmentVisible;
+}

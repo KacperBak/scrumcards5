@@ -47,7 +47,7 @@ $("button#settings").click(function() {
 });
 
 $("div#mainSegment").click(function() {
-    if(!isMainSymbolPresentFontSizeSegmentVisible && !isMainSymbolPreviewFontSizeSegmentVisible){
+    if(checkPresentSegmentConditions()){
         toggleButtonsVisible();
     }
 });
