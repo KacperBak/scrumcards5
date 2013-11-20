@@ -27,10 +27,15 @@ body{
 .spRow1 .spRow2 .spRow3 .spRow4{
 }
 
-*.infoContent {
+*.infoRow {
     margin-left: 1em;
     margin-right: 1em;
 }
+
+*.infoContent {
+    color: #000000;
+}
+
 
 *.settingsContent {
     margin-left: 1em;
