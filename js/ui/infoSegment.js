@@ -12,10 +12,12 @@ var displayInfo = function(){
         $("#infoSegment").hide();
         $("#settingsSegment").show();
         isInfoVisible = false;
+        switchLargeFigureBackground(!isInfoVisible);
     }else{
         $("#settingsSegment").hide();
         $("#infoSegment").show();
         isInfoVisible = true;
+        switchLargeFigureBackground(!isInfoVisible);
     }
 }
 
