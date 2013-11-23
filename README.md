@@ -13,7 +13,7 @@ Tech facts
 
 Dependencies
 ------------
-- jQuery
-- string.js
-- twitter bootstrap
-- underscore.js
+- jQuery v1.10.2
+- string.js 1.6.0
+- twitter bootstrap v2.3.2
+- underscore.js 1.5.2
