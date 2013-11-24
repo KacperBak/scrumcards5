@@ -44,3 +44,10 @@ var getReplaceFragment = function(){
 var checkPresentSegmentConditions = function(){
     return !isMainSymbolPresentFontSizeSegmentVisible && !isMainSymbolPreviewFontSizeSegmentVisible && !isMainSymbolOpacitySegmentVisible;
 }
+
+/**
+ * removes the display: none attribute from body tag
+ */
+var displayBodyOnDomReady = function(){
+    $('body').removeAttr('style');
+}

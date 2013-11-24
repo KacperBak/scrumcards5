@@ -23,6 +23,7 @@ echo "\n" >> $JS_OUTPUT
 cat ../js/lib/string.js >> $JS_OUTPUT
 echo "\n" >> $JS_OUTPUT
 
+
 # aggregate - APP files
 APP_FILES=../js/app/*
 
@@ -40,6 +41,9 @@ do
     cat $f >> $JS_OUTPUT
     echo "\n" >> $JS_OUTPUT
 done
+
+#init application
+echo "initSc5();" >> $JS_OUTPUT
 
 echo "--- CSS aggregation   ---"
 

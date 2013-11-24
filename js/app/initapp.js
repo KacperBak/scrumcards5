@@ -3,6 +3,7 @@
  */
 var initSc5 = function(){
 
+    displayBodyOnDomReady();
     initLocalStorage();
     initAppColor();
     initInfoSegment();
