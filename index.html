@@ -17,12 +17,12 @@
 
 
         <!-- development -->
-        <link href="font.css" rel="stylesheet" media="screen">
-        <link href="bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="index.css" rel="stylesheet" media="screen">
+        <!--<link href="font.css" rel="stylesheet" media="screen">-->
+        <!--<link href="bootstrap.min.css" rel="stylesheet" media="screen">-->
+        <!--<link href="index.css" rel="stylesheet" media="screen">-->
 
         <!-- deployment -->
-        <!--<link href="./index.css" rel="stylesheet" media="screen">-->
+        <link href="./index.css" rel="stylesheet" media="screen">
 
         <link rel="icon" href="favicon.png" type="image/png">
         <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
@@ -286,6 +286,7 @@
     </div>
 
     <!-- development -->
+    <!--
     <script src="js/lib/jquery-1.10.2.js"></script>
     <script src="js/lib/bootstrap.js"></script>
     <script src="js/lib/underscore.js"></script>
@@ -313,9 +314,10 @@
     <script src="js/ui/themesSegment.js"></script>
 
     <script type="text/javascript">initSc5();</script>
+    -->
 
     <!-- deployment -->
-    <!--<script defer src="./index.js"></script>-->
+    <script defer src="./index.js"></script>
     <script async type="text/javascript">
 
         /* google analytics */
@@ -331,6 +333,17 @@
 
         /* twitter */
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+        /* temp */
+        var now = Date.now();
+
+        var nowHash = '#' + String(now);
+        window.location.hash = nowHash;
+
+        window.onhashchange = function() {
+            history.pushState(null, '', nowHash);
+            console.log("back to:" + nowHash);
+        }
     </script>
     </body>
 </html>
