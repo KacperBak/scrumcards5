@@ -1,0 +1,20 @@
+= scrumcards5 release notes
+:Author:    Kacper Bak
+:Email:     info@scrumcards5.com
+:Date:      18.12.2013
+:Revision:  0.1.0
+:description: Mobile Scrum tool for agile software development. Displays Scrum values on all HTML5 capable mobile devices.
+
+== Version 0.1.0
+- Application init improved
+- JS deployment improved
+- AppInfo updated
+- Scalable opacity for main symbol implemented
+- Scalable font size for main symbol implemented
+- Timestamp in manifest included
+- Fibonacci card deck implemented
+- infinite symbol added
+- IPhone specific header added
+
+== Version 0.0.2
+- first launch of the app with basic functions

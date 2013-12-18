@@ -1,15 +1,15 @@
 /**
  * handler
  */
-$( "button#specialChars" ).click(function() {
-    displaySpecialChars();
+$("button#decks").click(function() {
+    displayDecksSegment();
 });
 
-$( "button#fullscreen" ).click(function() {
+$("button#fullscreen").click(function() {
     toggleButtonsVisible();
 });
 
-$( "button#settings" ).click(function() {
+$("button#settings").click(function() {
 
     if( isSettingsVisible && isThemesVisible){
 
@@ -21,30 +21,49 @@ $( "button#settings" ).click(function() {
         //back from info
         displayInfo();
 
-    } else if (isSettingsVisible && isAfterSelectVisible){
+    } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolPreviewFontSizeSegmentVisible) {
 
-        //back from afterSelect
-        displayAfterSelect();
+        //back from mainSymbolPreviewFontSizeSegment
+        displayMainSymbolPreviewFontSizeSegment();
 
-    } else {
+    } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolOpacitySegmentVisible) {
+
+        //back from mainSymbolFontSizeSegment
+        displayMainSymbolOpacitySegment();
+
+    } else if(isSettingsVisible && isMainSymbolSegmentVisible && isMainSymbolPresentFontSizeSegmentVisible) {
+
+        //back from mainSymbolPresentFontSizeSegment
+        displayMainSymbolPresentFontSizeSegment();
+
+    } else if (isSettingsVisible && isMainSymbolSegmentVisible){
+
+        //back from mainSymbolSegment
+        displayMainSymbolSegment();
+
+    }  else {
         displaySettings();
     }
 });
 
-$( "div#mainSegment" ).click(function() {
-    toggleButtonsVisible();
+$("div#mainSegment").click(function() {
+    if(checkPresentSegmentConditions()){
+        toggleButtonsVisible();
+    }
 });
 
-$( "button#minus" ).click(function() {
-    replaceScrumValueByPlusOrMinus(lastScrumValue());
+$("button#minus").click(function() {
+    lastDeckValue();
+    replaceDeckValueByPlusOrMinus();
 });
 
-$( "button#scrumPoints").click(function(){
-    displayScrumPoints();
+$("button#scrumPoints").click(function(){
+    displaySelectedDeck();
 });
 
-$( "button#plus" ).click(function() {
-    replaceScrumValueByPlusOrMinus(nextScrumValue());
+$("button#plus").click(function() {
+    nextDeckValue();
+    replaceDeckValueByPlusOrMinus();
 });
 
 /**
@@ -53,35 +72,35 @@ $( "button#plus" ).click(function() {
 var isControlButtonsVisible = true;
 
 var toggleButtonsVisible = function(){
-    if(!isScrumPointsVisible){
+    if(!isDeck0Visible){
         if(isControlButtonsVisible){
             isControlButtonsVisible = false;
             $("button").fadeOut();
             switchLargeFigureColor(isControlButtonsVisible);
             switchLargeFigureBackground(isControlButtonsVisible);
-            resizeElementDimensions(getMainSymbolFontSize());
+            resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeight());
         }else{
             isControlButtonsVisible = true;
             $("button").fadeIn();
             switchLargeFigureColor(isControlButtonsVisible);
             switchLargeFigureBackground(isControlButtonsVisible);
-            resizeElementDimensions(getMainSymbolFontSize());
+            resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeight());
         }
     }
 }
 
-var replaceScrumValue = function(scrumCardValue){
-    replaceMainContent($( '<div id="mainContent" class="span12 text-center large-figure">'+ scrumCardValue +'</div>'));
+var replaceMainValue = function(){
+    var replaceFragment = getReplaceFragment();
+    replaceMainContent( mainContentParent, mainContentChild, replaceFragment);
     switchLargeFigureColor(isControlButtonsVisible);
 }
 
 var setAppIcon = function (){
     var replaceFragment = $('<div id="mainContent" class="span12 text-center large-figure" data-icon="&#xe00e;"></div>');
-    replaceMainContent(replaceFragment);
+    replaceMainContent(mainContentParent, mainContentChild ,replaceFragment);
 }
 
-var replaceMainContent = function(replaceFragment){
-    $("div#mainContent").remove();
-    $("div#mainSegment").append(replaceFragment);
-    resizeElementDimensions(getMainSymbolFontSize());
+var replaceMainContent = function(parent, child, replaceFragment){
+    replaceContent(parent, child, replaceFragment);
+    resizeElementDimensions(getMainSymbolFontSize(), getMainContentHeight());
 }

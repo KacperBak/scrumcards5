@@ -14,14 +14,15 @@ JS_OUTPUT=./out/index.js
 touch $JS_OUTPUT
 
 # aggregate - LIB files (order is extreme important --> no loop)
-cat ../js/lib/jquery-1.10.2.min.js >> $JS_OUTPUT
+cat ../js/lib/jquery-1.10.2.js >> $JS_OUTPUT
 echo "\n" >> $JS_OUTPUT
-cat ../js/lib/bootstrap.min.js >> $JS_OUTPUT
+cat ../js/lib/bootstrap.js >> $JS_OUTPUT
 echo "\n" >> $JS_OUTPUT
-cat ../js/lib/underscore-min.js >> $JS_OUTPUT
+cat ../js/lib/underscore.js >> $JS_OUTPUT
 echo "\n" >> $JS_OUTPUT
-cat ../js/lib/string.min.js >> $JS_OUTPUT
+cat ../js/lib/string.js >> $JS_OUTPUT
 echo "\n" >> $JS_OUTPUT
+
 
 # aggregate - APP files
 APP_FILES=../js/app/*
@@ -40,6 +41,9 @@ do
     cat $f >> $JS_OUTPUT
     echo "\n" >> $JS_OUTPUT
 done
+
+#init application
+echo "initSc5();" >> $JS_OUTPUT
 
 echo "--- CSS aggregation   ---"
 
@@ -121,7 +125,7 @@ rm -rf compressed/index.css
 echo "--- JS  compress GCC  ---"
 # 164341 Byte
 java -jar compiler.jar --js out/index.js --js_output_file compressed/index.js
-# java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --js out/index.js --js_output_file compressed/index.js
+#java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --js out/index.js --js_output_file compressed/index.js
 
 echo "--- CSS compress YUI  ---"
 # 166504 Byte

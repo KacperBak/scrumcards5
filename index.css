@@ -6,7 +6,8 @@ body{
     /* 160x240 */
     font-size: 12em;
     line-height: 390px;
-    /*background-color: magenta;*/
+    opacity: 1.0;
+    color: #000000;
 }
 
 .header{
@@ -26,12 +27,17 @@ body{
 .spRow1 .spRow2 .spRow3 .spRow4{
 }
 
-*.infoContent {
+*.infoRow {
     margin-left: 1em;
     margin-right: 1em;
 }
 
-*.afterSelectContent {
+*.infoContent {
+    color: #000000;
+}
+
+
+*.settingsContent {
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -39,5 +45,6 @@ body{
 .selectValue {
     font-size: 1em;
     line-height: 1.65em;
+    color: #000000;
 }
 
